@@ -1,0 +1,450 @@
+
+
+<!-- ======= Header/Navbar ======= -->
+  <!--<header>
+      <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="navbar-brand text-brand" href="{{ url_for('main.index') }}">Best<span class="color-b">Funiture</span>
+        <li class="list-inline-item">
+          <a href="{{url_for('carts.cart')}}">
+            <i class="bi bi-cart"> <sup style="color:red;">({{session['shoppingcart']|length}})</sup> </i>
+          </a>
+        </li>
+      </a>
+
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('main.index') }}">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url_for('main.about') }}">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{{url_for('product.product')}}">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url_for('main.contact') }}">Contact Us</a>
+          </li>
+
+       
+          <li class="nav-item dropdown">
+
+            {% if current_user.is_authenticated %}
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ url_for('users.account') }}"> <i class="ion-android-person"></i> Hello, {{ current_user.username }} </a>
+              <a class="dropdown-item " href="{{ url_for('carts.cart') }}">Shooping Cart</a>
+              <a class="dropdown-item " href="{{ url_for('main.checkout') }}">Checkout</a>
+            
+              {% if current_user.email == 'emeraldinteriorservices@gmail.com' %}
+              <a class="dropdown-item " href="{{ url_for('admin.home') }}">Dashboard</a>
+              {% endif %}
+              <a class="dropdown-item " href="{{ url_for('users.logout') }}">Logout</a>
+            
+              {% else %}
+             <li class="nav-item">
+               <a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
+             </li>
+
+              {% endif %}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+         {% for category, message in messages %}
+             <div class="alert alert-{{ category }}">
+                 {{ message }}
+             </div>
+         {% endfor %}
+    {% endif %}
+  {% endwith %}
+  </nav>
+  
+  </header>-->
+  <!-- End Header/Navbar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="app">
+    <div class="bgheadproject hidden-xs" style="background: url('static/storage/general/breadcrumb-background.jpg')">
+        <div class="description">
+            <div class="container-fluid w90">
+                <h1 class="text-center">About us</h1>
+                <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
+                    <a href="index.html" itemprop="item" title="Home">
+                        Home
+                        <meta itemprop="name" content="Home" />
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                                                <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    About us
+                    <meta itemprop="name" content="About us" />
+                    <meta itemprop="position" content="2" />
+                </li>
+                        </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class=" container  padtop50">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="scontent">
+                    
+
+                    <div class="ck-content"><p><div id="contact">
+    <div class="row">
+        <div class="col-md-5">
+            <!--<div class="wrapper">
+                
+            </div> -->
+             <img src="static/storage/general/emax (1).png" alt="">
+        </div>
+        <div class="col-md-7">
+           
+                <div class="wrapper">
+                    <h2 class="h2">Helping people get home since 2006</h2>
+                <div class="contact-main">
+                    <p></p>
+                    <div
+                        class="contact-name"
+                        style="text-transform: uppercase"
+                    ></div>
+                    <div class="contact-address">Emax ecosystem of products and services is designed to provide a seamless, end-to-end transaction experience, helping renters, shoppers, buyers and sellers with every step of their journey. Founded to empower people with information so they could find the right home, Emax is synonymous with real estate. As the most visited, most trusted1 name in the industry, “Emax” is searched more often than “real estate,”2 and our data indicates 70% of all home buyers and sellers use Emax at some point in their transaction.
+
+
+                    </div>
+                    <br>
+                    <div class="contact-address"><i>Emax® is making home a reality for more and more people.</i> </div>
+                    <br>
+                    <h4><span style="font-size:18px;"><b>Emax is here for you, </b><span style="font-family:Arial, Helvetica, sans-serif;"><strong> every step of the way </strong></span></span></h4>
+                    
+                    <div class="contact-address">Real estate is an incredibly personal experience — and for most people, it’s the biggest transaction they’ll ever make. 
+
+                        Emax is built on a deep understanding of movers’ needs and a motivation to help you accomplish your moving goals. When you request to connect with an agent, Emax works to understand your unique situation in order to connect you with a local real estate professional who can tailor their services to you, help you explore options, and be your advocate to win your next home.
+                        
+                        That’s also why Emax provides a suite of products and services that helps most agents across the country do business more efficiently. This means agents can spend more time on what matters: helping you get home. In short, Emax shows up for our real estate agent partners so they can better show up for you.
+
+
+                    </div>
+
+                </div>
+
+                </div>
+                
+          
+        </div>
+    </div>
+</div>
+<br>
+ </p>
+</div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+</div>
+
+
+    <div class=" container  padtop50">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="scontent">
+                    
+
+                    <div class="ck-content">
+                        <h4><span style="font-size:18px;"><b>1. COMPANY</b><span style="font-family:Arial, Helvetica, sans-serif;"><strong> PROFILE</strong></span></span></h4>
+
+                        <p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">Founded on August 28, 1993 (mainly known as Emax-Solution Co., Ltd.), Emax operates in the field of real estate business, building villas for rent.<br>
+                        With the slogan "Breaking time, through space" with a sustainable development strategy, taking Real Estate as a focus area, Emax is constantly connecting between buyers and sellers in the field. Real estate, bringing people closer together, over the distance of time and space, is a reliable place for real estate investment - an area that is constantly evolving over time.</span></span></p>
+
+                    <blockquote>
+                      <h2 style="font-style:italic;text-align:center;"><span style="font-size:24px;"><strong><span style="font-family:Arial, Helvetica, sans-serif;"><span style="color:#16a085;">"Our Agenda"</span></span></strong></span></h2>
+                    </blockquote>
+
+    <div class=" container  padtop50">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="scontent">
+                
+
+                <!--<div class="ck-content"><p><div id="contact">-->
+
+        <div class="row">
+    <div class="col-md-5">
+        
+            <img src="static/storage/general/Agenda.jpg" alt="">
+            
+        
+    </div>
+    <div class="col-md-7">
+       
+            <div class="wrapper">
+                <h2 class="h2">Our Plan</h2>
+            <div class="contact-main">
+                <p></p>
+                <div
+                    class="contact-name"
+                    style="text-transform: uppercase"
+                ></div>
+                <div class="contact-address"> Being a pioneer is a great gift and must be reciprocated with an undying desire for continuous evolving. Among the many values esteemed at Emax, we have a constant consciousness of our carbon footprints and have a solid plan to be certified as the first green estate in sub saharan Africa. We are working with global energy experts to build the largest solar farm in Nigeria’s capital to generate up to 2.5 kva/ha of electricity to serve thousands of our homes and other target buildings. </div>
+                <br>
+                <br>
+            </div>
+
+            </div>
+            
+      
+    </div>
+
+    
+    <div class="col-md-7">
+   
+        <div class="wrapper">
+          
+        <div class="contact-main">
+            <p></p>
+            <div
+                class="contact-name"
+                style="text-transform: uppercase"
+            ></div>
+            <div class="contact-address"> Every Emax design is created with the user at its core thereby enabling us to adapt our home automation to emerging trends that wow the customer across different demographics as they daily unfold the vast possibilities within the walls of the homes. The beauty of automation beyond the luxury and fascination that it provides is that it creates a level-playing field for everyone to have a normalized experience, eg, the voice interaction between the home and residents living with physical disabilities or visual impairments are top priority considerations that derive our motivation to continually improve these possibilities within the next half-decade. <br><br> Our R&D team is also looking deeply into other areas within our segment market for best strategies to approach the hospitality business in Nigeria. Having raised the bar in the real estate sector in only less than half a decade, we are expanding the horizon of our style, taste and customer base to not only create a new standard for best practice but to raise the bar of excellence to enable us compete globally as a nation. There are a few other areas of possible investments within the stipulated exploratory time frame; including commercial business properties, STEM-specialised tertiary institutions which will birth a project that sits at the heart of our CSR, free learning centres across the 6 geo political zones of the country with internationally standardized curriculum for practical learning.</div>
+            <br>
+            <br>
+            "We also work on conducting a comprehensive surveys. Analyze data and deliver actionable insights to help our clients achieve their goals."
+        </div>
+
+        </div>
+        
+  
+    </div>
+
+    <div class="col-md-5">
+            
+        <img src="static/storage/general/Agenda2.jpg" alt="">
+    </div>
+    
+    </div>
+
+
+                      <h4 style="text-align:center;"><img alt="" src="../static/flex-home.test/storage/general/asset-3-at-3x.png" style="width:90%;"></h4>
+                      
+                      <h4><span style="font-size:18px;"><b>2. VISION </b></span></h4>
+                      
+                      <p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">- Acquiring domestic areas.<br>
+                      - Reaching far across continents.</span></span></p>
+                      
+                      <h4><span style="font-size:18px;"><b>3. MISSION</b></span></h4>
+                      
+                      <p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">- Creating the community<br>
+                      - Building destinations<br>
+                      - Nurture happiness</span></span></p>
+                      
+                      <p><img alt="" src="../static/flex-home.test/storage/general/vietnam-office-4.jpg"></p>
+                      </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--============================================================================================================-->
+<!--============================================================================================================-->
+<!--============================================================================================================-->
+
+
+<div id="app">
+    <div class="bgheadproject hidden-xs" style="background: url('storage/general/breadcrumb-background.jpg')">
+        <div class="description">
+            <div class="container-fluid w90">
+                <h1 class="text-center">About us</h1>
+                <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
+                    <a href="index.html" itemprop="item" title="Home">
+                        Home
+                        <meta itemprop="name" content="Home" />
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                                                <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    About us
+                    <meta itemprop="name" content="About us" />
+                    <meta itemprop="position" content="2" />
+                </li>
+                        </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class=" container  padtop50">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="scontent">
+                    
+
+                    <div class="ck-content"><p><div id="contact">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="wrapper">
+                <img src="storage/general/emax (1).png" alt="">
+                
+            </div>
+        </div>
+        <div class="col-md-6">
+           
+                <div class="wrapper">
+                    <h2 class="h2">Helping people get home since 2006</h2>
+                <div class="contact-main">
+                    <p></p>
+                    <div
+                        class="contact-name"
+                        style="text-transform: uppercase"
+                    ></div>
+                    <div class="contact-address">Emax ecosystem of products and services is designed to provide a seamless, end-to-end transaction experience, helping renters, shoppers, buyers and sellers with every step of their journey. Founded to empower people with information so they could find the right home, Emax is synonymous with real estate. As the most visited, most trusted1 name in the industry, “Emax” is searched more often than “real estate,”2 and our data indicates 70% of all home buyers and sellers use Emax at some point in their transaction.
+
+
+                    </div>
+                    <br>
+                    <div class="contact-address"><i>Emax® is making home a reality for more and more people.</i> </div>
+                    <br>
+                    <h4><span style="font-size:18px;"><b>Emax is here for you, </b><span style="font-family:Arial, Helvetica, sans-serif;"><strong> every step of the way </strong></span></span></h4>
+                    
+                    <div class="contact-address">Real estate is an incredibly personal experience — and for most people, it’s the biggest transaction they’ll ever make. 
+
+                        Emax is built on a deep understanding of movers’ needs and a motivation to help you accomplish your moving goals. When you request to connect with an agent, Emax works to understand your unique situation in order to connect you with a local real estate professional who can tailor their services to you, help you explore options, and be your advocate to win your next home.
+                        
+                        That’s also why Emax provides a suite of products and services that helps most agents across the country do business more efficiently. This means agents can spend more time on what matters: helping you get home. In short, Emax shows up for our real estate agent partners so they can better show up for you.
+
+
+                    </div>
+
+                </div>
+
+                </div>
+                
+          
+        </div>
+    </div>
+</div>
+<br>
+ </p>
+</div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+</div>
+
+
+    <div class=" container  padtop50">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="scontent">
+                    
+
+                    <div class="ck-content">
+                        <h4><span style="font-size:18px;"><b>1. COMPANY</b><span style="font-family:Arial, Helvetica, sans-serif;"><strong> PROFILE</strong></span></span></h4>
+
+<p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">Founded on August 28, 1993 (mainly known as Emax-Solution Co., Ltd.), Emax operates in the field of real estate business, building villas for rent.<br>
+With the slogan "Breaking time, through space" with a sustainable development strategy, taking Real Estate as a focus area, Emax is constantly connecting between buyers and sellers in the field. Real estate, bringing people closer together, over the distance of time and space, is a reliable place for real estate investment - an area that is constantly evolving over time.</span></span></p>
+
+<blockquote>
+<h2 style="font-style:italic;text-align:center;"><span style="font-size:24px;"><strong><span style="font-family:Arial, Helvetica, sans-serif;"><span style="color:#16a085;">"Our Agenda"</span></span></strong></span></h2>
+</blockquote>
+
+<p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">"Our agenda is to conduct comprehensive surveys. Analyze data and deliver actionable insights to help our clients achieve their goals."<br>
+    </span></span></p>
+
+<h4 style="text-align:center;"><img alt="" src="../flex-home.test/storage/general/asset-3-at-3x.png" style="width:90%;"></h4>
+
+<h4><span style="font-size:18px;"><b>2. VISION </b></span></h4>
+
+<p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">- Acquiring domestic areas.<br>
+- Reaching far across continents.</span></span></p>
+
+<h4><span style="font-size:18px;"><b>3. MISSION</b></span></h4>
+
+<p><span style="font-size:16px;"><span style="font-family:Arial, Helvetica, sans-serif;">- Creating the community<br>
+- Building destinations<br>
+- Nurture happiness</span></span></p>
+
+<p><img alt="" src="../flex-home.test/storage/general/vietnam-office-4.jpg"></p>
+</div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    

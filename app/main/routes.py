@@ -19,7 +19,27 @@ def index():
 
 @main.route('/about', methods=['GET', 'POST'])
 def about():
-    return render_template("about.html")
+    return render_template("about-US.html")
+
+
+@main.route('/projects', methods=['GET', 'POST'])
+def projects():
+    return render_template("projects.html")
+
+
+@main.route('/properties', methods=['GET', 'POST'])
+def properties():
+    return render_template("properties.html")
+
+
+@main.route('/agents', methods=['GET', 'POST'])
+def agents():
+    return render_template("agents.html")
+
+
+@main.route('/news', methods=['GET', 'POST'])
+def news():
+    return render_template("news.html")
 
 
 @main.route('/checkout', methods=['GET', 'POST'])
@@ -79,10 +99,10 @@ def checkout():
                            form=form, grandtotal=grandtotal, product=product)
 
 
-@main.route('/faq', methods=['GET', 'POST'])
+@main.route('/gallery', methods=['GET', 'POST'])
 @login_required
-def faq():
-    return render_template("faq.html")
+def gallery():
+    return render_template("gallery.html")
 
 
 @main.route('/returnpolicy', methods=['GET', 'POST'])
