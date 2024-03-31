@@ -6,9 +6,9 @@ from flask_login import current_user, login_required
 admin = Blueprint('admin', __name__)
 
 
-@admin.route('/home', methods=['GET', 'POST'])
+@admin.route('/admin', methods=['GET', 'POST'])
 # @login_required
-def home():
+def admin1():
     users = User.query.all()
     product = Product.query.all()
     # if current_user.email != 'emeraldinteriorservices@gmail.com':
@@ -16,7 +16,7 @@ def home():
     #     return redirect(url_for('main.index', users=users, product=product))
     # else:
     #     render_template('admin/home.html', users=users, product=product)
-    return render_template("admin/home.html", users=users, product=product,)
+    return render_template("admin/index.html", users=users, product=product,)
 
 
 @admin.route('/users', methods=['GET', 'POST'])
