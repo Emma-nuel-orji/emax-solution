@@ -4,7 +4,7 @@ from flask import current_app
 from time import time
 from flask_login import UserMixin
 import json
-import jwt
+# import jwt
 
 
 @login_manager.user_loader
@@ -22,21 +22,21 @@ class User(db.Model, UserMixin):
     product = db.relationship('Product', backref='author', lazy=True)
     payment = db.relationship('Payment', backref='author', lazy=True)
 
-    def get_reset_token(self, expires_in=300):
-        return jwt.encode(
-            {'reset_password': self.id, 'exp': time() + expires_in},
-            current_app.config['SECRET_KEY'], algorithm='HS256')
+    # def get_reset_token(self, expires_in=300):
+    #     return jwt.encode(
+    #         {'reset_password': self.id, 'exp': time() + expires_in},
+    #         current_app.config['SECRET_KEY'], algorithm='HS256')
 
-    @staticmethod
-    def verify_reset_token(token):
-        try:
-            user_id = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
-        except:
-            return None
-        return User.query.get(user_id)
+    # @staticmethod
+    # def verify_reset_token(token):
+    #     try:
+    #         user_id = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
+    #     except:
+    #         return None
+    #     return User.query.get(user_id)
 
-    def __repr__(self):
-        return f"User('{self.username}', '{self.phone}', '{self.email}', '{self.image_file}')"
+    # def __repr__(self):
+    #     return f"User('{self.username}', '{self.phone}', '{self.email}', '{self.image_file}')"
 
 
 class Payment(db.Model):
