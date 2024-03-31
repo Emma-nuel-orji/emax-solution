@@ -11,40 +11,59 @@
                 <div class="card-body">
                     <h4 class="text-center">Login</h4>
                     <br>
-                                        <br>
-                    <form method="POST" action="https://worldluxproperties.org/login">
+                    <br>
+         
+                    <form class="join" action="" method="POST" enctype="multipart/form-data" novalidate>
+                        {{ form.hidden_tag() }}
                         <input type="hidden" name="_token" value="b8XSHCUVfMLjsbVHhHFwOHXgMOZgN7sJxOa51c3C" autocomplete="off">                        <div class="form-group">
-                            <input id="email" type="text"
-                                   class="form-control"
-                                   placeholder="Email/Username"
-                                   name="email" value="" autofocus>
-                                                    </div>
+                           
+                            <div class="form-group">  
+                                {{ form.email.label(class='form-control-label') }}
+                                {% if form.email.errors %}
+                                    {{ form.email(class='form-control form-control-lg is-invalid') }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                     {{ form.email(class='form-control form-control-lg') }}
+                                {% endif %}
+                            </div>
                         <div class="form-group">
-                            <input id="password" type="password"
-                                   class="form-control"
-                                   placeholder="Password" name="password">
-                                                    </div>
+                            {{ form.password.label(class='form-control-label') }}
+                            {% if form.password.errors %}
+                                {{ form.password(class='form-control form-control-lg is-invalid') }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                 {{ form.password(class='form-control form-control-lg') }}
+                            {% endif %}
+                        </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"
-                                                   name="remember" > Remember Me
+                                        <label style='padding-left: 20px;'>
+                                            {{ form.remember(class="form-check-input") }}
+                                            {{ form.remember.label(class="form-check-input-label") }}
+
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-md-center">
-                                    <a href="password/request.html">
+                                    <a href="{{ url_for('users.reset_request') }}">
                                         Forgot Your Password?
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-full fw6">
-                                Login
-                            </button>
+                            {{ form.submit(class='btn btn-primary btn-full fw6') }}
+                            
                         </div>
 
                                                     <div class="form-group text-center">
@@ -64,3 +83,56 @@
 </div>
 
 {% endblock content%}
+
+
+
+<form class="join" action="" method="POST" enctype="multipart/form-data" novalidate>
+    <div class="container-fluid">
+        {{ form.hidden_tag() }}
+      <div class="row">
+      <fieldset class="form-group">
+        <div class="form-group">
+            {{ form.email.label(class='form-control-label') }}
+            {% if form.email.errors %}
+                {{ form.email(class='form-control form-control-lg is-invalid') }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                 {{ form.email(class='form-control form-control-lg') }}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.password.label(class='form-control-label') }}
+            {% if form.password.errors %}
+                {{ form.password(class='form-control form-control-lg is-invalid') }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                 {{ form.password(class='form-control form-control-lg') }}
+            {% endif %}
+        </div>
+        <div class="form-check">
+            {{ form.remember(class="form-check-input") }}
+            {{ form.remember.label(class="form-check-input-label") }}
+        </div>
+      </fieldset>
+    </div>
+</div>
+
+<div class="form-group ">
+    {{ form.submit(class='btn btn-primary') }}
+</div>
+<h5 class="text-muted ml-2">
+<a  href="{{ url_for('users.reset_request') }}" >Forgot Password?</a>
+</h5>
+<p>
+Don't have an account?  <a href="/register"> Registration > </a>
+</p>
+</form>

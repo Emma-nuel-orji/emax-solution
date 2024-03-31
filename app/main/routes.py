@@ -125,14 +125,14 @@ def contact():
     user = User
     form = ContactForm()
     if form.validate_on_submit():
-        msg = Message(f'New Message from {current_user.username}', sender=f'{user.email}',
-                      recipients=['emeraldinteriorservices@gmail.com'])
+        msg = Message(f'New Message from {form.name.data}', sender=f'{user.email}',
+                      recipients=['eorji452@gmail.com'])
         msg.body = f"""
            Name :  {form.name.data}
 
            Email :  {form.contact_email.data}
 
-           Subject :  {form.subject.data}
+           Phone Number :  {form.number.data}
 
            Message :  {form.message.data}
            """

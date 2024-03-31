@@ -13,14 +13,36 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Emmanuel.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/img'
 app.config['UPLOADED_PHOTO_DEST'] = os.path.join(basedir, 'static/img')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'                                       
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'eorji452@gmail.com'
+EMAIL_HOST_PASSWORD = 'jvxc grdl hofw sskv'
+
+
+DEFAULT_FROM_EMAIL = '<anything you want>'
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER'] = "smtp.gmail.com"
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
+
 EMAIL_USERNAME = "eorji452@gmail.com"
-EMAIL_HOST_PASSWORD = "sqokdetbwukuwxzo"
+EMAIL_HOST_PASSWORD = "jvxc grdl hofw sskv"
 app.config['MAIL_USERNAME'] = EMAIL_USERNAME
 app.config['MAIL_PASSWORD'] = EMAIL_HOST_PASSWORD
+
+# app.config['MAIL_SERVER'] = "smtp.gmail.com"
+# app.config['MAIL_PORT'] = 465
+# app.config['MAIL_USE_TLS'] = False
+# app.config['MAIL_USE_SSL'] = True
+# EMAIL_USERNAME = "eorji452@gmail.com"
+# EMAIL_HOST_PASSWORD = "sqokdetbwukuwxzo"
+# app.config['MAIL_USERNAME'] = EMAIL_USERNAME
+# app.config['MAIL_PASSWORD'] = EMAIL_HOST_PASSWORD
 
 mail = Mail(app)
 db = SQLAlchemy(app)

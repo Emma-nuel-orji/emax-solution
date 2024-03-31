@@ -4,7 +4,7 @@
 
 
 <div id="app">
-    <div class="bgheadproject hidden-xs" style="background: url('storage/general/breadcrumb-background.jpg')">
+    <div class="bgheadproject hidden-xs" style="background: url('static/storage/general/breadcrumb-background.jpg')">
         <div class="description">
             <div class="container-fluid w90">
                 <h1 class="text-center">Contact</h1>
@@ -53,48 +53,66 @@
         <div class="col-md-6">
             <form
                 class="generic-form"
-                action="https://worldluxproperties.org/contact/send"
-                method="post"
+                action=""
+                method="POST"
             >
+            {{ form.hidden_tag() }}
                 <div class="wrapper">
                     <h2 class="h2">HOW WE CAN HELP YOU?</h2>
                     <input type="hidden" name="_token" value="b8XSHCUVfMLjsbVHhHFwOHXgMOZgN7sJxOa51c3C" autocomplete="off">                    
 
                     <div class="form-group">
-                        <input
-                            class="form-control"
-                            name="name"
-                            type="text"
-                            placeholder="Name *"
-                            required=""
-                        >
+                        {{ form.name.label(class= "form-control-label") }}
+                        {% if form.name.errors %}
+                            {{ form.name(class= "form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                 {% for error in form.name.errors %}
+                                   <span class="alert-danger"> {{ error }} </span>
+                                 {% endfor%}
+                            </div>
+                        {% else%}
+                             {{ form.name(class= "form-control form-control-lg") }}
+                        {% endif%}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.contact_email.label(class= "form-control-label") }}
+                        {% if form.contact_email.errors %}
+                            {{ form.contact_email(class= "form-control form-control-lg is-invalid") }}
+                             <div class="invalid-feedback">
+                                  {% for error in form.contact_email.errors%}
+                                    <span class="alert-danger"> {{ error }} </span>
+                                  {% endfor%}
+                             </div>
+                         {% else %}
+                              {{ form.contact_email(class= "form-control form-control-lg") }}
+                         {% endif%}
                     </div>
                     <div class="form-group">
-                        <input
-                            class="form-control"
-                            name="email"
-                            type="text"
-                            placeholder="Email *"
-                            required=""
-                        >
+                        {{ form.number.label(class= "form-control-label") }}
+                         {% if form.number.errors %}
+                             {{ form.number(class= "form-control form-control-lg is-invalid") }}
+                             <div class="invalid-feedback">
+                                  {% for error in form.number.errors%}
+                                     <span class="alert-danger"> {{ error }} </span>
+                                  {% endfor%}
+                             </div>
+                         {% else%}
+                              {{ form.number(class= "form-control form-control-lg") }}
+                         {% endif%}
                     </div>
                     <div class="form-group">
-                        <input
-                            class="form-control"
-                            name="phone"
-                            type="text"
-                            placeholder="Phone"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <textarea
-                            class="form-control"
-                            name="content"
-                            rows="6"
-                            minlength="10"
-                            placeholder="Message *"
-                            required=""
-                        ></textarea>
+                        {{ form.message.label(class= "form-control-label") }}
+                        {% if form.message.errors %}
+                            {{ form.message(class= "form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                 {% for error in form.message.errors%}
+                                    <span class="alert-danger"> {{ error }} </span>
+                                 {% endfor%}
+                            </div>
+                        {% else%}
+                             {{ form.message(class= "form-control form-control-lg") }}
+                        {% endif%}
                     </div>
                                             
                                             
@@ -114,10 +132,8 @@
                     </div>
                     <br>
                     <div class="form-actions">
-                        <button
-                            class="btn-special"
-                            type="submit"
-                        >Send message</button>
+                        {{ form.submit( class="col-md-3 col-sm-6 btn-special btn btn-success") }}
+                        
                     </div>
                 </div>
             </form>
@@ -158,3 +174,4 @@
 
 
 {% endblock content%}
+
