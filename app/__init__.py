@@ -57,7 +57,7 @@ from app.main.routes import main
 from app.product.routes import prod
 from app.admin.routes import admin
 from app.order.routes import order
-
+from app.errors.handlers import errors
 
 app.register_blueprint(users)
 app.register_blueprint(carts)
@@ -65,4 +65,4 @@ app.register_blueprint(main)
 app.register_blueprint(prod)
 app.register_blueprint(admin)
 app.register_blueprint(order)
-
+app.register_blueprint(errors)
