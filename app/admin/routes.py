@@ -29,10 +29,10 @@ def admin1():
 @admin.route('/users', methods=['GET', 'POST'])
 # @login_required
 def users():
-    if current_user.email != 'emeraldinteriorservices@gmail.com':
+    if current_user.email != 'orjiobiajulum@yahoo.com':
         flash("Sorry you have to be an admin to access this page", "info")
         return redirect(url_for('main.index'))
     user = User.query.all()
-    return render_template("admin/users.html", user=user)
+    return render_template("users.html", user=user)
 
 

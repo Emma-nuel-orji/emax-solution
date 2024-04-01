@@ -14,38 +14,48 @@
          <li class="breadcrumb-item active">Tables</li>
        </ol>
 
-       <!-- Database for Users -->
-         <br><br>  <h2 style="text-align:center ;"> USERS TABLE</h2>
-
+       <!-- Post DataTables Example -->
+       <br><br>  <h2 style="text-align:center ;"> NEWS PROJECT</h2> 
+       <div class="col-md-7 align-self-center">
+        <a href="{{url_for('posts.propertiespost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add New Project</a>
+    </div><br>
        <div class="card mb-3">
          <div class="card-header">
            <i class="fas fa-table"></i>
            Data Table Example</div>
          <div class="card-body">
            <div class="table-responsive">
-             <table class="table table-bordered" width="100%" cellspacing="0">
+             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                <thead>
                  <tr>
                    <th>ID</th>
-                   <th>Username</th>
-                   <th>Email</th>
-                   <th>Phone</th>
+                   <th> Name</th>
+                   <th>Image</th>
+                   <th>Price</th>
+                   <th>Discount</th>
+                   <th>Category</th>
+                   <th>Price</th>
+                   <th>Edit</th>
                    <th>Action</th>
                  </tr>
                </thead>
-
                <tbody>
-                {% for user in user %}
+                {% for prod in product %}
                  <tr>
-                   <td> {{user.id}} </td>
-                   <td>{{ user.username }}</td>
-                   <td>{{ user.email}}</td>
-                   <td>{{ user.phone}}</td>
-                     <td>
+                  <td> {{prod.id}} </td>
+                   <td>{{ prod.name }}</td> 
+                   <td><img  src="{{url_for('static', filename='img/' + prod.image)}}" width="50" height="50"/></td>
+                   <td>{{prod.price}}</td>
+                   <td>{{prod.discount}}</td>
+                   <td>{{prod.category}}</td>
+                   <td>{{prod.price}}</td> 
+                   <td><a class="btn-success btn" href=""> Edit </a></td>
+                   <td>
                      <button type="button" class="btn btn-danger btn-sm m-2" data-toggle="modal" data-target="#deleteModal">Delete</button>
                    </td>
                  </tr>
-                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+
+                 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -56,7 +66,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <form action="{{ url_for('users.delete_user',user_id=user.id) }}" method="POST" style="display: inline-block">
+                            <form action="{{ url_for('main.delete_prod',prod_id=prod.id) }}" method="POST" style="display: inline-block">
                                 <input class="btn-danger" type="submit" value="Delete">
                             </form>
                           </div>
@@ -73,9 +83,7 @@
          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
        </div>
 
-       <p class="small text-center text-muted my-5">
-         <em>More table examples coming soon...</em>
-       </p>
+
 
      </div>
      </div>

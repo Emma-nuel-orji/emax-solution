@@ -54,7 +54,7 @@ login_manager.login_message_category = 'info'
 from app.users.routes import users
 from app.carts.carts import carts
 from app.main.routes import main
-from app.product.routes import prod
+from app.posts.routes import posts
 from app.admin.routes import admin
 from app.order.routes import order
 from app.errors.handlers import errors
@@ -62,7 +62,7 @@ from app.errors.handlers import errors
 app.register_blueprint(users)
 app.register_blueprint(carts)
 app.register_blueprint(main)
-app.register_blueprint(prod)
+app.register_blueprint(posts)
 app.register_blueprint(admin)
 app.register_blueprint(order)
 app.register_blueprint(errors)

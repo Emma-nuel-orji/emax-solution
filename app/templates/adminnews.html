@@ -1,4 +1,4 @@
-{% extends 'Admin/layouts.html' %}
+{% extends 'layouts.html' %}
 
 {% block content %}
 
@@ -15,9 +15,9 @@
        </ol>
 
        <!-- Post DataTables Example -->
-       <br><br>  <h2 style="text-align:center ;"> POSTS TABLE</h2> 
+       <br><br>  <h2 style="text-align:center ;"> NEWS TABLE</h2> 
        <div class="col-md-7 align-self-center">
-        <a href="{{url_for('product.productpost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add new product</a>
+        <a href="{{url_for('posts.newspost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add News</a>
     </div><br>
        <div class="card mb-3">
          <div class="card-header">
