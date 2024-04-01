@@ -7,14 +7,14 @@ admin = Blueprint('admin', __name__)
 
 
 @admin.route('/admin', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def admin1():
     if current_user.email != 'orjiobiajulum@yahoo.com':
         flash("Sorry you have to be an admin to access this page", "info")
         return redirect(url_for('main.index'))
     product = Product.query.all()
     users = User.query.all()
-    return render_template("Admin/index.html", product=product, users=users)
+    return render_template("admin.html", product=product, users=users)
 
     # users = User.query.all()
     # product = Product.query.all()
