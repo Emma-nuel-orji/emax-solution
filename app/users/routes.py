@@ -69,7 +69,7 @@ def delete_user(user_id):
     db.session.commit()
     flash("the user has been deleted successfully", 'success')
     return redirect(url_for('admin.home'))
-    return render_template("admin/users.html", user=user)
+    return render_template("users.html", user=user)
 
 
 @users.route('/logout')

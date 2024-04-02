@@ -146,12 +146,34 @@ def adminproject():
 #     return render_template("product.html", product=product)
 
 
-# @posts.route("/productpost/<int:product_id>", methods=['GET', 'POST'])
-# def products(product_id):
-#     prod = Product.query.get_or_404(product_id)
-#     return render_template("single_product.html", prod=prod)
 
 @posts.route('/single_product', methods=['GET', 'POST'])
 def single_product():
     product = Product.query.all()
     return render_template('single_product.html', product=product)
+
+
+# @posts.route("/productpost/<int:product_id>", methods=['GET', 'POST'])
+# def products(product_id):
+#     prod = Product.query.get_or_404(product_id)
+#     return render_template("single_product.html", prod=prod)
+
+
+@posts.route('/single_project', methods=['GET', 'POST'])
+def single_project():
+    return render_template("single_project.html")
+
+
+@posts.route('/single_properties', methods=['GET', 'POST'])
+def single_properties():
+    return render_template("single_properties.html")
+
+
+@posts.route('/single_agent', methods=['GET', 'POST'])
+def single_agent():
+    return render_template("single_agent.html")
+
+@posts.route('/single_news', methods=['GET', 'POST'])
+def single_news():
+    return render_template("single_news.html")
+

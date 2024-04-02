@@ -120,6 +120,7 @@ def privacy():
     return render_template("privacy.html")
 
 
+
 @main.route('/contact', methods=['GET', 'POST'])
 def contact():
     user = User
