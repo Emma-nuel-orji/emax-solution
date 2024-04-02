@@ -20,7 +20,7 @@
         }
     </style>
 
-    <title>Worldlup</title>
+    <title>Emax-luxury-Homes</title>
 <meta name="description" content="Find your favorite homes at Flex Home">
 <link rel="canonical" href="index.html">
 <meta property="og:site_name" content="Worldlup">
@@ -49,7 +49,7 @@
 </script>
 
 
-
+<script src="https://unpkg.com/htmx.org@1.9.4"></script>
 
 
 
@@ -228,10 +228,12 @@
            </li>
     </ul>
 
-                         <a class="btn btn-primary add-property" href="{{url_for('admin.admin1')}}">
+                                     {% if current_user.email == 'orjiobiajulum@yahoo.com' %}
+                                            <a class="btn btn-primary add-property" href="{{url_for('admin.admin1')}}">
                                             <i class="fas fa-plus-circle"></i> Add Property
                                         </a>
-                                    
+                                        {% endif %}
+
                                     <div class="d-sm-none">
                                         <div>
                                            <ul class="topbar-items d-block">
@@ -517,32 +519,6 @@
 
 
 
-<div
-        class="js-cookie-consent cookie-consent cookie-consent-full-width"
-        style="background-color: #000000 !important; color: #FFFFFF !important;"
-    >
-        <div
-            class="cookie-consent-body"
-            style="max-width: 1170px;"
-        >
-            <span class="cookie-consent__message">
-                Your experience on this site will be improved by allowing cookies
-                                    <a
-                        href="cookie-policy.html">Cookie Policy</a>
-                            </span>
-
-            <button
-                class="js-cookie-consent-agree cookie-consent__agree"
-                style="background-color: #000000 !important; color: #FFFFFF !important; border: 1px solid #FFFFFF !important;"
-            >
-                Allow cookies
-            </button>
-        </div>
-    </div>
-    <div data-site-cookie-name="cookie_for_consent"></div>
-    <div data-site-cookie-lifetime="7300"></div>
-    <div data-site-cookie-domain="worldluxproperties.org"></div>
-    <div data-site-session-secure=""></div>
 
 
 

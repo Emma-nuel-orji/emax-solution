@@ -216,3 +216,18 @@ def delete_prod(prod_id):
 def thanks():
     return render_template('thank.html')
 
+
+
+@main.route("/search")
+def search():
+    q = request.args.get("q")
+    print(q)
+
+    if q:
+        results = Product.query.filter(Product.title.icontains(q) | Product.performer.icontains(q)) \
+        .order_by(Product.peak_position.asc()).order_by(Product.chart_debut.desc()).limit(100).all()
+    else:
+        results = []
+
+    return render_template("search_results.html", results=results)
+
