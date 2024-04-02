@@ -33,7 +33,7 @@
 <meta name="twitter:description" content="">
 
     <link
-        href="../storage/logo/world-luxury-favi.jpg"
+        href="static/storage/logo/world-luxury-favi.jpg"
         rel="shortcut icon"
     >
 
@@ -68,18 +68,18 @@
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="../feed/properties">
 <link
-    href="../../www.google.com/index.html"
+    href="../../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../../www.gstatic.com/index.html"
+    href="../../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "../index.html";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -93,15 +93,15 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../../facebook.com/index.html"
+                                                                                                                                                    <a href="../../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -152,8 +152,8 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="../index.html">
-                                <img src="../storage/logo/world-luxury-2.png"
+                                                    <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                                <img src="static/storage/logo/world-luxury-2.png"
                                      class="logo" height="40" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -260,14 +260,14 @@
 
 
 <div id="app">
-    <div class="bgheadproject hidden-xs" style="background: url('../storage/general/breadcrumb-background.jpg')">
+    <div class="bgheadproject hidden-xs" style="background: url('static/storage/general/breadcrumb-background.jpg')">
     <div class="description">
         <div class="container-fluid w90 text-center">
             <h1>Private Home Sales</h1>
             <p></p>
             <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="../index.html" itemprop="item" title="Home">
+                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -295,8 +295,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/1-410x270.jpg"
-                                                    src="../storage/news/1-410x270.jpg"
+                                                    data-src="static/storage/news/1-410x270.jpg"
+                                                    src="static/storage/news/1-410x270.jpg"
                                                     alt="The Top 2020 Handbag Trends to Know" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/the-top-2020-handbag-trends-to-know.html" title="The Top 2020 Handbag Trends to Know" class="linkdetail"></a></div>
@@ -325,8 +325,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/2-410x270.jpg"
-                                                    src="../storage/news/2-410x270.jpg"
+                                                    data-src="static/storage/news/2-410x270.jpg"
+                                                    src="static/storage/news/2-410x270.jpg"
                                                     alt="Top Search Engine Optimization Strategies!" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/top-search-engine-optimization-strategies.html" title="Top Search Engine Optimization Strategies!" class="linkdetail"></a></div>
@@ -355,8 +355,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/3-410x270.jpg"
-                                                    src="../storage/news/3-410x270.jpg"
+                                                    data-src="static/storage/news/3-410x270.jpg"
+                                                    src="static/storage/news/3-410x270.jpg"
                                                     alt="Which Company Would You Choose?" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/which-company-would-you-choose.html" title="Which Company Would You Choose?" class="linkdetail"></a></div>
@@ -385,8 +385,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/4-410x270.jpg"
-                                                    src="../storage/news/4-410x270.jpg"
+                                                    data-src="static/storage/news/4-410x270.jpg"
+                                                    src="static/storage/news/4-410x270.jpg"
                                                     alt="Used Car Dealer Sales Tricks Exposed" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/used-car-dealer-sales-tricks-exposed.html" title="Used Car Dealer Sales Tricks Exposed" class="linkdetail"></a></div>
@@ -415,8 +415,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/5-410x270.jpg"
-                                                    src="../storage/news/5-410x270.jpg"
+                                                    data-src="static/storage/news/5-410x270.jpg"
+                                                    src="static/storage/news/5-410x270.jpg"
                                                     alt="20 Ways To Sell Your Product Faster" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/20-ways-to-sell-your-product-faster.html" title="20 Ways To Sell Your Product Faster" class="linkdetail"></a></div>
@@ -445,8 +445,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/6-410x270.jpg"
-                                                    src="../storage/news/6-410x270.jpg"
+                                                    data-src="static/storage/news/6-410x270.jpg"
+                                                    src="static/storage/news/6-410x270.jpg"
                                                     alt="The Secrets Of Rich And Famous Writers" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/the-secrets-of-rich-and-famous-writers.html" title="The Secrets Of Rich And Famous Writers" class="linkdetail"></a></div>
@@ -475,8 +475,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/7-410x270.jpg"
-                                                    src="../storage/news/7-410x270.jpg"
+                                                    data-src="static/storage/news/7-410x270.jpg"
+                                                    src="static/storage/news/7-410x270.jpg"
                                                     alt="Imagine Losing 20 Pounds In 14 Days!" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/imagine-losing-20-pounds-in-14-days.html" title="Imagine Losing 20 Pounds In 14 Days!" class="linkdetail"></a></div>
@@ -505,8 +505,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/8-410x270.jpg"
-                                                    src="../storage/news/8-410x270.jpg"
+                                                    data-src="static/storage/news/8-410x270.jpg"
+                                                    src="static/storage/news/8-410x270.jpg"
                                                     alt="Are You Still Using That Slow, Old Typewriter?" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/are-you-still-using-that-slow-old-typewriter.html" title="Are You Still Using That Slow, Old Typewriter?" class="linkdetail"></a></div>
@@ -535,8 +535,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/9-410x270.jpg"
-                                                    src="../storage/news/9-410x270.jpg"
+                                                    data-src="static/storage/news/9-410x270.jpg"
+                                                    src="static/storage/news/9-410x270.jpg"
                                                     alt="A Skin Cream That’s Proven To Work" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/a-skin-cream-thats-proven-to-work.html" title="A Skin Cream That’s Proven To Work" class="linkdetail"></a></div>
@@ -565,8 +565,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/10-410x270.jpg"
-                                                    src="../storage/news/10-410x270.jpg"
+                                                    data-src="static/storage/news/10-410x270.jpg"
+                                                    src="static/storage/news/10-410x270.jpg"
                                                     alt="10 Reasons To Start Your Own, Profitable Website!" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/10-reasons-to-start-your-own-profitable-website.html" title="10 Reasons To Start Your Own, Profitable Website!" class="linkdetail"></a></div>
@@ -595,8 +595,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/11-410x270.jpg"
-                                                    src="../storage/news/11-410x270.jpg"
+                                                    data-src="static/storage/news/11-410x270.jpg"
+                                                    src="static/storage/news/11-410x270.jpg"
                                                     alt="Simple Ways To Reduce Your Unwanted Wrinkles!" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/simple-ways-to-reduce-your-unwanted-wrinkles.html" title="Simple Ways To Reduce Your Unwanted Wrinkles!" class="linkdetail"></a></div>
@@ -625,8 +625,8 @@
                                         <div class="blii">
                                             <div class="img">
                                                 <img
-                                                    data-src="../storage/news/12-410x270.jpg"
-                                                    src="../storage/news/12-410x270.jpg"
+                                                    data-src="static/storage/news/12-410x270.jpg"
+                                                    src="static/storage/news/12-410x270.jpg"
                                                     alt="Apple iMac with Retina 5K display review" class="thumb"
                                                     style="border-radius: 0;"></div>
                                             <a href="../news/apple-imac-with-retina-5k-display-review.html" title="Apple iMac with Retina 5K display review" class="linkdetail"></a></div>
@@ -693,31 +693,31 @@
 
             <div class="mb-4 w-100 float-left lastestnews">
             <a href="../news/bcg-sets-great-store-by-real-estate-negotiations.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/1-2-150x150.jpg" src="../storage/properties/1-2-150x150.jpg" width="90" alt="BCG sets great store by real estate negotiations">
+                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/1-2-150x150.jpg" src="static/storage/properties/1-2-150x150.jpg" width="90" alt="BCG sets great store by real estate negotiations">
                 BCG sets great store by real estate negotiations
             </a>
         </div>
             <div class="mb-4 w-100 float-left lastestnews">
             <a href="../news/private-home-sales-drop-27-in-october.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/2-2-150x150.jpg" src="../storage/properties/2-2-150x150.jpg" width="90" alt="Private Home Sales Drop 27% In October">
+                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/2-2-150x150.jpg" src="static/storage/properties/2-2-150x150.jpg" width="90" alt="Private Home Sales Drop 27% In October">
                 Private Home Sales Drop 27% In October
             </a>
         </div>
             <div class="mb-4 w-100 float-left lastestnews">
             <a href="../news/singapore-overtakes-hong-kong-in-terms-of-property-investment-prospects.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/6-1-150x150.jpg" src="../storage/properties/6-1-150x150.jpg" width="90" alt="Singapore Overtakes Hong Kong In Terms Of Property Investment Prospects">
+                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/6-1-150x150.jpg" src="static/storage/properties/6-1-150x150.jpg" width="90" alt="Singapore Overtakes Hong Kong In Terms Of Property Investment Prospects">
                 Singapore Overtakes Hong Kong In Terms Of Property Investment Prospects
             </a>
         </div>
             <div class="mb-4 w-100 float-left lastestnews">
             <a href="../news/s-koreas-big-investors-flocking-to-overseas-real-estate.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/download-150x150.jpg" src="../storage/properties/download-150x150.jpg" width="90" alt="S. Korea’s Big Investors Flocking to Overseas Real Estate">
+                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/download-150x150.jpg" src="static/storage/properties/download-150x150.jpg" width="90" alt="S. Korea’s Big Investors Flocking to Overseas Real Estate">
                 S. Korea’s Big Investors Flocking to Overseas Real Estate
             </a>
         </div>
             <div class="mb-4 w-100 float-left lastestnews">
             <a href="../news/the-top-2020-handbag-trends-to-know.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/news/1-150x150.jpg" src="../storage/news/1-150x150.jpg" width="90" alt="The Top 2020 Handbag Trends to Know">
+                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/news/1-150x150.jpg" src="static/storage/news/1-150x150.jpg" width="90" alt="The Top 2020 Handbag Trends to Know">
                 The Top 2020 Handbag Trends to Know
             </a>
         </div>
@@ -736,8 +736,8 @@
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="../index.html">
-                            <img src="../storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
+                        <a href="{{ url_for('main.index') }}">
+                            <img src="static/storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
                         </a>
                     </p>
                                                     <p><i class="fas fa-map-marker-alt"></i> &nbsp;North Link Building, 10 Admiralty Street, 757695 Singapore</p>
@@ -905,8 +905,8 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = '../public/themes/flex-home/index.html';
-    window.siteUrl = '../index.html';
+    window.themeUrl = '../public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

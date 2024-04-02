@@ -33,7 +33,7 @@
 <meta name="twitter:description" content="Walnut Park is conveniently located on North Lamar Boulevard across from the 293-acre Walnut Creek Metropolitan Park and just south of Yager Lane near numerous shops and restaurants. Only 11 miles from downtown Austin, the heavily-wooded site borders Walnut Creek and offers residents inspiring views in an unparalleled, secluded community">
 
     <link
-        href="../storage/logo/world-luxury-favi.jpg"
+        href="static/storage/logo/world-luxury-favi.jpg"
         rel="shortcut icon"
     >
 
@@ -71,18 +71,18 @@
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="../feed/properties">
 <link
-    href="../../www.google.com/index.html"
+    href="../../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../../www.gstatic.com/index.html"
+    href="../../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "../index.html";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -96,15 +96,15 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../../facebook.com/index.html"
+                                                                                                                                                    <a href="../../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -155,8 +155,8 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="../index.html">
-                                <img src="../storage/logo/world-luxury-2.png"
+                                                    <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                                <img src="static/storage/logo/world-luxury-2.png"
                                      class="logo" height="40" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -268,7 +268,7 @@
         <div class="slidetop">
             <div class="owl-carousel" id="listcarousel">
                                     <div class="item">
-                        <img src="../storage/images-30.jpg"
+                        <img src="static/storage/images-30.jpg"
                             class="showfullimg"
                             rel="0"
                             alt="Walnut Park Apartments"
@@ -276,7 +276,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/images-30.jpeg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/projects/5.jpg"
+                        <img src="static/storage/projects/5.jpg"
                             class="showfullimg"
                             rel="1"
                             alt="Walnut Park Apartments"
@@ -284,7 +284,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/projects/5.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/projects/3.jpg"
+                        <img src="static/storage/projects/3.jpg"
                             class="showfullimg"
                             rel="2"
                             alt="Walnut Park Apartments"
@@ -292,7 +292,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/projects/3.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/projects/2.jpg"
+                        <img src="static/storage/projects/2.jpg"
                             class="showfullimg"
                             rel="3"
                             alt="Walnut Park Apartments"
@@ -307,7 +307,7 @@
                     <div>
                         <div class="owl-carousel" id="listcarouselthumb">
                                                             <div class="item cthumb" rel="0">
-                                    <img src="../storage/images-30.jpg"
+                                    <img src="static/storage/images-30.jpg"
                                         class="showfullimg"
                                         rel="0"
                                         alt="Walnut Park Apartments"
@@ -315,7 +315,7 @@
                                         title="Walnut Park Apartments">
                                 </div>
                                                             <div class="item cthumb" rel="1">
-                                    <img src="../storage/projects/5.jpg"
+                                    <img src="static/storage/projects/5.jpg"
                                         class="showfullimg"
                                         rel="1"
                                         alt="Walnut Park Apartments"
@@ -323,7 +323,7 @@
                                         title="Walnut Park Apartments">
                                 </div>
                                                             <div class="item cthumb" rel="2">
-                                    <img src="../storage/projects/3.jpg"
+                                    <img src="static/storage/projects/3.jpg"
                                         class="showfullimg"
                                         rel="2"
                                         alt="Walnut Park Apartments"
@@ -331,7 +331,7 @@
                                         title="Walnut Park Apartments">
                                 </div>
                                                             <div class="item cthumb" rel="3">
-                                    <img src="../storage/projects/2.jpg"
+                                    <img src="static/storage/projects/2.jpg"
                                         class="showfullimg"
                                         rel="3"
                                         alt="Walnut Park Apartments"
@@ -403,7 +403,7 @@
                 <div class="d-none">
                     <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="../index.html" itemprop="item" title="Home">
+                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -600,8 +600,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                src="../storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
+                data-src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
+                src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
                 alt="5 room luxury penthouse for sale in Kuala Lumpur">
         </div>
         <a href="../properties/villa-for-sale-in-lavanya-residences.html" class="linkdetail"></a>
@@ -654,8 +654,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
-                src="../storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
+                data-src="static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
+                src="static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
                 alt="2 Floor house in Compound Pejaten Barat Kemang">
         </div>
         <a href="../properties/want-to-lease-a-house-in-compound-pejaten-barat-kemang.html" class="linkdetail"></a>
@@ -701,8 +701,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../storage/cdb6b1d9972b4f2d0b0d0567aab84f96-410x270.jpg"
-                src="../storage/cdb6b1d9972b4f2d0b0d0567aab84f96-410x270.jpg"
+                data-src="static/storage/cdb6b1d9972b4f2d0b0d0567aab84f96-410x270.jpg"
+                src="static/storage/cdb6b1d9972b4f2d0b0d0567aab84f96-410x270.jpg"
                 alt="Walnut Park Apartment">
         </div>
         <a href="../properties/walnut-park-apartment.html" class="linkdetail"></a>
@@ -780,8 +780,8 @@
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="../index.html">
-                            <img src="../storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
+                        <a href="{{ url_for('main.index') }}">
+                            <img src="static/storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
                         </a>
                     </p>
                                                     <p><i class="fas fa-map-marker-alt"></i> &nbsp;North Link Building, 10 Admiralty Street, 757695 Singapore</p>
@@ -949,8 +949,8 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = '../public/themes/flex-home/index.html';
-    window.siteUrl = '../index.html';
+    window.themeUrl = '../public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

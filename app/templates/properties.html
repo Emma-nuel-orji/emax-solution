@@ -8,7 +8,7 @@
         <div class="ck-content"><div><section class="main-homes pb-3">
     <div
         class="bgheadproject hidden-xs"
-        style="background: url('storage/general/breadcrumb-background.jpg')"
+        style="background: url('static/storage/general/breadcrumb-background.jpg')"
     >
         <div class="description">
             <div class="container-fluid w90">
@@ -16,7 +16,7 @@
                 <p class="text-center">Each place is a good choice, it will help you make the right decision, do not miss the opportunity to discover our wonderful properties.</p>
                 <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="index.html" itemprop="item" title="Home">
+                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>

@@ -33,7 +33,7 @@
 <meta name="twitter:description" content="Move straight into this beautifully presented four-bedroom home and enjoy the best in modern family living without lifting a finger. Two separate living areas and four generous bedrooms provide plenty of space to grow, and entertaining is a real pleasure on the elegant alfresco patio in a peaceful garden setting.">
 
     <link
-        href="../storage/logo/world-luxury-favi.jpg"
+        href="static/storage/logo/world-luxury-favi.jpg"
         rel="shortcut icon"
     >
 
@@ -71,18 +71,18 @@
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="../feed/properties">
 <link
-    href="../../www.google.com/index.html"
+    href="../../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../../www.gstatic.com/index.html"
+    href="../../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "../index.html";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -96,15 +96,15 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../../facebook.com/index.html"
+                                                                                                                                                    <a href="../../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -155,8 +155,8 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="../index.html">
-                                <img src="../storage/logo/world-luxury-2.png"
+                                                    <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                                <img src="static/storage/logo/world-luxury-2.png"
                                      class="logo" height="40" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -269,7 +269,7 @@
         <div class="slidetop">
             <div class="owl-carousel" id="listcarousel">
                                     <div class="item">
-                        <img src="../storage/1a36ff0db28344402104a8b559e534c8.jpg"
+                        <img src="static/storage/1a36ff0db28344402104a8b559e534c8.jpg"
                             class="showfullimg"
                             rel="0"
                             alt="Elegant family home presents premium modern living"
@@ -277,7 +277,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/1a36ff0db28344402104a8b559e534c8.jpeg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/f4ccc49136fe386ead120738c916cf1e.jpg"
+                        <img src="static/storage/f4ccc49136fe386ead120738c916cf1e.jpg"
                             class="showfullimg"
                             rel="1"
                             alt="Elegant family home presents premium modern living"
@@ -285,7 +285,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/f4ccc49136fe386ead120738c916cf1e.jpeg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/a3-1.jpg"
+                        <img src="static/storage/properties/a3-1.jpg"
                             class="showfullimg"
                             rel="2"
                             alt="Elegant family home presents premium modern living"
@@ -293,7 +293,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/properties/a3-1.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/a5.jpg"
+                        <img src="static/storage/properties/a5.jpg"
                             class="showfullimg"
                             rel="3"
                             alt="Elegant family home presents premium modern living"
@@ -301,7 +301,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/properties/a5.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/a4-1.jpg"
+                        <img src="static/storage/properties/a4-1.jpg"
                             class="showfullimg"
                             rel="4"
                             alt="Elegant family home presents premium modern living"
@@ -309,7 +309,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/properties/a4-1.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/a6.jpg"
+                        <img src="static/storage/properties/a6.jpg"
                             class="showfullimg"
                             rel="5"
                             alt="Elegant family home presents premium modern living"
@@ -324,7 +324,7 @@
                     <div>
                         <div class="owl-carousel" id="listcarouselthumb">
                                                             <div class="item cthumb" rel="0">
-                                    <img src="../storage/1a36ff0db28344402104a8b559e534c8.jpg"
+                                    <img src="static/storage/1a36ff0db28344402104a8b559e534c8.jpg"
                                         class="showfullimg"
                                         rel="0"
                                         alt="Elegant family home presents premium modern living"
@@ -332,7 +332,7 @@
                                         title="Elegant family home presents premium modern living">
                                 </div>
                                                             <div class="item cthumb" rel="1">
-                                    <img src="../storage/f4ccc49136fe386ead120738c916cf1e.jpg"
+                                    <img src="static/storage/f4ccc49136fe386ead120738c916cf1e.jpg"
                                         class="showfullimg"
                                         rel="1"
                                         alt="Elegant family home presents premium modern living"
@@ -340,7 +340,7 @@
                                         title="Elegant family home presents premium modern living">
                                 </div>
                                                             <div class="item cthumb" rel="2">
-                                    <img src="../storage/properties/a3-1.jpg"
+                                    <img src="static/storage/properties/a3-1.jpg"
                                         class="showfullimg"
                                         rel="2"
                                         alt="Elegant family home presents premium modern living"
@@ -348,7 +348,7 @@
                                         title="Elegant family home presents premium modern living">
                                 </div>
                                                             <div class="item cthumb" rel="3">
-                                    <img src="../storage/properties/a5.jpg"
+                                    <img src="static/storage/properties/a5.jpg"
                                         class="showfullimg"
                                         rel="3"
                                         alt="Elegant family home presents premium modern living"
@@ -356,7 +356,7 @@
                                         title="Elegant family home presents premium modern living">
                                 </div>
                                                             <div class="item cthumb" rel="4">
-                                    <img src="../storage/properties/a4-1.jpg"
+                                    <img src="static/storage/properties/a4-1.jpg"
                                         class="showfullimg"
                                         rel="4"
                                         alt="Elegant family home presents premium modern living"
@@ -364,7 +364,7 @@
                                         title="Elegant family home presents premium modern living">
                                 </div>
                                                             <div class="item cthumb" rel="5">
-                                    <img src="../storage/properties/a6.jpg"
+                                    <img src="static/storage/properties/a6.jpg"
                                         class="showfullimg"
                                         rel="5"
                                         alt="Elegant family home presents premium modern living"
@@ -434,7 +434,7 @@
         <div class="d-none">
             <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="../index.html" itemprop="item" title="Home">
+                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -651,8 +651,8 @@
                                         <a href="../projects/park.html">
                                             <img
                                                 class="thumb lazy"
-                                                data-src="../storage/images-35.jpg"
-                                                src="../storage/images-35.jpg"
+                                                data-src="static/storage/images-35.jpg"
+                                                src="static/storage/images-35.jpg"
                                                 alt="The Avila Apartments"
                                             >
                                         </a>
@@ -696,7 +696,7 @@
     <div class="d-print-none row justify-content-center">
         <div class="px-3 position-relative overlay-icon w-100">
             <a  href="https://www.youtube.com/watch?v=UfEiKK-iX70" class="popup-youtube">
-                <img src="../storage/properties/property-video-thumb.jpg" alt="Elegant family home presents premium modern living" class="img-fluid rounded w-100">
+                <img src="static/storage/properties/property-video-thumb.jpg" alt="Elegant family home presents premium modern living" class="img-fluid rounded w-100">
                 <div class="video-popup-btn">
                     <div class="video-popup-icon">
                         <i class="fal fa-play-circle fa-2x"></i>
@@ -792,7 +792,7 @@
                                                                     <a href="../agents/lklein.html">
                                                                                     <img
                                                 class="img-thumbnail"
-                                                src="../storage/accounts/8-150x150.jpg"
+                                                src="static/storage/accounts/8-150x150.jpg"
                                                 alt="Mavis Mueller"
                                             >
                                                                             </a>
@@ -900,8 +900,8 @@
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="../index.html">
-                            <img src="../storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
+                        <a href="{{ url_for('main.index') }}">
+                            <img src="static/storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
                         </a>
                     </p>
                                                     <p><i class="fas fa-map-marker-alt"></i> &nbsp;North Link Building, 10 Admiralty Street, 757695 Singapore</p>
@@ -1069,8 +1069,8 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = '../public/themes/flex-home/index.html';
-    window.siteUrl = '../index.html';
+    window.themeUrl = '../public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

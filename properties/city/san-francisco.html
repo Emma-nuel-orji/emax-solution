@@ -29,7 +29,7 @@
 <meta name="twitter:title" content="Properties in San Francisco">
 
     <link
-        href="../../storage/logo/world-luxury-favi.jpg"
+        href="../static/storage/logo/world-luxury-favi.jpg"
         rel="shortcut icon"
     >
 
@@ -65,18 +65,18 @@
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="../../feed/properties">
 <link
-    href="../../../www.google.com/index.html"
+    href="../../../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../../../www.gstatic.com/index.html"
+    href="../../../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "../../index.html";
+    window.siteUrl = "../{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -90,15 +90,15 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../../../facebook.com/index.html"
+                                                                                                                                                    <a href="../../../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../../../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../../../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -149,8 +149,8 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="../../index.html">
-                                <img src="../../storage/logo/world-luxury-2.png"
+                                                    <a class="navbar-brand" href="../{{ url_for('main.index') }}">
+                                <img src="../static/storage/logo/world-luxury-2.png"
                                      class="logo" height="40" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -260,7 +260,7 @@
     <section class="main-homes pb-3">
     <div
         class="bgheadproject hidden-xs"
-        style="background: url('../../storage/general/breadcrumb-background.jpg')"
+        style="background: url('../static/storage/general/breadcrumb-background.jpg')"
     >
         <div class="description">
             <div class="container-fluid w90">
@@ -268,7 +268,7 @@
                 <p class="text-center"></p>
                 <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="../../index.html" itemprop="item" title="Home">
+                    <a href="../{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -660,8 +660,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
-                src="../../storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
+                data-src="../static/storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
+                src="../static/storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
                 alt="Nice Apartment for rent in Berlin">
         </div>
         <a href="../nice-apartment-for-rent-in-berlin.html" class="linkdetail"></a>
@@ -707,8 +707,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
-                src="../../storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
+                data-src="../static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
+                src="../static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
                 alt="2 Floor house in Compound Pejaten Barat Kemang">
         </div>
         <a href="../want-to-lease-a-house-in-compound-pejaten-barat-kemang.html" class="linkdetail"></a>
@@ -754,8 +754,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
-                src="../../storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
+                data-src="../static/storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
+                src="../static/storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
                 alt="Luxury Apartments in Singapore for Sale">
         </div>
         <a href="../the-avila-apartment.html" class="linkdetail"></a>
@@ -801,8 +801,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
-                src="../../storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
+                data-src="../static/storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
+                src="../static/storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
                 alt="Elegant family home presents premium modern living">
         </div>
         <a href="../elegant-family-home-presents-premium-modern-living.html" class="linkdetail"></a>
@@ -848,8 +848,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
-                src="../../storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
+                data-src="../static/storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
+                src="../static/storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
                 alt="Brand New 1 Bedroom Apartment In First Class Location">
         </div>
         <a href="../break-lease-available.html" class="linkdetail"></a>
@@ -895,8 +895,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
-                src="../../storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
+                data-src="../static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
+                src="../static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
                 alt="Private Estate Magnificent Views">
         </div>
         <a href="../private-estate-magnificent-views.html" class="linkdetail"></a>
@@ -942,8 +942,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
-                src="../../storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
+                data-src="../static/storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
+                src="../static/storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
                 alt="Osaka Heights Apartment">
         </div>
         <a href="../osaka-heights-apartment.html" class="linkdetail"></a>
@@ -989,8 +989,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
-                src="../../storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
+                data-src="../static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
+                src="../static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
                 alt="Stunning French Inspired Manor">
         </div>
         <a href="../stunning-french-inspired-manor.html" class="linkdetail"></a>
@@ -1036,8 +1036,8 @@
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="../../storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
-                src="../../storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
+                data-src="../static/storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
+                src="../static/storage/3b27126f58b28bbb8c5d78de5f0ac61c-410x270.jpg"
                 alt="3 Beds Villa Calpe, Alicante">
         </div>
         <a href="../3-beds-villa-calpe-alicante.html" class="linkdetail"></a>
@@ -1150,8 +1150,8 @@
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="../../index.html">
-                            <img src="../../storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
+                        <a href="../{{ url_for('main.index') }}">
+                            <img src="../static/storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
                         </a>
                     </p>
                                                     <p><i class="fas fa-map-marker-alt"></i> &nbsp;North Link Building, 10 Admiralty Street, 757695 Singapore</p>
@@ -1319,8 +1319,8 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = '../../public/themes/flex-home/index.html';
-    window.siteUrl = '../../index.html';
+    window.themeUrl = '../../public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '../{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

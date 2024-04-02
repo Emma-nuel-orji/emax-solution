@@ -23,7 +23,7 @@ def admin1():
     #     return redirect(url_for('main.index', users=users, product=product))
     # else:
     #     render_template('admin/home.html', users=users, product=product)
-    # return render_template("admin/index.html", users=users, product=product,)
+    # return render_template("admin/{{ url_for('main.index') }}", users=users, product=product,)
 
 
 @admin.route('/users', methods=['GET', 'POST'])

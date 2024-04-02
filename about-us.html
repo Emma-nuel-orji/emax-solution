@@ -70,18 +70,18 @@ With the slogan "Breaking time, through space" with a sustainable development st
 
 <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","name":"Worldlup","url":"https:\/\/worldluxproperties.org\/about-us","logo":{"@type":"ImageObject","url":"https:\/\/worldluxproperties.org\/storage\/logo\/world-luxury-2.png"}}</script><link type="application/atom+xml" rel="alternate" title="Properties feed" href="feed/properties">
 <link
-    href="../www.google.com/index.html"
+    href="../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../www.gstatic.com/index.html"
+    href="../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "index.html";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -95,15 +95,15 @@ With the slogan "Breaking time, through space" with a sustainable development st
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../facebook.com/index.html"
+                                                                                                                                                    <a href="../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -154,7 +154,7 @@ With the slogan "Breaking time, through space" with a sustainable development st
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="index.html">
+                                                    <a class="navbar-brand" href="{{ url_for('main.index') }}">
                                 <img src="storage/logo/world-luxury-2.png"
                                      class="logo" height="40" alt="">
                             </a>
@@ -264,7 +264,7 @@ With the slogan "Breaking time, through space" with a sustainable development st
                 <h1 class="text-center">About us</h1>
                 <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="index.html" itemprop="item" title="Home">
+                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -396,7 +396,7 @@ With the slogan "Breaking time, through space" with a sustainable development st
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="index.html">
+                        <a href="{{ url_for('main.index') }}">
                             <img src="storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
                         </a>
                     </p>
@@ -566,8 +566,8 @@ With the slogan "Breaking time, through space" with a sustainable development st
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = 'public/themes/flex-home/index.html';
-    window.siteUrl = 'index.html';
+    window.themeUrl = 'public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

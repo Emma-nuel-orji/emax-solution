@@ -22,7 +22,7 @@
 
     <title>Emax-luxury-Homes</title>
 <meta name="description" content="Find your favorite homes at Flex Home">
-<link rel="canonical" href="index.html">
+<link rel="canonical" href="{{ url_for('main.index') }}">
 <meta property="og:site_name" content="Worldlup">
 <meta property="og:title" content="Worldlup">
 <meta property="og:description" content="Find your favorite homes at Flex Home">
@@ -77,18 +77,18 @@
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="static/feed/properties">
 <link
-    href="../www.google.com/index.html"
+    href="../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../www.gstatic.com/index.html"
+    href="../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "index.html";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -102,15 +102,15 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../facebook.com/index.html"
+                                                                                                                                                    <a href="../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -131,13 +131,13 @@
                                             </button>
                                             <ul class="dropdown-menu language_bar_chooser">
                                                                                                     <li>
-                                                        <a href="index.html"  class="active" ><span>USD</span></a>
+                                                        <a href="{{ url_for('main.index') }}"  class="active" ><span>USD</span></a>
                                                     </li>
                                                                                                     <li>
-                                                        <a href="index.html" ><span>EUR</span></a>
+                                                        <a href="{{ url_for('main.index') }}" ><span>EUR</span></a>
                                                     </li>
                                                                                                     <li>
-                                                        <a href="index.html" ><span>VND</span></a>
+                                                        <a href="{{ url_for('main.index') }}" ><span>VND</span></a>
                                                     </li>
                                           </ul>
                                         </div>
@@ -253,13 +253,13 @@
                                                                 </button>
                                                                 <ul class="dropdown-menu language_bar_chooser">
                                                                      <li>
-                                                                            <a href="index.html"  class="active" ><span>USD</span></a>
+                                                                            <a href="{{ url_for('main.index') }}"  class="active" ><span>USD</span></a>
                                                                         </li>
                                                                            <li>
-                                                                            <a href="index.html" ><span>EUR</span></a>
+                                                                            <a href="{{ url_for('main.index') }}" ><span>EUR</span></a>
                                                                         </li>
                                                                            <li>
-                                                                            <a href="index.html" ><span>VND</span></a>
+                                                                            <a href="{{ url_for('main.index') }}" ><span>VND</span></a>
                                                                         </li>
                                                                    </ul>
                                                             </div>
@@ -321,7 +321,7 @@
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="index.html">
+                        <a href="{{ url_for('main.index') }}">
                             <img src="static/storage/logo/2.png" style="max-height: 48px" alt="">
                         </a>
                     </p>
@@ -491,8 +491,8 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = 'public/themes/flex-home/index.html';
-    window.siteUrl = 'index.html';
+    window.themeUrl = 'public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

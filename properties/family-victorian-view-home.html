@@ -33,7 +33,7 @@
 <meta name="twitter:description" content="There is a formal dining room and spacious living room located on either side of the updated eat-in kitchen skylight, white cabinets, and stainless steel appliances. Enjoy ample natural light and spectacular southern views from the main living room oversized windows and a walk-out deck. A bonus room (guest bedroom/office) and a full bath complete t">
 
     <link
-        href="../storage/logo/world-luxury-favi.jpg"
+        href="static/storage/logo/world-luxury-favi.jpg"
         rel="shortcut icon"
     >
 
@@ -71,18 +71,18 @@
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="../feed/properties">
 <link
-    href="../../www.google.com/index.html"
+    href="../../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="../../www.gstatic.com/index.html"
+    href="../../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "../index.html";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -96,15 +96,15 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="../../facebook.com/index.html"
+                                                                                                                                                    <a href="../../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../twitter.com/index.html"
+                                                                                                                                                                                        <a href="../../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="../../youtube.com/index.html"
+                                                                                                                                                                                        <a href="../../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
@@ -155,8 +155,8 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="../index.html">
-                                <img src="../storage/logo/world-luxury-2.png"
+                                                    <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                                <img src="static/storage/logo/world-luxury-2.png"
                                      class="logo" height="40" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -269,7 +269,7 @@
         <div class="slidetop">
             <div class="owl-carousel" id="listcarousel">
                                     <div class="item">
-                        <img src="../storage/6cfd34d464b54bb6acb6a7521b741ff6.jpg"
+                        <img src="static/storage/6cfd34d464b54bb6acb6a7521b741ff6.jpg"
                             class="showfullimg"
                             rel="0"
                             alt="Family Victorian &quot;View&quot; Home"
@@ -277,7 +277,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/6cfd34d464b54bb6acb6a7521b741ff6.jpeg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/34f98a7b698ed4a37a6b389551be87f5.jpg"
+                        <img src="static/storage/34f98a7b698ed4a37a6b389551be87f5.jpg"
                             class="showfullimg"
                             rel="1"
                             alt="Family Victorian &quot;View&quot; Home"
@@ -285,7 +285,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/34f98a7b698ed4a37a6b389551be87f5.jpeg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/b4.jpg"
+                        <img src="static/storage/properties/b4.jpg"
                             class="showfullimg"
                             rel="2"
                             alt="Family Victorian &quot;View&quot; Home"
@@ -293,7 +293,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/properties/b4.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/b6.jpg"
+                        <img src="static/storage/properties/b6.jpg"
                             class="showfullimg"
                             rel="3"
                             alt="Family Victorian &quot;View&quot; Home"
@@ -301,7 +301,7 @@
                             data-mfp-src="https://worldluxproperties.org/storage/properties/b6.jpg">
                     </div>
                                     <div class="item">
-                        <img src="../storage/properties/b2.jpg"
+                        <img src="static/storage/properties/b2.jpg"
                             class="showfullimg"
                             rel="4"
                             alt="Family Victorian &quot;View&quot; Home"
@@ -316,7 +316,7 @@
                     <div>
                         <div class="owl-carousel" id="listcarouselthumb">
                                                             <div class="item cthumb" rel="0">
-                                    <img src="../storage/6cfd34d464b54bb6acb6a7521b741ff6.jpg"
+                                    <img src="static/storage/6cfd34d464b54bb6acb6a7521b741ff6.jpg"
                                         class="showfullimg"
                                         rel="0"
                                         alt="Family Victorian &quot;View&quot; Home"
@@ -324,7 +324,7 @@
                                         title="Family Victorian &quot;View&quot; Home">
                                 </div>
                                                             <div class="item cthumb" rel="1">
-                                    <img src="../storage/34f98a7b698ed4a37a6b389551be87f5.jpg"
+                                    <img src="static/storage/34f98a7b698ed4a37a6b389551be87f5.jpg"
                                         class="showfullimg"
                                         rel="1"
                                         alt="Family Victorian &quot;View&quot; Home"
@@ -332,7 +332,7 @@
                                         title="Family Victorian &quot;View&quot; Home">
                                 </div>
                                                             <div class="item cthumb" rel="2">
-                                    <img src="../storage/properties/b4.jpg"
+                                    <img src="static/storage/properties/b4.jpg"
                                         class="showfullimg"
                                         rel="2"
                                         alt="Family Victorian &quot;View&quot; Home"
@@ -340,7 +340,7 @@
                                         title="Family Victorian &quot;View&quot; Home">
                                 </div>
                                                             <div class="item cthumb" rel="3">
-                                    <img src="../storage/properties/b6.jpg"
+                                    <img src="static/storage/properties/b6.jpg"
                                         class="showfullimg"
                                         rel="3"
                                         alt="Family Victorian &quot;View&quot; Home"
@@ -348,7 +348,7 @@
                                         title="Family Victorian &quot;View&quot; Home">
                                 </div>
                                                             <div class="item cthumb" rel="4">
-                                    <img src="../storage/properties/b2.jpg"
+                                    <img src="static/storage/properties/b2.jpg"
                                         class="showfullimg"
                                         rel="4"
                                         alt="Family Victorian &quot;View&quot; Home"
@@ -412,7 +412,7 @@
         <div class="d-none">
             <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="../index.html" itemprop="item" title="Home">
+                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -629,8 +629,8 @@
                                         <a href="../projects/mimaroba-paradise.html">
                                             <img
                                                 class="thumb lazy"
-                                                data-src="../storage/images-32.jpg"
-                                                src="../storage/images-32.jpg"
+                                                data-src="static/storage/images-32.jpg"
+                                                src="static/storage/images-32.jpg"
                                                 alt="Mimaroba Paradise"
                                             >
                                         </a>
@@ -749,7 +749,7 @@
                                                                     <a href="../agents/lklein.html">
                                                                                     <img
                                                 class="img-thumbnail"
-                                                src="../storage/accounts/8-150x150.jpg"
+                                                src="static/storage/accounts/8-150x150.jpg"
                                                 alt="Mavis Mueller"
                                             >
                                                                             </a>
@@ -857,8 +857,8 @@
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="../index.html">
-                            <img src="../storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
+                        <a href="{{ url_for('main.index') }}">
+                            <img src="static/storage/logo/world-luxury-2.png" style="max-height: 38px" alt="">
                         </a>
                     </p>
                                                     <p><i class="fas fa-map-marker-alt"></i> &nbsp;North Link Building, 10 Admiralty Street, 757695 Singapore</p>
@@ -1026,8 +1026,8 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = '../public/themes/flex-home/index.html';
-    window.siteUrl = '../index.html';
+    window.themeUrl = '../public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 

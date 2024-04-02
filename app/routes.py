@@ -14,7 +14,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 #     product = Product.query.all()
 #     recom = Recommendation.query.all()
 #     posts = Blog.query.all()
-#     return render_template("index.html", product=product, recom=recom, posts=posts)
+#     return render_template("{{ url_for('main.index') }}", product=product, recom=recom, posts=posts)
 #
 #
 # @app.route('/register', methods=['GET', 'POST'])
