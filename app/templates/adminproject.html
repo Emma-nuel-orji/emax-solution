@@ -17,7 +17,7 @@
        <!-- Post DataTables Example -->
        <br><br>  <h2 style="text-align:center ;"> NEWS PROJECT</h2> 
        <div class="col-md-7 align-self-center">
-        <a href="{{url_for('posts.propertiespost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add New Project</a>
+        <a href="{{url_for('posts.projectpost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add New Project</a>
     </div><br>
        <div class="card mb-3">
          <div class="card-header">
@@ -32,23 +32,24 @@
                    <th> Name</th>
                    <th>Image</th>
                    <th>Price</th>
-                   <th>Discount</th>
-                   <th>Category</th>
+                   <th>Status</th>
+                   <th>Location</th>
                    <th>Price</th>
+
                    <th>Edit</th>
                    <th>Action</th>
                  </tr>
                </thead>
                <tbody>
-                {% for prod in product %}
+                {% for proj in projects %}
                  <tr>
-                  <td> {{prod.id}} </td>
-                   <td>{{ prod.name }}</td> 
-                   <td><img  src="{{url_for('static', filename='img/' + prod.image)}}" width="50" height="50"/></td>
-                   <td>{{prod.price}}</td>
-                   <td>{{prod.discount}}</td>
-                   <td>{{prod.category}}</td>
-                   <td>{{prod.price}}</td> 
+                  <td> {{proj.id}} </td>
+                   <td>{{ proj.name }}</td> 
+                   <td><img  src="{{url_for('static', filename='img/' + proj.image)}}" width="50" height="50"/></td>
+                   <td>{{proj.price}}</td>
+                   <td>{{proj.status}}</td>
+                   <td>{{proj.location}}</td>
+                   <td>{{proj.price}}</td> 
                    <td><a class="btn-success btn" href=""> Edit </a></td>
                    <td>
                      <button type="button" class="btn btn-danger btn-sm m-2" data-toggle="modal" data-target="#deleteModal">Delete</button>

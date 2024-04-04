@@ -19,9 +19,12 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False, )
     image_file = db.Column(db.String(60), nullable=False, default='default.jpg.png')
-    product = db.relationship('Product', backref='author', lazy=True)
-    payment = db.relationship('Payment', backref='author', lazy=True)
-
+    
+    properties = db.relationship('Properties', backref='author', lazy=True)
+    project = db.relationship('Project', backref='author', lazy=True)
+    agent = db.relationship('Agent', backref='author', lazy=True)
+    news = db.relationship('News', backref='author', lazy=True)
+    
     # def get_reset_token(self, expires_in=300):
     #     return jwt.encode(
     #         {'reset_password': self.id, 'exp': time() + expires_in},
@@ -81,24 +84,60 @@ class JsonEcodedDict(db.TypeDecorator):
             return json.loads(value)
 
 
-class Checkout(db.Model):
+class Properties(db.Model):
+    __searchable__ = ['name', 'description']
     id = db.Column(db.Integer, primary_key=True)
-    invoice = db.Column(db.String(200), unique=True, nullable=False)
-    firstname = db.Column(db.String(200), nullable=False)
-    lastname = db.Column(db.String(200), nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    phone = db.Column(db.String(6000), nullable=False)
-    country = db.Column(db.String(2000), nullable=False)
-    city = db.Column(db.String(2000), nullable=False)
-    street = db.Column(db.String(2000), nullable=False)
-    building = db.Column(db.String(2000), nullable=False)
-    zip = db.Column(db.String(200), nullable=False)
+    image = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    name = db.Column(db.String(20000), nullable=False)
+    price = db.Column(db.String(200), nullable=False)
+    location = db.Column(db.String(2000), unique=True, nullable=False)
+    status = db.Column(db.String(6000), nullable=False)
+    square = db.Column(db.String(2000), nullable=False)
+    bedroom = db.Column(db.String(2000), nullable=False)
+    bathroom = db.Column(db.String(2000), nullable=False)
+    floors = db.Column(db.String(2000), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    customer_id = db.Column(db.Integer, unique=True, nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    productsname = db.Column(db.String(2000),  nullable=False)
-    grandtotal = db.Column(db.String(200),  nullable=False)
-    orders = db.Column(JsonEcodedDict)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
+    def __repr__(self):
+        return f"Properties('{self.name}','{self.price}','{self.location}','{self.status}','{self.square}','{self.bedroom}','{self.bathroom}','{self.floors}','{self.description}','{self.date_created}','{self.image}')"
+
+
+class Project(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String(20), nullable=False, default='default.jpg.png')
+    name = db.Column(db.String(20000), nullable=False)
+    status = db.Column(db.String(200), unique=True, nullable=False)
+    location = db.Column(db.String(2000), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
-        return f"Checkout('{self.invoice}','{self.firstname}','{self.lastname}','{self.email}','{self.phone}','{self.country}','{self.city}','{self.street}','{self.building}','{self.zip}','{self.description}','{self.date_created}')"
+        return f"Project('{self.image}','{self.name}','{self.status}','{self.location}','{self.description}','{self.date_created}')"
+
+class News(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String(20), nullable=False, default='default.jpg.png')
+    title = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    def __repr__(self):
+        return f"News('{self.image}','{self.title}','{self.description}','{self.date_created}')"
+
+class Agent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String(20), nullable=False, default='default.jpg.png')   
+    name = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    phone = db.Column(db.String(6000), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+    def __repr__(self):
+        return f"Agent('{self.image}','{self.name}','{self.email}','{self.phone}','{self.date_created}')"
+

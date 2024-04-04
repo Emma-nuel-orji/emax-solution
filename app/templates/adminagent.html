@@ -31,24 +31,22 @@
                    <th>ID</th>
                    <th> Name</th>
                    <th>Image</th>
-                   <th>Price</th>
-                   <th>Discount</th>
-                   <th>Category</th>
-                   <th>Price</th>
+                   <th>Email</th>
+                   <th>Phone</th>
+                   
                    <th>Edit</th>
                    <th>Action</th>
                  </tr>
                </thead>
                <tbody>
-                {% for prod in product %}
+                {% for post in agent %}
                  <tr>
-                  <td> {{prod.id}} </td>
-                   <td>{{ prod.name }}</td> 
-                   <td><img  src="{{url_for('static', filename='img/' + prod.image)}}" width="50" height="50"/></td>
-                   <td>{{prod.price}}</td>
-                   <td>{{prod.discount}}</td>
-                   <td>{{prod.category}}</td>
-                   <td>{{prod.price}}</td> 
+                  <td> {{post.id}} </td>
+                   <td>{{ post.name }}</td> 
+                   <td><img  src="{{url_for('static', filename='img/' + post.image)}}" width="50" height="50"/></td>
+                   <td>{{post.email}}</td>
+                   <td>{{post.phone}}</td>
+                   
                    <td><a class="btn-success btn" href=""> Edit </a></td>
                    <td>
                      <button type="button" class="btn btn-danger btn-sm m-2" data-toggle="modal" data-target="#deleteModal">Delete</button>

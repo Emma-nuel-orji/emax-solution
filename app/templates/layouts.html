@@ -108,29 +108,30 @@
       
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-dumbbell" aria-hidden="true"></i></i>
-          <span>INVENTORY</span>
+          <i class="fas fa-fw fa-upload" aria-hidden="true"></i></i>
+          <span>ALL POSTS</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Products :</h6>
-          <a class="dropdown-item" href="{{ url_for('posts.adminagent') }} ">All products</a>
-          <a class="dropdown-item" href="#">All images</a>
+          <h6 class="dropdown-header">Posts :</h6>
+          <a class="dropdown-item" href="{{ url_for('posts.newspost') }} ">Post News </a>
+          <a class="dropdown-item" href="{{ url_for('posts.agentpost') }} ">New Agent</a>
+          <a class="dropdown-item" href="{{ url_for('posts.propertiespost') }} ">Upload New Property</a>
+          <a class="dropdown-item" href="{{ url_for('posts.projectpost') }} ">Upload New Project</a>
+    
           <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="{{url_for('posts.adminnews')}}">Add new product</a>
-          <a class="dropdown-item" href="#">Add new image</a>
+          
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-cart-plus" aria-hidden="true"></i></i>
-          <span>SALES</span>
+          <i class="fa fa-envelope" aria-hidden="true"></i></i>
+          <span>ALL INBOX</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Ordered products:</h6>
-          <a class="dropdown-item" href="{{ url_for('order.orders') }}">Orders</a>
-          <a class="dropdown-item" href="{{ url_for('main.proof') }}">Payments</a>
+          <a class="dropdown-item" href="{{ url_for('main.index') }}">Emails</a>
+          
         </div>
       </li>
       <li class="nav-item">

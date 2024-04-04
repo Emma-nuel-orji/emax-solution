@@ -15,9 +15,9 @@
        </ol>
 
        <!-- Post DataTables Example -->
-       <br><br>  <h2 style="text-align:center ;"> NEWS PROPERTIES</h2> 
+       <br><br>  <h2 style="text-align:center ;"> PROPERTY LIST </h2> 
        <div class="col-md-7 align-self-center">
-        <a href="{{url_for('posts.propertiespost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add New Properties</a>
+        <a href="{{url_for('posts.propertiespost')}}" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Add New Property</a>
     </div><br>
        <div class="card mb-3">
          <div class="card-header">
@@ -32,23 +32,30 @@
                    <th> Name</th>
                    <th>Image</th>
                    <th>Price</th>
-                   <th>Discount</th>
-                   <th>Category</th>
+                   <th>Square</th>
+                   <th>Status</th>
                    <th>Price</th>
+                   <th>No Of Bed</th>
+                   <th>No Of floor</th>
+                   <th>No Of Bat</th>
+                   <th>Location</th>
                    <th>Edit</th>
                    <th>Action</th>
                  </tr>
                </thead>
                <tbody>
-                {% for prod in product %}
+                {% for prop in properties %}
                  <tr>
-                  <td> {{prod.id}} </td>
-                   <td>{{ prod.name }}</td> 
-                   <td><img  src="{{url_for('static', filename='img/' + prod.image)}}" width="50" height="50"/></td>
-                   <td>{{prod.price}}</td>
-                   <td>{{prod.discount}}</td>
-                   <td>{{prod.category}}</td>
-                   <td>{{prod.price}}</td> 
+                  <td> {{prop.id}} </td>
+                   <td>{{ prop.name }}</td> 
+                   <td><img  src="{{url_for('static', filename='img/' + prop.image)}}" width="50" height="50"/></td>
+                   <td>{{prop.price}}</td>
+                   <td>{{prop.square}}</td>
+                   <td>{{prop.status}}</td>
+                   <td>{{prop.bathroom}}</td> 
+                   <td>{{prop.bedroom}}</td> 
+                   <td>{{prop.floors}}</td> 
+                   <td>{{prop.location}}</td> 
                    <td><a class="btn-success btn" href=""> Edit </a></td>
                    <td>
                      <button type="button" class="btn btn-danger btn-sm m-2" data-toggle="modal" data-target="#deleteModal">Delete</button>

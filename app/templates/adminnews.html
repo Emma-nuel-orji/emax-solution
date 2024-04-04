@@ -29,26 +29,23 @@
                <thead>
                  <tr>
                    <th>ID</th>
-                   <th> Name</th>
+                   
                    <th>Image</th>
-                   <th>Price</th>
-                   <th>Discount</th>
-                   <th>Category</th>
-                   <th>Price</th>
+                   <th>Title</th>
+                   <th>Description</th>
+                   
                    <th>Edit</th>
                    <th>Action</th>
                  </tr>
                </thead>
                <tbody>
-                {% for prod in product %}
+                {% for new in news %}
                  <tr>
-                  <td> {{prod.id}} </td>
-                   <td>{{ prod.name }}</td> 
-                   <td><img  src="{{url_for('static', filename='img/' + prod.image)}}" width="50" height="50"/></td>
-                   <td>{{prod.price}}</td>
-                   <td>{{prod.discount}}</td>
-                   <td>{{prod.category}}</td>
-                   <td>{{prod.price}}</td> 
+                  <td> {{new.id}} </td>
+                   <td>{{ new.title }}</td> 
+                   <td><img  src="{{url_for('static', filename='img/' + new.image)}}" width="50" height="50"/></td>
+                   <td>{{new.description}}</td>
+                    
                    <td><a class="btn-success btn" href=""> Edit </a></td>
                    <td>
                      <button type="button" class="btn btn-danger btn-sm m-2" data-toggle="modal" data-target="#deleteModal">Delete</button>

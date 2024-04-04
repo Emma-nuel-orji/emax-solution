@@ -1,8 +1,8 @@
 import secrets
-from app.models import Product, Checkout, Payment
+from app.models import Product, Payment
 from flask import render_template, url_for, flash, redirect, request, abort, Blueprint, session
 from app import db, mail
-from app.forms import CheckoutForm, ContactForm, PaymentForm
+from app.forms import ContactForm, PaymentForm
 from app.models import User
 from flask_login import current_user, login_required
 from flask_mail import Message
@@ -42,65 +42,9 @@ def news():
     return render_template("news.html")
 
 
-@main.route('/checkout', methods=['GET', 'POST'])
-@login_required
-def checkout():
-    if 'shoppingcart' not in session or len(session['shoppingcart']) <= 0:
-        return redirect(url_for('product.product'))
-    form = CheckoutForm()
-    if form.validate_on_submit():
-        try:
-            subtotal = 0
-            grandtotal = 0
-            invoice = secrets.token_hex(5)
-            customer_id = current_user.id
-            product = Checkout.query.filter_by(customer_id=customer_id, invoice=invoice).order_by(
-                Checkout.id.desc()).all()
-            for key, product in session['shoppingcart'].items():
-                discount = 0
-                discount = (discount / 100) * float(product['price'].replace(',', ''))
-
-                subtotal += float(product['price'].replace(',', ''))
-                subtotal -= discount
-
-                grandtotal = "{:,.2f}".format(subtotal)
-                user = Checkout(productsname=(product['name']), grandtotal=grandtotal, customer_id=current_user.id,
-                                orders=session['shoppingcart'], invoice=secrets.token_hex(5),
-                                firstname=form.firstname.data, lastname=form.lastname.data, email=form.email.data,
-                                phone=form.phone.data, country=form.country.data, city=form.city.data,
-                                street=form.street.data, building=form.building.data, zip=form.zip.data,
-                                date_created=form.date_created.data, description=form.description.data, )
-            db.session.add(user)
-            db.session.commit()
-            flash('Your order has been sent successfully', 'success')
-            return redirect(url_for('main.payment'))
-        except Exception as e:
-            print(e)
-            flash('something went wrong while getting order', 'danger')
-            return redirect(url_for('product.product'))
-
-    subtotal = 0
-    grandtotal = 0
-    invoice = secrets.token_hex(5)
-    customer_id = current_user.id
-    customer = User.query.filter_by(id=customer_id).first()
-    orders = Checkout.query.filter_by(customer_id=customer_id, invoice=invoice).order_by(
-        Checkout.id.desc()).all()
-    for key, product in session['shoppingcart'].items():
-        discount = 0
-        discount = (discount / 100) * float(product['price'].replace(',', ''))
-
-        subtotal += float(product['price'].replace(',', ''))
-        subtotal -= discount
-
-        grandtotal = "{:,.2f}".format(subtotal)
-
-    return render_template('checkout.html', title='Register', invoice=invoice, customer=customer, orders=orders,
-                           form=form, grandtotal=grandtotal, product=product)
-
 
 @main.route('/gallery', methods=['GET', 'POST'])
-@login_required
+# @login_required
 def gallery():
     return render_template("gallery.html")
 
