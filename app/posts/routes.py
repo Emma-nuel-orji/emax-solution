@@ -68,15 +68,16 @@ def projectpost():
         status = form.status.data
         description = form.description.data
         location = form.location.data
+        
         author = current_user
-        product = Project(name=name, status=status, author=author, description=description, location=location, image=image)
-        db.session.add(product)
+        proj = Project(name=name, status=status, author=author, description=description, location=location, image=image)
+        db.session.add(proj)
         db.session.commit()
         flash('Your post has been created!', 'success')
         return redirect(url_for('posts.adminproject'))
     elif request.method == 'GET':
         image_file = url_for('static', filename='img/' + current_user.image_file)
-    return render_template('projectpost.html ', form=form, image_file=image_file)
+    return render_template('projectpost.html', form=form, image_file=image_file)
 
 
 

@@ -19,7 +19,7 @@ def index():
 
 @main.route('/about', methods=['GET', 'POST'])
 def about():
-    return render_template("about-US.html")
+    return render_template("about.html")
 
 
 @main.route('/projects', methods=['GET', 'POST'])
