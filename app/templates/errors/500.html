@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +9,7 @@
 
     <meta name="csrf-token" content="b8XSHCUVfMLjsbVHhHFwOHXgMOZgN7sJxOa51c3C">
 
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700;800&display=swap" rel="stylesheet" type="text/css">
+        <link href="../fonts.googleapis.com/css27261.css?family=Nunito+Sans:wght@300;600;700;800&amp;display=swap" rel="stylesheet" type="text/css">
 
     <style>
         :root {
@@ -18,15 +20,19 @@
         }
     </style>
 
-    <title>500 - Not found</title>
-<meta name="description" content="Find your favorite homes at Emax-Solution">
+    <title>Emax-luxury-Homes</title>
+<meta name="description" content="Find your favorite homes at Flex Home">
+<link rel="canonical" href="{{ url_for('main.index') }}">
 <meta property="og:site_name" content="Worldlup">
-<meta property="og:type" content="website">
-<meta property="og:title" content="404 - Not found">
-<meta name="twitter:title" content="404 - Not found">
+<meta property="og:title" content="Worldlup">
+<meta property="og:description" content="Find your favorite homes at Flex Home">
+<meta property="og:url" content="https://worldluxproperties.org">
+<meta property="og:type" content="article">
+<meta name="twitter:title" content="Worldlup">
+<meta name="twitter:description" content="Find your favorite homes at Flex Home">
 
     <link
-        href="https://worldluxproperties.org/storage/logo/world-luxury-favi.jpg"
+        href="static/storage/logo/2.png"
         rel="shortcut icon"
     >
 
@@ -42,36 +48,47 @@
 }
 </script>
 
-<style>.grecaptcha-badge { visibility: hidden; }</style><link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/vendor/core/plugins/cookie-consent/css/cookie-consent.css?v=1.0.1">
-<link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/vendor/core/plugins/language/css/language-public.css?v=2.2.0">
-<link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/themes/flex-home/libraries/bootstrap/bootstrap.min.v4.css">
-<link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/themes/flex-home/libraries/fontawesome/css/fontawesome.min.css">
-<link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/themes/flex-home/libraries/owl-carousel/owl.carousel.min.css">
-<link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/themes/flex-home/libraries/owl-carousel/owl.theme.default.css">
-<link media="all" type="text/css" rel="stylesheet" href="https://worldluxproperties.org/themes/flex-home/css/style.css?v=2.49.3">
+
+<script src="https://unpkg.com/htmx.org@1.9.4"></script>
 
 
-<script src="https://worldluxproperties.org/themes/flex-home/libraries/jquery.min.js"></script>
-<script src="https://worldluxproperties.org/themes/flex-home/libraries/bootstrap/popper.min.js"></script>
-<script src="https://worldluxproperties.org/themes/flex-home/libraries/bootstrap/bootstrap.min.js"></script>
-<script src="https://worldluxproperties.org/themes/flex-home/libraries/owl-carousel/owl.carousel.min.js"></script>
-<script src="https://worldluxproperties.org/themes/flex-home/libraries/jquery.matchHeight-min.js"></script>
-<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/worldluxproperties.org"},{"@type":"ListItem","position":2,"name":"404 - Not found","item":"https:\/\/worldluxproperties.org"}]}</script>
 
-<link type="application/atom+xml" rel="alternate" title="Properties feed" href="https://worldluxproperties.org/feed/properties">
+<style>.grecaptcha-badge { visibility: hidden; }</style><link media="all" type="text/css" rel="stylesheet" href="static/vendor/core/plugins/cookie-consent/css/cookie-consentf700.css?v=1.0.1">
+<link media="all" type="text/css" rel="stylesheet" href="static/vendor/core/plugins/language/css/language-publicd1f1.css?v=2.2.0">
+<link media="all" type="text/css" rel="stylesheet" href="static/vendor/core/core/base/libraries/ckeditor/content-styles.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/bootstrap/bootstrap.min.v4.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/fontawesome/css/fontawesome.min.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/owl-carousel/owl.carousel.min.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/owl-carousel/owl.theme.default.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/css/style8a43.css?v=2.49.3">
+
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/leaflet/leaflet.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/magnific/magnific-popup.css">
+<link media="all" type="text/css" rel="stylesheet" href="static/themes/flex-home/libraries/jquery-bar-rating/css-stars.css">
+
+<script src="static/themes/flex-home/libraries/jquery.min.js"></script>
+<script src="static/themes/flex-home/libraries/bootstrap/popper.min.js"></script>
+<script src="static/themes/flex-home/libraries/bootstrap/bootstrap.min.js"></script>
+<script src="static/themes/flex-home/libraries/owl-carousel/owl.carousel.min.js"></script>
+<script src="static/themes/flex-home/libraries/jquery.matchHeight-min.js"></script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/worldluxproperties.org"},{"@type":"ListItem","position":2,"name":"Home","item":"https:\/\/worldluxproperties.org"}]}</script>
+
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","name":"Worldlup","url":"https:\/\/worldluxproperties.org","logo":{"@type":"ImageObject","url":"https:\/\/worldluxproperties.org\/storage\/logo\/world-luxury-2.png"}}</script><link type="application/atom+xml" rel="alternate" title="Properties feed" href="feed/properties">
+
+<link type="application/atom+xml" rel="alternate" title="Properties feed" href="static/feed/properties">
 <link
-    href="https://www.google.com"
+    href="../www.google.com/{{ url_for('main.index') }}"
     rel="preconnect"
 >
 <link
-    href="https://www.gstatic.com"
+    href="../www.gstatic.com/{{ url_for('main.index') }}"
     rel="preconnect"
     crossorigin
 >
 
 
 <script>
-    window.siteUrl = "https://worldluxproperties.org";
+    window.siteUrl = "{{ url_for('main.index') }}";
 </script>
 
 </head>
@@ -85,53 +102,68 @@
                 <div class="content">
                     <div class="topbar-left">
                                                                             <div class="top-socials">
-                                                                                                                                                    <a href="https://facebook.com"
+                                                                                                                                                    <a href="../facebook.com/{{ url_for('main.index') }}"
                                            title="Facebook" target="_blank">
                                             <i class="fab fa-facebook"></i>
                                         </a>
-                                                                                                                                                                                        <a href="https://twitter.com"
+                                                                                                                                                                                        <a href="../twitter.com/{{ url_for('main.index') }}"
                                            title="Twitter" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
-                                                                                                                                                                                        <a href="https://youtube.com"
+                                                                                                                                                                                        <a href="../youtube.com/{{ url_for('main.index') }}"
                                            title="Youtube" target="_blank">
                                             <i class="fab fa-youtube"></i>
                                         </a>
                                                                                                 </div>
                                                             <span class="line"></span>
-                                                                                                        <a href="/cdn-cgi/l/email-protection#592a38353c193b362d3b353c773a3634" dir="ltr"><span class="__cf_email__" data-cfemail="daa9bbb6bf9ab8b5aeb8b6bff4b9b5b7">[email&#160;protected]</span></a>
+                                                                                                        <a href="cdn-cgi/l/email-protection.html#f98a98959cb99b968d9b959cd79a9694" dir="ltr"><span class="__cf_email__" >info@emax-solution.com</span></a>
                                             </div>
                     <div class="topbar-right">
                                                                                     <ul class="topbar-items">
-                                    <li><a href="https://worldluxproperties.org/wishlist"><i class="fas fa-heart"></i>&nbsp;Wishlist(<span class="wishlist-count">0</span>)</a></li>
+                                    <li><a href="wishlist.html"><i class="fas fa-heart"></i>&nbsp;Wishlist(<span class="wishlist-count">0</span>)</a></li>
                                 </ul>
                             
                                                                                         <div class="language currency-switcher">
                                     <div class="language-switcher-wrapper">
                                         <div class="dropdown d-inline-block">
                                             <button class="btn btn-secondary dropdown-toggle btn-select-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                VND
+                                                NGN
                                             </button>
                                             <ul class="dropdown-menu language_bar_chooser">
                                                                                                     <li>
-                                                        <a href="https://worldluxproperties.org/currency/switch/USD" ><span>USD</span></a>
+                                                        <a href="{{ url_for('main.index') }}"  class="active" ><span>USD</span></a>
                                                     </li>
                                                                                                     <li>
-                                                        <a href="https://worldluxproperties.org/currency/switch/EUR" ><span>EUR</span></a>
+                                                        <a href="{{ url_for('main.index') }}" ><span>EUR</span></a>
                                                     </li>
                                                                                                     <li>
-                                                        <a href="https://worldluxproperties.org/currency/switch/VND"  class="active" ><span>VND</span></a>
+                                                        <a href="{{ url_for('main.index') }}" ><span>VND</span></a>
                                                     </li>
-                                                                                            </ul>
+                                          </ul>
                                         </div>
                                     </div>
                                 </div>
-                                                                            
-                                                    <ul class="topbar-items">
-                                                                    <li class="login-item">
-                                        <a href="https://emax-solution.com/login"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
-                                    </li>
-                                                            </ul>
+                                {% if current_user.is_authenticated %}
+                                <ul class="topbar-items">
+                                  <li class="login-item">
+                              <a href="{{ url_for('users.logout') }}"><i class="fas fa-sign-in-alt"></i>&nbsp;Logout</a>
+                          </li>
+                                                  </ul>
+
+                                
+
+                                {% else %}
+                                
+                                <ul class="topbar-items">
+                                  <li class="login-item">
+                              <a href="{{ url_for('users.login') }}"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+                          </li>
+                                                  </ul>
+
+
+                                
+                                  {% endif %}                
+                                                    
                                                                         </div>
                 </div>
             </div>
@@ -144,9 +176,9 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                                                    <a class="navbar-brand" href="https://emax-solution.com">
-                                <img src="static/storage/logo/emax-logo (2).png"
-                                     class="logo" height="40" alt="">
+                                                    <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                                <img src="static/storage/logo/2.png"
+                                     class="logo" height="65" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -165,98 +197,117 @@
                                 <div class="main-menu-nav d-lg-flex">
                                     <ul  class="navbar-nav justify-content-end menu menu--mobile">
             <li class="menu-item   ">
-            <a href="https://worldluxproperties.org/projects" target="_self">
+            <a href="{{ url_for('main.projects') }}" target="_self">
                 Projects
             </a>
                     </li>
             <li class="menu-item   ">
-            <a href="https://worldluxproperties.org/properties" target="_self">
+            <a href="{{ url_for('main.properties') }}" target="_self">
                 Properties
             </a>
                     </li>
             <li class="menu-item   ">
-            <a href="https://worldluxproperties.org/agents" target="_self">
+            <a href="{{ url_for('main.agents') }}" target="_self">
                 Agents
             </a>
                     </li>
             <li class="menu-item   ">
-            <a href="https://worldluxproperties.org/news" target="_self">
+            <a href="{{ url_for('main.news') }}" target="_self">
                 News
             </a>
                     </li>
             <li class="menu-item   ">
-            <a href="https://worldluxproperties.org/careers" target="_self">
-                Careers
+            <a href="{{ url_for('main.gallery') }}" target="_self">
+                Gallery
             </a>
                     </li>
             <li class="menu-item   ">
-            <a href="https://worldluxproperties.org/contact" target="_self">
+            <a href="{{ url_for('main.contact') }}" target="_self">
                 Contact
             </a>
-                    </li>
+           </li>
     </ul>
 
-                                                                            <a class="btn btn-primary add-property" href="https://worldluxproperties.org/account/properties">
+                                     {% if current_user.email == 'orjiobiajulum@yahoo.com' %}
+                                            <a class="btn btn-primary add-property" href="{{url_for('admin.admin1')}}">
                                             <i class="fas fa-plus-circle"></i> Add Property
                                         </a>
-                                    
+                                        {% endif %}
+
                                     <div class="d-sm-none">
                                         <div>
-                                                                                                                                                <ul class="topbar-items d-block">
+                                           <ul class="topbar-items d-block">
                                                         <li class="login-item">
-                                                            <a href="https://worldluxproperties.org/wishlist"><i class="fas fa-heart"></i> Wishlist(<span class="wishlist-count">0</span>)</a>
+                                                            <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist(<span class="wishlist-count">0</span>)</a>
                                                         </li>
                                                     </ul>
                                                 
-                                                                                                    <div class="language">
+                                                       <div class="language">
                                                         <div class="language-switcher-wrapper">
                                                             <div class="d-inline-block language-label">
                                                                 Currencies:
                                                             </div>
                                                             <div class="dropdown d-inline-block">
                                                                 <button class="btn btn-secondary dropdown-toggle btn-select-language" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                                    VND
+                                                                    NGN
                                                                 </button>
                                                                 <ul class="dropdown-menu language_bar_chooser">
-                                                                                                                                            <li>
-                                                                            <a href="https://worldluxproperties.org/currency/switch/USD" ><span>USD</span></a>
+                                                                     <li>
+                                                                            <a href="{{ url_for('main.index') }}"  class="active" ><span>USD</span></a>
                                                                         </li>
-                                                                                                                                            <li>
-                                                                            <a href="https://worldluxproperties.org/currency/switch/EUR" ><span>EUR</span></a>
+                                                                           <li>
+                                                                            <a href="{{ url_for('main.index') }}" ><span>EUR</span></a>
                                                                         </li>
-                                                                                                                                            <li>
-                                                                            <a href="https://worldluxproperties.org/currency/switch/VND"  class="active" ><span>VND</span></a>
+                                                                           <li>
+                                                                            <a href="{{ url_for('main.index') }}" ><span>VND</span></a>
                                                                         </li>
-                                                                                                                                    </ul>
+                                                                   </ul>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                                                                                                        
-                                                                                            <ul class="topbar-items d-block">
-                                                                                                            <li class="login-item">
-                                                            <a href="https://worldluxproperties.org/login"><i class="fas fa-sign-in-alt"></i>  Login</a>
+                                                        
+                                                    {% if current_user.is_authenticated %}
+                                                    <ul class="topbar-items d-block">
+                                                          <li class="login-item">
+                                                            <a href="{{ url_for('users.logout') }}"><i class="fas fa-sign-in-alt"></i>  Logout</a>
                                                         </li>
-                                                                                                    </ul>
+                                                        </ul>
+
+                                                    {% else %}
+                                                    <ul class="topbar-items d-block">
+                                                          <li class="login-item">
+                                                            <a href="{{ url_for('users.login') }}"><i class="fas fa-sign-in-alt"></i>  Login</a>
+                                                        </li>
+                                                        </ul>
+                                                      {% endif %}
                                                                                                                                     </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                          {% if messages %}
+                               {% for category, message in messages %}
+                                   <div class="alert alert-{{ category }}">
+                                       {{ message }}
+                                   </div>
+                               {% endfor %}
+                          {% endif %}
+                        {% endwith %}
                     </nav>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
 <div class="bgheadproject hidden-xs" style="background: url('https://worldluxproperties.org/storage/general/breadcrumb-background.jpg')">
     <div class="description">
         <div class="container-fluid w90">
             <h1 class="text-center">500 - Internal Server Error</h1>
             <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="https://worldluxproperties.org" itemprop="item" title="Home">
+                    <a href="https://emax-solution.com" itemprop="item" title="Home">
                         Home
                         <meta itemprop="name" content="Home" />
                     </a>
@@ -319,19 +370,21 @@
         </div>
     </div>
 </div>
+
+
 <footer>
     <br>
     <div class="container-fluid w90">
         <div class="row">
             <div class="col-sm-3">
                                     <p>
-                        <a href="https://emax-solution.com">
-                            <img src="static/storage/logo/emax-logo (2).png" style="max-height: 38px" alt="">
+                        <a href="{{ url_for('main.index') }}">
+                            <img src="static/storage/logo/2.png" style="max-height: 48px" alt="">
                         </a>
                     </p>
-                                                    <p><i class="fas fa-map-marker-alt"></i> &nbsp;North Link Building, 10 Admiralty Street, 757695 Singapore</p>
-                                                    <p><i class="fas fa-phone-square"></i>&nbsp;<span class="d-inline-block">Hotline: </span>&nbsp;<a href="tel:+234 8118 006 268" dir="ltr">+234 8118 006 268</a></p>
-                                                    <p><i class="fas fa-envelope"></i>&nbsp;<span class="d-inline-block">Email: </span>&nbsp;<a href="/cdn-cgi/l/email-protection#493a28252c092b263d2b252c672a2624" dir="ltr"><span class="__cf_email__" data-cfemail="5023313c3510323f24323c357e333f3d">[email&#160;protected]</span></a></p>
+                                                    <p><i class="fas fa-map-marker-alt"></i> &nbsp;4th Floor, Mukhtar El Yakub Building Zakariyya Maimalari Street, Central Business District Abuja. FCT 900211 Nigeria</p>
+                                                    <p><i class="fas fa-phone-square"></i>&nbsp;<span class="d-inline-block">Hotline: </span>&nbsp;<a href="tel:+234 8118 006 268" dir="ltr">+234 8180 062 968</a></p>
+                                                    <p><i class="fas fa-envelope"></i>&nbsp;<span class="d-inline-block">Email: </span>&nbsp;<a href="" dir="ltr"><span>info@emax-solution.com</span></a></p>
                             </div>
             <div class="col-sm-9 padtop10">
                 <div class="row">
@@ -340,9 +393,10 @@
                             <h4>About</h4>
                         <ul >
             <li
+             class="             current "
             >
             <a
-                href="https://emax-solution.com/about"
+                href="{{ url_for('main.about') }}"
                 title="About us"
                             >
                                 <span>About us</span>
@@ -351,7 +405,7 @@
             <li
             >
             <a
-                href="https://emax-solution.com/contact"
+                href="{{ url_for('main.contact') }}"
                 title="Contact us"
                             >
                                 <span>Contact us</span>
@@ -360,16 +414,16 @@
             <li
             >
             <a
-                href="https://emax-solution.com/careers"
+                href="{{ url_for('main.privacy') }}"
                 title="Careers"
                             >
-                                <span>Careers</span>
+                                <span>Privacy Policy</span>
             </a>
                     </li>
             <li
             >
             <a
-                href="https://emax-solution.com/terms-conditions"
+                href="{{ url_for('main.terms') }}"
                 title="Terms &amp; Conditions"
                             >
                                 <span>Terms &amp; Conditions</span>
@@ -386,37 +440,37 @@
             <li
             >
             <a
-                href="https://emax-solution.com/projects"
+                href="{{ url_for('main.news') }}"
                 title="All projects"
                             >
-                                <span>All projects</span>
+                                <span>Our Offered Services</span>
             </a>
                     </li>
             <li
             >
             <a
-                href="https://emax-solution.com/properties"
+                href="{{ url_for('main.news') }}"
                 title="All properties"
                             >
-                                <span>All properties</span>
+                                <span>Financial Guidance</span>
             </a>
                     </li>
             <li
             >
             <a
-                href="https://emax-solution.com/properties?type=sale"
+                href="{{ url_for('main.news') }}"
                 title="Houses for sale"
                             >
-                                <span>Houses for sale</span>
+                                <span>Our Milestones</span>
             </a>
                     </li>
             <li
             >
             <a
-                href="https://emax-solution.com/properties?type=rent"
+                href="{{ url_for('main.news') }}"
                 title="Houses for rent"
                             >
-                                <span>Houses for rent</span>
+                                <span>Our Traction</span>
             </a>
                     </li>
     </ul>
@@ -430,7 +484,7 @@
             <li
             >
             <a
-                href="https://emax-solution.com/news"
+                href="{{ url_for('main.news') }}"
                 title="Latest news"
                             >
                                 <span>Latest news</span>
@@ -439,25 +493,25 @@
             <li
             >
             <a
-                href="https://emax-solution.com/news/house-architecture"
+                href="{{ url_for('main.news') }}"
                 title="House architecture"
                             >
-                                <span>House architecture</span>
+                                <span>Our Management Team</span>
             </a>
                     </li>
             <li
             >
             <a
-                href="https://emax-solution.com/news/house-design"
+                href="{{ url_for('main.news') }}"
                 title="House design"
                             >
-                                <span>House design</span>
+                                <span>Our Properties</span>
             </a>
                     </li>
             <li
             >
             <a
-                href="https://emax-solution.com/news/building-materials"
+                href="{{ url_for('main.news') }}"
                 title="Building materials"
                             >
                                 <span>Building materials</span>
@@ -474,7 +528,7 @@
                             <div class="copyright">
                 <div class="col-sm-12">
                     <p class="text-center mb-0">
-                        ©2023 Emax-Solution is Proudly Powered by Botble Team.
+                        ©2023 Emax is Proudly Powered by Botble Team.
                     </p>
                 </div>
             </div>
@@ -494,57 +548,30 @@
         "Removed from wishlist successfully!": "Removed from wishlist successfully!",
         "I care about this property!!!": "I care about this property!!!",
     };
-    window.themeUrl = 'https://worldluxproperties.org/themes/flex-home';
-    window.siteUrl = 'https://worldluxproperties.org';
+    window.themeUrl = 'public/themes/flex-home/{{ url_for('main.index') }}';
+    window.siteUrl = '{{ url_for('main.index') }}';
     window.currentLanguage = 'en';
 </script>
 
 <div class="action_footer">
     <a href="#" class="cd-top" ><i class="fas fa-arrow-up"></i></a>
-            <a href="tel:+234 8118 006 268" class="text-white" style="font-size: 17px;"><i class="fas fa-phone"></i> <span>  &nbsp;+234 8118 006 268</span></a>
+            <a href="tel:18006268" class="text-white" style="font-size: 17px;"><i class="fas fa-phone"></i> <span>  &nbsp;+234 8180 062 168</span></a>
     </div>
 
-    <script src="https://worldluxproperties.org/themes/flex-home/libraries/jquery.waypoints.min.js"></script>
-<script src="https://worldluxproperties.org/themes/flex-home/js/app.js?v=2.49.3"></script>
-<script src="https://worldluxproperties.org/themes/flex-home/js/wishlist.js?v=2.49.3"></script>
-<script src="https://worldluxproperties.org/vendor/core/plugins/cookie-consent/js/cookie-consent.js?v=1.0.1"></script>
-<script src="https://worldluxproperties.org/vendor/core/plugins/language/js/language-public.js?v=2.2.0"></script>
+    <script src="static/themes/flex-home/libraries/jquery.waypoints.min.js"></script>
+<script src="static/themes/flex-home/js/app8a43.js?v=2.49.3"></script>
+<script src="static/themes/flex-home/js/wishlist8a43.js?v=2.49.3"></script>
+<script src="static/vendor/core/plugins/cookie-consent/js/cookie-consentf700.js?v=1.0.1"></script>
+<script src="static/vendor/core/plugins/language/js/language-publicd1f1.js?v=2.2.0"></script>
 
 
 
 
-
-<div
-        class="js-cookie-consent cookie-consent cookie-consent-full-width"
-        style="background-color: #000000 !important; color: #FFFFFF !important;"
-    >
-        <div
-            class="cookie-consent-body"
-            style="max-width: 1170px;"
-        >
-            <span class="cookie-consent__message">
-                Your experience on this site will be improved by allowing cookies
-                                    <a
-                        href="https://worldluxproperties.org/cookie-policy">Cookie Policy</a>
-                            </span>
-
-            <button
-                class="js-cookie-consent-agree cookie-consent__agree"
-                style="background-color: #000000 !important; color: #FFFFFF !important; border: 1px solid #FFFFFF !important;"
-            >
-                Allow cookies
-            </button>
-        </div>
-    </div>
-    <div data-site-cookie-name="cookie_for_consent"></div>
-    <div data-site-cookie-lifetime="7300"></div>
-    <div data-site-cookie-domain="worldluxproperties.org"></div>
-    <div data-site-session-secure=""></div>
-
-
+<script src="static/themes/flex-home/libraries/leaflet/leaflet.js"></script>
+<script src="static/themes/flex-home/libraries/magnific/jquery.magnific-popup.min.js"></script>
+<script src="static/themes/flex-home/js/property.js"></script>
+<script src="static/themes/flex-home/libraries/jquery-bar-rating/jquery.barrating.min.js"></script>
+<script src="static/themes/flex-home/js/review.js"></script>
 
 </body>
 </html>
-
-
-
