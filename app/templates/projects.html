@@ -279,25 +279,30 @@
 
 <input type="hidden" name="page" data-value="1">
     <div class="row">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
-                <div class="item">
-    <div class="blii">
-        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-35-410x270.jpeg" src="storage/images-35-410x270.jpg" alt="The Avila Apartments">
-        </div>
-        <a href="{{ url_for('posts.single_project') }}" class="linkdetail"></a>
-        <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>Villa</span></li></ul>
-    </div>
 
-    <div class="description">
-        <a href="{{ url_for('posts.single_project') }}"><h5>The Avila Apartments</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
+        <!--here-->
+    {% for proj in project %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
+                <div class="item">
+                <div class="blii">
+                    <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-35-410x270.jpeg" src="storage/images-35-410x270.jpg" alt="The Avila Apartments">
+                    </div>
+                    <a href="{{ url_for('posts.single_project') }}" class="linkdetail"></a>
+                    <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>Villa{{ proj.status }}</span></li></ul>
+                </div>
+            
+                <div class="description">
+                    <a href="{{ url_for('posts.single_project') }}"><h5>The Avila Apartments{{ proj.name }}</h5>
+                        <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California{{ proj.location }}</p>
                     </a>
-    </div>
-</div>
-
+                </div>
             </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
-                <div class="item">
+            </div>
+      {% endfor %}
+   <!--ends here-->
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
+    <div class="item">
     <div class="blii">
         <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-34-410x270.jpeg" src="storage/images-34-410x270.jpg" alt="Aydos Forest Apartments">
         </div>

@@ -1,5 +1,5 @@
 import secrets
-from app.models import Product, Payment
+from app.models import Product, Payment, News, Agent, Project, Properties
 from flask import render_template, url_for, flash, redirect, request, abort, Blueprint, session
 from app import db, mail
 from app.forms import ContactForm, PaymentForm
@@ -24,22 +24,26 @@ def about():
 
 @main.route('/projects', methods=['GET', 'POST'])
 def projects():
-    return render_template("projects.html")
+    proj = Project.query.all()
+    return render_template("projects.html", proj=proj)
 
 
 @main.route('/properties', methods=['GET', 'POST'])
 def properties():
-    return render_template("properties.html")
+    prop = Properties.query.all()
+    return render_template("properties.html", prop=prop)
 
 
 @main.route('/agents', methods=['GET', 'POST'])
 def agents():
-    return render_template("agents.html")
+    agent = Agent.query.all()
+    return render_template("agents.html", agent=agent)
 
 
 @main.route('/news', methods=['GET', 'POST'])
 def news():
-    return render_template("news.html")
+    news = News.query.all()
+    return render_template("news.html", news=news)
 
 
 
@@ -131,28 +135,63 @@ def proof():
     return render_template('admin/proof.html', payment=payment)
 
 
-@main.route("/delete_proof/<int:payment_id>/delete", methods=['GET', 'POST'])
-def delete_proof(payment_id):
-    product = Payment.query.get_or_404(payment_id)
-    if current_user.email != 'emeraldinteriorservices@gmail.com':
-        abort(403)
-    db.session.delete(product)
-    db.session.commit()
-    flash("the product has been deleted successfully", 'success')
-    return redirect(url_for('admin.home'))
-    return render_template("admin/proof.html", product=product)
+# @main.route("/delete_proof/<int:payment_id>/delete", methods=['GET', 'POST'])
+# def delete_proof(payment_id):
+#     product = Payment.query.get_or_404(payment_id)
+#     if current_user.email != 'orjiobiajulum@yahoo.com':
+#         abort(403)
+#     db.session.delete(product)
+#     db.session.commit()
+#     flash("the product has been deleted successfully", 'success')
+#     return redirect(url_for('admin.admin1'))
+#     return render_template("admin/proof.html", product=product)
 
 
-@main.route("/delete_prod/<int:prod_id>/delete", methods=['GET', 'POST'])
-def delete_prod(prod_id):
-    prod = Product.query.get_or_404(prod_id)
-    if current_user.email != 'emeraldinteriorservices@gmail.com':
+@main.route("/delete_new/<int:new_id>/delete", methods=['GET', 'POST'])
+def delete_new(new_id):
+    new = News.query.get_or_404(new_id)
+    if current_user.email != 'orjiobiajulum@yahoo.com':
         abort(403)
-    db.session.delete(prod)
+    db.session.delete(new)
     db.session.commit()
     flash("the product has been deleted successfully", 'success')
-    return redirect(url_for('admin.home'))
-    return render_template("admin/home.html", prod=prod)
+    return redirect(url_for('admin.admin1'))
+    return render_template("admin.html", new=new)
+
+
+@main.route("/delete_post/<int:post_id>/delete", methods=['GET', 'POST'])
+def delete_post(post_id):
+    post = Agent.query.get_or_404(post_id)
+    if current_user.email != 'orjiobiajulum@yahoo.com':
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash("the product has been deleted successfully", 'success')
+    return redirect(url_for('admin.admin1'))
+    return render_template("admin.html", post=post)
+
+@main.route("/delete_prop/<int:prop_id>/delete", methods=['GET', 'POST'])
+def delete_prop(prop_id):
+    prop = Properties.query.get_or_404(prop_id)
+    if current_user.email != 'orjiobiajulum@yahoo.com':
+        abort(403)
+    db.session.delete(prop)
+    db.session.commit()
+    flash("the product has been deleted successfully", 'success')
+    return redirect(url_for('admin.admin1'))
+    return render_template("admin.html", prop=prop)
+
+
+@main.route("/delete_proj/<int:proj_id>/delete", methods=['GET', 'POST'])
+def delete_proj(proj_id):
+    proj = Project.query.get_or_404(proj_id)
+    if current_user.email != 'orjiobiajulum@yahoo.com':
+        abort(403)
+    db.session.delete(proj)
+    db.session.commit()
+    flash("the product has been deleted successfully", 'success')
+    return redirect(url_for('admin.admin1'))
+    return render_template("admin.html", proj=proj)
 
 
 @main.route('/thanks')

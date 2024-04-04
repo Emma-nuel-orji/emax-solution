@@ -34,6 +34,9 @@
 
                     <div class="blog-container">
         <div class="row">
+
+
+            <!--here-->
                             <div class="col-md-4 col-sm-6 container-grid" style="margin-bottom: 30px;">
                     <div class="grid-in">
                         <div class="grid-shadow">
@@ -51,7 +54,7 @@
                                 <div class="blog-title">
                                     <a href="{{ url_for('posts.single_news') }}" title="BCG sets great store by real estate negotiations"><h2>BCG sets great store by real estate negotiations</h2></a>
                                     <div class="post-meta">
-    <p class="d-inline-block"><i class="fa fa-calendar"></i> Nov 19, 2023 in </p>
+    <p class="d-inline-block"><i class="fa fa-calendar"></i> {{ post.date_posted.strftime('%d-%m-%Y')}} in </p>
     - <p class="d-inline-block"><i class="fa fa-eye"></i> 634</p>
 </div>
 
@@ -63,6 +66,11 @@
                         </div>
                     </div>
                 </div>
+
+
+<!--endshere-->
+
+
                             <div class="col-md-4 col-sm-6 container-grid" style="margin-bottom: 30px;">
                     <div class="grid-in">
                         <div class="grid-shadow">
