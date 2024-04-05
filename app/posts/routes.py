@@ -172,9 +172,10 @@ def single_properties():
     return render_template("single_properties.html")
 
 
-@posts.route('/single_agent', methods=['GET', 'POST'])
-def single_agent():
-    return render_template("single_agent.html")
+@posts.route('/single_agent/<int:post_id>', methods=['GET', 'POST'])
+def single_agent(post_id):
+    post = Agent.query.get_or_404(post_id)
+    return render_template("single_agent.html", post=post)
 
 @posts.route('/single_news', methods=['GET', 'POST'])
 def single_news():

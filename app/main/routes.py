@@ -24,14 +24,14 @@ def about():
 
 @main.route('/projects', methods=['GET', 'POST'])
 def projects():
-    proj = Project.query.all()
-    return render_template("projects.html", proj=proj)
+    project = Project.query.all()
+    return render_template("projects.html", project=project)
 
 
 @main.route('/properties', methods=['GET', 'POST'])
 def properties():
-    prop = Properties.query.all()
-    return render_template("properties.html", prop=prop)
+    property = Properties.query.all()
+    return render_template("properties.html", property=property)
 
 
 @main.route('/agents', methods=['GET', 'POST'])

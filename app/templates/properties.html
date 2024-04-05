@@ -37,7 +37,7 @@
             <form
                 id="ajax-filters-form"
                 data-ajax-url="properties.html"
-                action="https://worldluxproperties.org/properties"
+                action="https://emax-solution.com/properties"
                 method="get"
             >
                 <div class="search-box">
@@ -403,13 +403,16 @@
 
 <input type="hidden" name="page" data-value="1">
     <div class="row">
-                    <div class="colm10 property-item" data-lat="" data-long="">
-                <div class="item" data-lat="" data-long="">
+
+        <!--starts here-->
+        {% for prop in property %}
+    <div class="colm10 property-item" data-lat="" data-long="">
+    <div class="item" data-lat="" data-long="">
     <div class="blii">
         <div class="img">
             <img class="thumb"
-                data-src="static/storage/760xxsxm-1-410x270.webp"
-                src="static/storage/760xxsxm-1-410x270.webp"
+                data-src="{{url_for('static', filename='img/' + prop.image)}}"
+                src="{{url_for('static', filename='img/' + prop.image)}}"
                 alt="Passive House, Bratislava V Rusovce, Id: 0265">
         </div>
         <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
@@ -419,10 +422,10 @@
                 <span>7</span>
             </div>
         </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
+        <div class="status"><span class="label-success status-label">{{ prop.status }} </span></div>
         <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title=""></span></li>
-            <li class="item-price"><span title="29,870,198,980₫">29,870,198,980₫</span></li>
+            <li class="h-type"><span title="">House</span></li>
+            <li class="item-price"><span title="29,870,198,980₫">₦ {{ prop.price }}</span></li>
         </ul>
     </div>
 
@@ -430,23 +433,29 @@
         <a href="#" class="text-orange heart add-to-wishlist" data-id="37"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
         <a href="{{ url_for('posts.single_properties') }}">
-            <h5>Passive House, Bratislava V Rusovce, Id: 0265</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> </p>
+            <h5> {{ prop.name }}</h5>
+            <p class="dia_chi"><i class="fas fa-map-marker-alt">{{ prop.location }}</i> </p>
         </a>
         <p class="threemt bold500">
                             <span original-title="Number of rooms">
                     <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">4</i>
+                        class="vti">4 {{ prop.bedroom }}</i>
                 </span>
                                         <span title="Number of rest rooms"> <i><img
                             src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">3</i></span>
+                        class="vti">3 {{ prop.bathroom }}</i></span>
                                     
         </p>
     </div>
 </div>
+</div>
+{% endfor %}
+     <!--endshere-->
 
-            </div>
+
+
+
+
                     <div class="colm10 property-item" data-lat="" data-long="">
                 <div class="item" data-lat="" data-long="">
     <div class="blii">
@@ -466,7 +475,7 @@
         <div class="status"><span class="label-success status-label">Selling</span></div>
         <ul class="item-price-wrap hide-on-list">
             <li class="h-type"><span title="House">House</span></li>
-            <li class="item-price"><span title="41,510,439,653₫">41,510,439,653₫</span></li>
+            <li class="item-price"><span title="41,510,439,653₫">₦ 41,510,439,653₫</span></li>
         </ul>
     </div>
 

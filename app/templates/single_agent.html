@@ -7,11 +7,11 @@
     <section class="main-homes">
     <div
         class="bgheadproject hidden-xs"
-        style="background: url('static/storage/general/breadcrumb-background.jpg')"
+        style="background: url('../static/storage/general/breadcrumb-background.jpg')"
     >
         <div class="description">
             <div class="container-fluid w90">
-                <h1 class="text-center">Marjorie Mann</h1>
+                <h1 class="text-center">{{ post.name }}</h1>
                 <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
                     <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
@@ -21,7 +21,7 @@
                     <meta itemprop="position" content="1" />
                 </li>
                                                 <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    Marjorie Mann
+                                                    {{ post.email }}
                     <meta itemprop="name" content="Marjorie Mann" />
                     <meta itemprop="position" content="2" />
                 </li>
@@ -30,134 +30,42 @@
             </div>
         </div>
     </div>
+
+
     <div class="container-fluid w90 padtop30">
         <div class="rowm10">
             <h5 class="headifhouse">Agent info</h5>
+
             <div class="agent-details">
                 <div>
-                                            <a href="abbottharmony.html">
-                                                            <img
-                                    class="img-thumbnail"
-                                    src="static/storage/accounts/10-150x150.jpg"
-                                    alt="Marjorie Mann"
-                                >
-                                                    </a>
-                                    </div>
+                    <a href="abbottharmony.html">
+                       <img class="img-thumbnail" src="{{url_for('static', filename='img/' + post.image)}}" alt="{{post.name}}" width="250" height="100">
+                    </a>
+                    </div>
                 <div>
-                    <h4>Marjorie Mann</h4>
-                                            <p><strong class="d-inline-block">Email</strong>: <span dir="ltr"><a href="../cdn-cgi/l/email-protection.html#3953565157174a54504d51795b564d5b555c175a5654"><span class="__cf_email__" data-cfemail="32585d5a5c1c415f5b465a72505d46505e571c515d5f">[email&#160;protected]</span></a></span></p>
-                                                                <p class="mobile"><strong class="d-inline-block">Phone</strong>: <span
+                    <h4>{{ post.name }}</h4>
+                                            <p><strong class="d-inline-block">Email</strong>: <span dir="ltr"><a href="mailto:{{ post.email }}"><span class="" data-cfemail="32585d5a5c1c415f5b465a72505d46505e571c515d5f">{{ post.email }}</span></a></span></p>
+                    <p class="mobile"><strong class="d-inline-block">Phone</strong>: <span
                                 dir="ltr"
-                            ><a href="tel:+19088724843">+19088724843</a></span></p>
+                            ><a href="tel:{{ post.phone }}">{{ post.phone }}</a></span></p>
                                         <p><strong class="d-inline-block">Joined on</strong>: <span
-                            class="d-inline-block">2023-11-19</span></p>
+                            class="d-inline-block">{{ post.date_created.strftime('%d-%m-%Y')}}</span></p>
                 </div>
                 <div style="clear: both"></div>
             </div>
 
             <div style="clear: both"></div>
 
-            <div
-                class="ck-content"
-                style="margin-top: 20px"
-            >King said to itself in a.</div>
+            
 
             <br>
 
-                            <h5 class="headifhouse">Properties by this agent</h5>
-                <div class="projecthome px-2">
-                    <div class="row rowm10">
-                                                    <div class="col-sm-6 col-lg-4 col-xl-3 colm10">
-                                <div class="item" data-lat="43.982274" data-long="-76.182356">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                alt="Villa for sale at Bermuda Dunes">
-        </div>
-        <a href="../properties/42460-buccaneer-court.html" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="../themes/flex-home/images/media-count.svg" alt="media">
-                <span>4</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Commercial property">Commercial property</span></li>
-            <li class="item-price"><span title="30,714,162,500₫">30,714,162,500₫</span></li>
-        </ul>
-    </div>
+                           <!-- <h5 class="headifhouse">Properties by this agent</h5>-->
+               
+    
 
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="4"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="../properties/42460-buccaneer-court.html">
-            <h5>Villa for sale at Bermuda Dunes</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Alhambra, California</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="../themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">4</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="../themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">3</i></span>
-                                        <span title="Square"> <i><img
-                            src="../themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">480 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
+  
 
-                            </div>
-                                                    <div class="col-sm-6 col-lg-4 col-xl-3 colm10">
-                                <div class="item" data-lat="42.601639" data-long="-76.36969">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-410x270.jpg"
-                src="static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-410x270.jpg"
-                alt="Thompsons Road House for rent">
-        </div>
-        <a href="../properties/harry-baskervilles-hay-loft.html" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="../themes/flex-home/images/media-count.svg" alt="media">
-                <span>2</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Renting</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Commercial property">Commercial property</span></li>
-            <li class="item-price"><span title="34,746,138₫">34,746,138₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="10"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="../properties/harry-baskervilles-hay-loft.html">
-            <h5>Thompsons Road House for rent</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Bakersfield, California</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="../themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">3</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="../themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">3</i></span>
-                                        <span title="Square"> <i><img
-                            src="../themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">160 m²</i> </span>
-                        
-        </p>
-    </div>
 </div>
 
                             </div>

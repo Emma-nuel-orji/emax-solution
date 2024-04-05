@@ -37,35 +37,37 @@
 
 
             <!--here-->
-                            <div class="col-md-4 col-sm-6 container-grid" style="margin-bottom: 30px;">
+            {% for new in news %}
+                <div class="col-md-4 col-sm-6 container-grid" style="margin-bottom: 30px;">
                     <div class="grid-in">
                         <div class="grid-shadow">
                             <div class="hourseitem" style="margin-top: 0;">
                                 <div class="blii">
                                     <div class="img">
                                         <img
-                                            data-src="static/storage/properties/1-2-410x270.jpg"
-                                            src="static/storage/properties/1-2-410x270.jpg"
+                                            data-src="{{url_for('static', filename='img/' + new.image)}}"
+                                            src="{{url_for('static', filename='img/' + new.image)}}"
                                             alt="BCG sets great store by real estate negotiations" class="thumb"
                                             style="border-radius: 0;"></div>
                                     <a href="{{ url_for('posts.single_news') }}" title="BCG sets great store by real estate negotiations" class="linkdetail"></a></div>
                             </div>
                             <div class="grid-h" data-mh="blog-post">
                                 <div class="blog-title">
-                                    <a href="{{ url_for('posts.single_news') }}" title="BCG sets great store by real estate negotiations"><h2>BCG sets great store by real estate negotiations</h2></a>
+                            <a href="{{ url_for('posts.single_news') }}" title="Private Home Sales Drop 27% In October"><h2> {{ new.title }}</h2></a>
                                     <div class="post-meta">
-    <p class="d-inline-block"><i class="fa fa-calendar"></i> {{ post.date_posted.strftime('%d-%m-%Y')}} in </p>
-    - <p class="d-inline-block"><i class="fa fa-eye"></i> 634</p>
-</div>
+                                <p class="d-inline-block"><i class="fa fa-calendar"></i> {{ new.date_created.strftime('%d-%m-%Y')}} in </p>
+                                - <p class="d-inline-block"><i class="fa fa-eye"></i> 634</p>
+                            </div>
 
                                 </div>
                                 <div class="blog-excerpt">
-                                    <p>BCG leaders shared with investors at a meeting this month that real estate and renewable energy will be the two main activities of the group. In the field of manufacturing, BCG only retains businesses that have been successfully restructured, reaching the requisite levels of economic efficiency and creating solid foundations...</p>
+                                    <p>{{ new.description [0:300]}} <b>........ </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
 
 <!--endshere-->
