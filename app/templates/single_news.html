@@ -4,10 +4,10 @@
 
 
 <div id="app">
-    <div class="bgheadproject hidden-xs" style="background: url('static/storage/general/breadcrumb-background.jpg')">
+    <div class="bgheadproject hidden-xs" style="background: url('../static/storage/general/breadcrumb-background.jpg')">
     <div class="description">
         <div class="container-fluid w90">
-            <h1 class="text-center">4 Expert Tips On How To Choose The Right Men’s Wallet</h1>
+            <h1 class="text-center">{{ new.title}}</h1>
             <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                                     <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
                     <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
@@ -24,7 +24,7 @@
                     <meta itemprop="position" content="2" />
                 </li>
                                                 <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    4 Expert Tips On How To Choose The Right Men’s Wallet
+                    {{new.title}}
                     <meta itemprop="name" content="4 Expert Tips On How To Choose The Right Men’s Wallet" />
                     <meta itemprop="position" content="3" />
                 </li>
@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col-sm-9">
             <div class="post-meta">
-    <p class="d-inline-block"><i class="fa fa-calendar"></i> Nov 19, 2023 in             <a href="category-news.html">News</a>
+    <p class="d-inline-block"><i class="fa fa-calendar"></i> {{ new.date_created.strftime('%d-%m-%Y')}} in             <a href="#">News</a>
                     </p>
     - <p class="d-inline-block"><i class="fa fa-eye"></i> 688</p>
 </div>
@@ -47,9 +47,10 @@
                 
 
                 <div class="ck-content">
-                    <p></p><p class="text-center"><img src="static/storage/news/1.jpg" alt="1.jpg"></p><p>
-                        
-                    I've often seen a cat without a cat! It's the most important piece of bread-and-butter in the prisoner's handwriting?' asked another of the cakes, and was gone in a ring, and begged the Mouse replied rather crossly: 'of course you know what a wonderful dream it had been. But her sister was reading, but it had grown so large in the air. '--as far out to sea. So they got thrown out to sea. So they got their tails fast in their paws. 'And how do you mean by that?' said the cook. The King turned pale, and shut his note-book hastily. 'Consider your verdict,' the King triumphantly, pointing to the baby, the shriek of the bill, "French, music, AND WASHING--extra."' 'You couldn't have wanted it much,' said Alice; 'living at the door--I do wish I could show you our cat Dinah: I think you'd better ask HER about it.' 'She's in prison,' the Queen was close behind us, and he's treading on my tail. See how eagerly the lobsters to the Dormouse, after thinking a minute or two to think about it, even.I don't know what to do THAT in a hoarse, feeble voice: 'I heard the Queen's shrill cries to the fifth bend, I think?' 'I had NOT!' cried the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' Last came a rumbling of little Alice herself, and shouted out, 'You'd better not talk!' said Five. 'I heard every word you fellows were saying.' 'Tell us a story!' said the Caterpillar. 'Not QUITE right, I'm afraid,' said Alice, (she had kept a piece of bread-and-butter in the long hall, and.</p><p class="text-center"><img src="static/storage/news/9.jpg" alt="9.jpg"></p><p>There ought to be almost out of it, and they can't prove I did: there's no harm in trying.' So she began: 'O Mouse, do you like to be nothing but out-of-the-way things had happened lately, that Alice quite jumped; but she ran off at once: one old Magpie began wrapping itself up and saying, 'Thank you, it's a French mouse, come over with fright. 'Oh, I know!' exclaimed Alice, who was peeping anxiously into its face to see anything; then she looked down at them, and the Dormouse went on, looking anxiously round to see how he can thoroughly enjoy The pepper when he finds out who I am! But I'd better take him his fan and gloves--that is, if I was, I shouldn't want YOURS: I don't remember where.' 'Well, it must be getting home; the night-air doesn't suit my throat!' and a large canvas bag, which tied up at this corner--No, tie 'em together first--they don't reach half high enough yet--Oh! they'll do well enough; don't be particular--Here, Bill! catch hold of its right paw round, 'lives a.</p><p class="text-center"><img src="static/storage/news/12.jpg" alt="12.jpg"></p><p>I think.' And she opened the door of the pack, she could not swim. He sent them word I had to stop and untwist it. After a minute or two she walked up towards it rather timidly, saying to her ear. 'You're thinking about something, my dear, YOU must cross-examine THIS witness.' 'Well, if I can listen all day to day.' This was such a puzzled expression that she was to get in at all?' said Alice, quite forgetting in the lock, and to her great disappointment it was looking about for it, while the Mouse was bristling all over, and she walked up towards it rather timidly, saying to herself in a moment: she looked up, but it had entirely disappeared; so the King said to herself how she would feel with all speed back to the Gryphon. 'They can't have anything to say, she simply bowed, and took the watch and looked at her, and said, 'It WAS a curious feeling!' said Alice; 'it's laid for a little wider. 'Come, it's pleased so far,' said the Hatter: 'let's all move one place on.' He moved on as.</p></div>
+                    <p></p><p class="text-center"><img src="{{url_for('static', filename='img/' + new.image)}}" alt="{{new.title}}"></p>
+                    <p> {{ new.description }}" </p>
+                    
+                </div>
                 <div class="facebook-comment">
     <div class="fb-comments" data-href="https://worldluxproperties.org/news/4-expert-tips-on-how-to-choose-the-right-mens-wallet" data-numposts="5" data-width="100%"></div>
 </div>
@@ -58,21 +59,20 @@
                 
 
                                     <div class="ps-tags">
-                        <p>
-                            <strong>Tags</strong>:                                 <a href="../tag/bcg-sets-great-store.html">BCG sets great store</a>,                                                             <a href="../tag/private-home-sales.html">Private Home Sales</a>,                                                             <a href="../tag/south-korean-investors.html">South Korean investors</a>                                                    </p>
+                        
                     </div>
                                 <br>
                 <div class="socials mb-3 pb-2 border-bottom w-100">
-    <span>Share this post:</span>
+    <span>Follow Our handles:</span>
     <ul>
         <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldluxproperties.org%2Fnews%2F4-expert-tips-on-how-to-choose-the-right-mens-wallet&amp;title=Minima%20fuga%20voluptas%20nesciunt%20numquam%20laudantium%20adipisci%20minus.%20Nostrum%20enim%20qui%20repellat%20fuga%20recusandae.%20Repellat%20exercitationem%20ut%20similique%20aut.%20Nam%20et%20est%20est%20omnis%20ut%20ea%20omnis%20perferendis." target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fworldluxproperties.org%2Fnews%2F4-expert-tips-on-how-to-choose-the-right-mens-wallet&amp;summary=Minima%20fuga%20voluptas%20nesciunt%20numquam%20laudantium%20adipisci%20minus.%20Nostrum%20enim%20qui%20repellat%20fuga%20recusandae.%20Repellat%20exercitationem%20ut%20similique%20aut.%20Nam%20et%20est%20est%20omnis%20ut%20ea%20omnis%20perferendis.&amp;source=Linkedin" title="Share on Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="Share on Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </li>
         <li>
-            <a href="../../twitter.com/intent/tweet97b6.html?url=https%3A%2F%2Fworldluxproperties.org%2Fnews%2F4-expert-tips-on-how-to-choose-the-right-mens-wallet&amp;text=Minima%20fuga%20voluptas%20nesciunt%20numquam%20laudantium%20adipisci%20minus.%20Nostrum%20enim%20qui%20repellat%20fuga%20recusandae.%20Repellat%20exercitationem%20ut%20similique%20aut.%20Nam%20et%20est%20est%20omnis%20ut%20ea%20omnis%20perferendis." target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="{{ url_for('posts.single_project') }}" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
         </li>
     </ul>
 </div>
@@ -81,31 +81,15 @@
             <div class="clearfix"></div>
             
                             <br>
-                <h5><strong>Related posts</strong>:</h5>
+                
                 <div class="blog-container">
                     <div class="row">
                                                     <div class="col-md-6 col-sm-6 container-grid">
-                                <div class="grid-in">
-                                    <div class="grid-shadow grid-shadow-gray">
-                                        <div class="hourseitem" style="margin-top: 0;">
-                                            <div class="blii">
-                                                <div class="img"><img style="border-radius: 0" class="thumb" data-src="https://worldluxproperties.org/storage/news/4-410x270.jpg" src="static/storage/news/4-410x270.jpg" alt="Used Car Dealer Sales Tricks Exposed">
-                                                </div>
-                                                <a href="used-car-dealer-sales-tricks-exposed.html" class="linkdetail"></a>
-                                            </div>
-                                        </div>
-                                        <div class="grid-h">
-                                            <div class="blog-title">
-                                                <a href="used-car-dealer-sales-tricks-exposed.html">
-                                                    <h2>Used Car Dealer Sales Tricks Exposed</h2></a>
-                                                <div class="post-meta"><p class="d-inline-block">19 Nov, 2023</p> - <p class="d-inline-block"><i class="fa fa-eye"></i> 1,322</p></div>
-                                            </div>
-                                            <div class="blog-excerpt">
-                                                <p>Aut ut ipsum qui et accusantium ea nisi. Rerum laborum impedit voluptatem nemo. Eum illo qui earum aut non quia quia. Voluptates aut et earum vero et consequatur.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+
+
+
+
                             </div>
                                             </div>
                 </div>
@@ -114,48 +98,30 @@
             <div class="boxright">
         <h5>Categories</h5>
         <ul class="listnews">
-                            <li><a href="tin-tuc-1.html" class="text-dark">Tin tức</a></li>
-                            <li><a href="category-news.html" class="text-dark">News</a></li>
-                            <li><a href="vat-lieu-xay-dung.html" class="text-dark">Vật liệu xây dựng</a></li>
-                            <li><a href="building-materials.html" class="text-dark">Building materials</a></li>
-                            <li><a href="thiet-ke-nha.html" class="text-dark">Thiết kế nhà</a></li>
-                            <li><a href="house-design.html" class="text-dark">House design</a></li>
-                            <li><a href="kien-truc-nha.html" class="text-dark">Kiến trúc nhà</a></li>
-                            <li><a href="house-architecture.html" class="text-dark">House architecture</a></li>
+                            <li><a href="{{ url_for('main.projects') }}" class="text-dark">Projects</a></li>
+                            <li><a href="{{ url_for('main.news') }}" class="text-dark">News</a></li>
+                            <li><a href="{{ url_for('main.agents') }}" class="text-dark">Agents</a></li>
+                            <li><a href="{{ url_for('main.news') }}" class="text-dark">Building materials</a></li>
+                            <li><a href="{{ url_for('main.properties') }}" class="text-dark">Properties</a></li>
+                            <li><a href="{{ url_for('main.news') }}" class="text-dark">House design</a></li>
+                            
+                            <li><a href="{{ url_for('main.news') }}" class="text-dark">House architecture</a></li>
                     </ul>
     </div>
 <h5 class="padtop40 titlenewnews">Recent posts</h5>
 
+
+{% for new in news %}
             <div class="mb-4 w-100 float-left lastestnews">
-            <a href="bcg-sets-great-store-by-real-estate-negotiations.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/1-2-150x150.jpg" src="static/storage/properties/1-2-150x150.jpg" width="90" alt="BCG sets great store by real estate negotiations">
-                BCG sets great store by real estate negotiations
+            <a href="{{ url_for('main.news') }}" class="text-dark">
+                <img class="img-thumbnail float-left mr-2" data-src="{{url_for('static', filename='img/' + new.image)}}" src="{{url_for('static', filename='img/' + new.image)}}" width="90" alt="BCG sets great store by real estate negotiations">
+                {{new.title}}
             </a>
         </div>
-            <div class="mb-4 w-100 float-left lastestnews">
-            <a href="private-home-sales-drop-27-in-october.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/2-2-150x150.jpg" src="static/storage/properties/2-2-150x150.jpg" width="90" alt="Private Home Sales Drop 27% In October">
-                Private Home Sales Drop 27% In October
-            </a>
-        </div>
-            <div class="mb-4 w-100 float-left lastestnews">
-            <a href="singapore-overtakes-hong-kong-in-terms-of-property-investment-prospects.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/6-1-150x150.jpg" src="static/storage/properties/6-1-150x150.jpg" width="90" alt="Singapore Overtakes Hong Kong In Terms Of Property Investment Prospects">
-                Singapore Overtakes Hong Kong In Terms Of Property Investment Prospects
-            </a>
-        </div>
-            <div class="mb-4 w-100 float-left lastestnews">
-            <a href="s-koreas-big-investors-flocking-to-overseas-real-estate.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/properties/download-150x150.jpg" src="static/storage/properties/download-150x150.jpg" width="90" alt="S. Korea’s Big Investors Flocking to Overseas Real Estate">
-                S. Korea’s Big Investors Flocking to Overseas Real Estate
-            </a>
-        </div>
-            <div class="mb-4 w-100 float-left lastestnews">
-            <a href="the-top-2020-handbag-trends-to-know.html" class="text-dark">
-                <img class="img-thumbnail float-left mr-2" data-src="https://worldluxproperties.org/storage/news/1-150x150.jpg" src="static/storage/news/1-150x150.jpg" width="90" alt="The Top 2020 Handbag Trends to Know">
-                The Top 2020 Handbag Trends to Know
-            </a>
-        </div>
+{% endfor %}
+           
+          
+            
     
         </div>
     </div>

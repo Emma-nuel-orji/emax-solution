@@ -415,7 +415,7 @@
                 src="{{url_for('static', filename='img/' + prop.image)}}"
                 alt="Passive House, Bratislava V Rusovce, Id: 0265">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="{{ url_for('posts.single_properties',prop_id=prop.id) }}" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -432,7 +432,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="37"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="{{ url_for('posts.single_properties',prop_id=prop.id) }}">
             <h5> {{ prop.name }}</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt">{{ prop.location }}</i> </p>
         </a>
@@ -465,7 +465,7 @@
                 src="static/storage/760xxsxm-410x270.webp"
                 alt="Family House Near Horský Park, Ba I – Old Town, Id: 0213">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -482,7 +482,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="36"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Family House Near Horský Park, Ba I – Old Town, Id: 0213</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> </p>
         </a>
@@ -509,7 +509,7 @@
                 src="static/storage/760x470xc-410x270.webp"
                 alt="Family Villa With Pool, Bratislava Ii Vrakuna Id: 0173">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -526,7 +526,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="35"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Family Villa With Pool, Bratislava Ii Vrakuna Id: 0173</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> </p>
         </a>
@@ -553,7 +553,7 @@
                 src="static/storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
                 alt="Nice Apartment for rent in Berlin">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -570,7 +570,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="17"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Nice Apartment for rent in Berlin</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
         </a>
@@ -600,7 +600,7 @@
                 src="storage/logo/741fcac9549437e9bb640884ece45885-uncropped-scaled-within-1536-1152-410x270.webp"
                 alt="Apartment Muiderstraatweg in Diemen">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -617,7 +617,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="16"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Apartment Muiderstraatweg in Diemen</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Bakersfield, California</p>
         </a>
@@ -647,7 +647,7 @@
                 src="static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
                 alt="2 Floor house in Compound Pejaten Barat Kemang">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -664,7 +664,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="15"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>2 Floor house in Compound Pejaten Barat Kemang</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
         </a>
@@ -694,7 +694,7 @@
                 src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
                 alt="5 room luxury penthouse for sale in Kuala Lumpur">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -711,7 +711,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="14"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>5 room luxury penthouse for sale in Kuala Lumpur</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Anaheim, California</p>
         </a>
@@ -741,7 +741,7 @@
                 src="static/storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
                 alt="Luxury Apartments in Singapore for Sale">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -758,7 +758,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="13"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Luxury Apartments in Singapore for Sale</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
         </a>
@@ -788,7 +788,7 @@
                 src="static/storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
                 alt="Elegant family home presents premium modern living">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -805,7 +805,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="12"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Elegant family home presents premium modern living</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
         </a>
@@ -835,7 +835,7 @@
                 src="static/storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
                 alt="Brand New 1 Bedroom Apartment In First Class Location">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -852,7 +852,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="11"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Brand New 1 Bedroom Apartment In First Class Location</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
         </a>
@@ -882,7 +882,7 @@
                 src="static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-410x270.jpg"
                 alt="Thompsons Road House for rent">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -899,7 +899,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="10"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Thompsons Road House for rent</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Bakersfield, California</p>
         </a>
@@ -929,7 +929,7 @@
                 src="static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
                 alt="Private Estate Magnificent Views">
         </div>
-        <a href="{{ url_for('posts.single_properties') }}" class="linkdetail"></a>
+        <a href="#" class="linkdetail"></a>
         <div class="media-count-wrapper">
             <div class="media-count">
                 <img src="static/themes/flex-home/images/media-count.svg" alt="media">
@@ -946,7 +946,7 @@
     <div class="description">
         <a href="#" class="text-orange heart add-to-wishlist" data-id="9"
             title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="{{ url_for('posts.single_properties') }}">
+        <a href="#">
             <h5>Private Estate Magnificent Views</h5>
             <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> San Francisco, California</p>
         </a>

@@ -10,12 +10,12 @@
         <div class="slidetop">
             <div class="owl-carousel" id="listcarousel">
                                     <div class="item">
-                        <img src="static/storage/3b27126f58b28bbb8c5d78de5f0ac61c.jpg"
+                        <img src="{{url_for('static', filename='img/' + prop.image)}}"
                             class="showfullimg"
                             rel="0"
-                            alt="3 Beds Villa Calpe, Alicante"
+                            alt="{{prop.name}}"
                             title="3 Beds Villa Calpe, Alicante"
-                            data-mfp-src="https://worldluxproperties.org/storage/3b27126f58b28bbb8c5d78de5f0ac61c.jpeg">
+                            data-mfp-src="{{url_for('static', filename='img/' + prop.image)}}">
                     </div>
                                     <div class="item">
                         <img src="static/storage/cdb6b1d9972b4f2d0b0d0567aab84f96.jpg"
@@ -114,7 +114,7 @@
     </div>
 
     <div class="container-fluid w90 padtop20">
-        <h1 class="titlehouse">3 Beds Villa Calpe, Alicante</h1>
+        <h1 class="titlehouse">{{prop.name}}</h1>
                     <p style="margin-bottom: 5px;"><span class="rating-star">
             <span class="rating-star-item" style="width: 72%"></span>
         </span>
@@ -125,14 +125,14 @@
                     class="d-inline-block"
                     style="margin-right: 10px"
                 >
-                    <i class="fas fa-map-marker-alt"></i> San Francisco, California
+                    <i class="fas fa-map-marker-alt"></i> {{prop.location}}
                 </span>
                                         <span
                     class="d-inline-block"
                     style="margin-right: 10px"
                 ><i class="fa fa-eye"></i> 8,580 views</span>
                         <span class="d-inline-block"><i class="fa fa-calendar-alt"></i>
-                Nov 17, 2019</span>
+                            {{ prop.date_created.strftime('%d-%m-%Y')}}</span>
         </p>
         <div class="d-none">
             <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -151,14 +151,14 @@
                     <meta itemprop="position" content="2" />
                 </li>
                                                 <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    3 Beds Villa Calpe, Alicante
+                    {{prop.name}}
                     <meta itemprop="name" content="3 Beds Villa Calpe, Alicante" />
                     <meta itemprop="position" content="3" />
                 </li>
                         </ul>
 
         </div>
-        <p class="pricehouse"> 16,602,250,000₫ <span class="label-success status-label">Selling</span></p>
+        <p class="pricehouse">₦ {{ prop.price }} <span class="label-success status-label">{{ prop.status}}</span></p>
         <div class="row">
             <div class="col-md-8">
                 
@@ -183,11 +183,11 @@
                                         </tr>
                                                                                                                 <tr>
                                             <td>Number of bedrooms</td>
-                                            <td><strong>3</strong></td>
+                                            <td><strong>{{ prop.bedroom }}</strong></td>
                                         </tr>
                                                                                                                 <tr>
                                             <td>Number of bathrooms</td>
-                                            <td><strong>3</strong></td>
+                                            <td><strong>{{ prop.bathroom }}</strong></td>
                                         </tr>
                                                                                                                 <tr>
                                             <td>Number of floors</td>
@@ -195,7 +195,7 @@
                                         </tr>
                                                                         <tr>
                                         <td>Price</td>
-                                        <td><strong>16,602,250,000₫</strong></td>
+                                        <td><strong>₦ {{ prop.price }}</strong></td>
                                     </tr>
                                                                         
                                 </table>
@@ -207,7 +207,7 @@
                         <div class="col-sm-12">
                             <h5 class="headifhouse">Description</h5>
                             <div class="ck-content">
-                                <p>This villa is equipped with all conveniences, where everything takes place on one living level. Three spacious bedrooms that all have direct access to the pool terrace and a spacious living room with an American kitchen with cooking island, from where you can walk onto the terrace through large glass sliding doors. Downstairs there is an indoor, double garage and laundry room with an internal staircase to the house. But you can also drive up to the front door by car. The terrace is spacious and there is an extra-long swimming pool, where you can swim laps well. Around there is a landscaped garden, which is also low in maintenance. Instead of gardening, there is more time left for wonderful enjoyment in and around this beautiful villa.</p>
+                                <p>{{prop.description}}</p>
                             </div>
                         </div>
                     </div>
@@ -342,125 +342,41 @@
                                                             </div>
                         </div>
                     </div>
-                    <br>
-                                                    <div class="row pb-3">
-                        <div class="col-sm-12">
-                            <h5 class="headifhouse">Project&#039;s information</h5>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="row item">
-                                <div class="col-md-4 col-sm-5 pr-sm-0">
-                                    <div class="img h-100 bg-light">
-                                        <a href="../projects/park.html">
-                                            <img
-                                                class="thumb lazy"
-                                                data-src="static/storage/images-35.jpg"
-                                                src="static/storage/images-35.jpg"
-                                                alt="The Avila Apartments"
-                                            >
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-sm-7 pt-2 pr-sm-0 bg-light">
-                                    <h5><a
-                                            class="font-weight-bold text-dark"
-                                            href="../projects/park.html"
-                                        >The Avila Apartments</a></h5>
-                                    <div>Within the historical peninsula, there is a very special area where you will never find a similar one. Unique sea view w...</div>
-                                    <p><a href="../projects/park.html">Read more</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
+                  
                                 <br>
                                     <div id="zxcvbnm">
     <h5 class="headifhouse">Location</h5>
-     <p class="d-print-none">Alicante, Spain</p>     <div class="traffic-map-container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div id="trafficMap" class="w-100 h-100 d-print-none"></div>
-            </div>
-        </div>
+     <p class="d-print-none">{{ prop.location }}</p>     <div class="traffic-map-container">
+       
     </div>
 </div>
 
 
-                    <div class="d-none d-print-block">
-                        <a
-                            class="text-decoration-none"
-                            href="https://maps.google.com/?ll=43.954366,-76.204832"
-                        >
-                            Alicante, Spain
-                        </a>
-                    </div>
+                    
                                 <br>
-                
-                
 
-                <br>
-                <div class="socials mb-3 pb-2 border-bottom w-100">
-    <span>Share this property:</span>
-    <ul>
-        <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldluxproperties.org%2Fproperties%2F3-beds-villa-calpe-alicante&amp;title=This%20villa%20is%20equipped%20with%20all%20conveniences,%20where%20everything%20takes%20place%20on%20one%20living%20level.%20Three%20spacious%20bedrooms%20that%20all%20have%20direct%20access%20to%20the%20pool%20terrace%20and%20a%20spacious%20living%20room%20with%20an%20American%20kitchen%20with%20cooking%20island,%20from%20where%20you%20can%20walk%20onto%20the%20terrace%20through%20large%20glass%20sliding%20doors." target="_blank" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fworldluxproperties.org%2Fproperties%2F3-beds-villa-calpe-alicante&amp;summary=This%20villa%20is%20equipped%20with%20all%20conveniences,%20where%20everything%20takes%20place%20on%20one%20living%20level.%20Three%20spacious%20bedrooms%20that%20all%20have%20direct%20access%20to%20the%20pool%20terrace%20and%20a%20spacious%20living%20room%20with%20an%20American%20kitchen%20with%20cooking%20island,%20from%20where%20you%20can%20walk%20onto%20the%20terrace%20through%20large%20glass%20sliding%20doors.&amp;source=Linkedin" title="Share on Linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </li>
-        <li>
-            <a href="../../twitter.com/intent/tweet6dad.html?url=https%3A%2F%2Fworldluxproperties.org%2Fproperties%2F3-beds-villa-calpe-alicante&amp;text=This%20villa%20is%20equipped%20with%20all%20conveniences,%20where%20everything%20takes%20place%20on%20one%20living%20level.%20Three%20spacious%20bedrooms%20that%20all%20have%20direct%20access%20to%20the%20pool%20terrace%20and%20a%20spacious%20living%20room%20with%20an%20American%20kitchen%20with%20cooking%20island,%20from%20where%20you%20can%20walk%20onto%20the%20terrace%20through%20large%20glass%20sliding%20doors." target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
-        </li>
-    </ul>
-</div>
+       
 
-                <div class="clearfix"></div>
-                <div class="facebook-comment">
-    <div class="fb-comments" data-href="https://worldluxproperties.org/properties/3-beds-villa-calpe-alicante" data-numposts="5" data-width="100%"></div>
-</div>
+        
 
 
                 
 
-                <br>
-                                    <div>
-        <h4>Write a review</h4>
-        <form action="https://worldluxproperties.org/ajax/review/3-beds-villa-calpe-alicante" method="post" class="space-y-3 review-form">
-            <input type="hidden" name="_token" value="b8XSHCUVfMLjsbVHhHFwOHXgMOZgN7sJxOa51c3C" autocomplete="off">            <input type="hidden" name="reviewable_type" value="Botble\RealEstate\Models\Property">
-            <div class="form-group">
-                <select name="star" id="select-star">
-                                            <option value="1" >1</option>
-                                            <option value="2" >2</option>
-                                            <option value="3" >3</option>
-                                            <option value="4" >4</option>
-                                            <option value="5" selected>5</option>
-                                    </select>
-            </div>
-            <div class="form-group">
-                <textarea name="content" id="content" class="form-control" placeholder="Enter your message" disabled></textarea>
-            </div>
-                            <p class="text-danger">Please log in to write review!</p>
-                        <button class="btn btn-primary" disabled>
-                Submit review
-            </button>
-        </form>
+               
+<div>
+       
+        
     </div>
     <br>
     <hr>
     <br>
     <div class="reviews-container">
                     <div class="row">
-                <div class="col-md-6">
-                    <h5><span class="reviews-count">5 Review(s)</span></h5>
-                </div>
-                <div class="col-md-6 text-right">
-                    <span class="rating-star">
-                <span class="rating-star-item" style="width: 72%"></span>
-            </span>
-            <span>3.6 out of 5</span>
-                        </div>
+               
+                
             </div>
-                <div class="loading-spinner"></div>
-        <div class="reviews-list space-y-7 reviews-list mt-10" data-url="https://worldluxproperties.org/ajax/review/3-beds-villa-calpe-alicante?reviewable_type=Botble\RealEstate\Models\Property" data-type="Botble\RealEstate\Models\Property"></div>
+          
     </div>
                             </div>
             <div class="col-md-4">
@@ -536,58 +452,7 @@
                 </div>
             </div>
         </div>
-        <br>
-        <div class="projecthome mb-2">
-            
-                            <h5 class="headifhouse">Related properties</h5>
-                <div class="row rowm10">
-                                            <div class="col-sm-6 col-lg-4 col-xl-3 colm10">
-                            <div class="item" data-lat="43.982274" data-long="-76.182356">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                alt="Villa for sale at Bermuda Dunes">
-        </div>
-        <a href="42460-buccaneer-court.html" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="../themes/flex-home/images/media-count.svg" alt="media">
-                <span>4</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Commercial property">Commercial property</span></li>
-            <li class="item-price"><span title="30,714,162,500₫">30,714,162,500₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="4"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="42460-buccaneer-court.html">
-            <h5>Villa for sale at Bermuda Dunes</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Alhambra, California</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="../themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">4</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="../themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">3</i></span>
-                                        <span title="Square"> <i><img
-                            src="../themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">480 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-                        </div>
+      
                                     </div>
                     </div>
     </div>

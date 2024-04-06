@@ -162,14 +162,16 @@ def single_product():
 #     return render_template("single_product.html", prod=prod)
 
 
-@posts.route('/single_project', methods=['GET', 'POST'])
-def single_project():
-    return render_template("single_project.html")
+@posts.route('/single_project/<int:proj_id>', methods=['GET', 'POST'])
+def single_project(proj_id):
+    proj = Project.query.get_or_404(proj_id)
+    return render_template("single_project.html", proj=proj)
 
 
-@posts.route('/single_properties', methods=['GET', 'POST'])
-def single_properties():
-    return render_template("single_properties.html")
+@posts.route('/single_properties/<int:prop_id>', methods=['GET', 'POST'])
+def single_properties(prop_id):
+    prop = Properties.query.get_or_404(prop_id)
+    return render_template("single_properties.html", prop=prop)
 
 
 @posts.route('/single_agent/<int:post_id>', methods=['GET', 'POST'])
@@ -177,7 +179,9 @@ def single_agent(post_id):
     post = Agent.query.get_or_404(post_id)
     return render_template("single_agent.html", post=post)
 
-@posts.route('/single_news', methods=['GET', 'POST'])
-def single_news():
-    return render_template("single_news.html")
+@posts.route('/single_news/<int:new_id>', methods=['GET', 'POST'])
+def single_news(new_id):
+    new = News.query.get_or_404(new_id)
+    news = News.query.all()
+    return render_template("single_news.html", new=new, news=news)
 
