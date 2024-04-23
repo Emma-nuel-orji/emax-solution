@@ -7,7 +7,7 @@ from app.models import User
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    username = StringField('Full Name', validators=[DataRequired(), Length(min=2, max=200)])
     phone = StringField('Phone Number', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -31,7 +31,14 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
-
+class UserForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=200)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Create Password', validators=[DataRequired()])
+    remember = BooleanField('By submitting, I accept emax terms of use.')
+    submit = SubmitField('Join Us Today')
+    
+    
 class UpdateAccountForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])

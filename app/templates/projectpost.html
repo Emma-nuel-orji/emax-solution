@@ -46,6 +46,62 @@
                 </div>
 
                 <div class="form-group">
+                    {{ form.type.label(class='form-control-label') }}
+                    {% if form.type.errors %}
+                        {{ form.type(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.type.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.type(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.blocks.label(class='form-control-label') }}
+                    {% if form.blocks.errors %}
+                        {{ form.blocks(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.blocks.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.blocks(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.floors.label(class='form-control-label') }}
+                    {% if form.floors.errors %}
+                        {{ form.floors(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.floors.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.floors(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.flats.label(class='form-control-label') }}
+                    {% if form.flats.errors %}
+                        {{ form.flats(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.flats.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.flats(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
                     {{ form.location.label(class='form-control-label') }}
                     {% if form.location.errors %}
                         {{ form.location(class='form-control form-control-lg is-invalid') }}

@@ -5,31 +5,95 @@
 
 <div id="app">
     <section class="main-homes">
-    <div
-        class="bgheadproject hidden-xs"
-        style="background: url('static/storage/general/breadcrumb-background.jpg')"
-    >
-        <div class="description">
-            <div class="container-fluid w90">
-                <h1 class="text-center">Agents</h1>
-                <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-                    <a href="{{ url_for('main.index') }}" itemprop="item" title="Home">
-                        Home
-                        <meta itemprop="name" content="Home" />
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                                                <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    Agents
-                    <meta itemprop="name" content="Agents" />
-                    <meta itemprop="position" content="2" />
-                </li>
-                        </ul>
+    
+        
 
+
+        <div id="app">
+            <div id="ismain-homes">
+            <div class="ck-content"><div><div
+            class="home_banner"
+            id="bannerSlider"
+            data-images="[]"
+            data-seconds="5"
+            data-slide="no"
+            style="background-image: url(static/storage/general/sky.jpg); transition: background 3s"
+        >
+        
+            <div class="topsearch">
+                        <form
+                    id="frmhomesearch"
+                     action="#/projects" data-ajax-url="#/projects"             method="GET"
+                >
+                    
+                    <div class="input-group input-group-lg">
+        
+                        <input
+                            id="txttypesearch"
+                            name="type"
+                            type="hidden"
+                             value="project"                 >
+        
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="far fa-search"></i></span>
+                        </div>
+                        <div class="keyword-input">
+                            <input
+                                class="form-control"
+                                id="txtkey"
+                                name="k"
+                                type="text"
+                                placeholder="Search by Name..."
+                                autocomplete="off"
+                            >
+                            <div class="spinner-icon">
+                                <i class="fas fa-spin fa-spinner"></i>
+                            </div>
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="far fa-location"></i></span>
+                        </div>
+                        <div
+                            class="location-input"
+                            data-url="ajax/cities.html"
+                        >
+                            <input
+                                name="city_id"
+                                type="hidden"
+                            >
+                            <input
+                                class="select-city-state form-control"
+                                name="location"
+                                value=""
+                                placeholder="City, State"
+                                autocomplete="off"
+                            >
+                            <div class="spinner-icon">
+                                <i class="fas fa-spin fa-spinner"></i>
+                            </div>
+                            <div class="suggestion">
+        
+                            </div>
+                        </div>
+                        <div class="input-group-append search-button-wrapper">
+                            <button
+                                class="btn btn-orange"
+                                type="submit"
+                            >Search</button>
+                        </div>
+        
+                        
+        
+                    </div>
+                    <div class="listsuggest">
+        
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
+        </div>
+
+
 
 
     <div class="container-fluid w90 padtop30">

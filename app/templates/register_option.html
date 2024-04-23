@@ -1,0 +1,152 @@
+{% extends "layout.html"%}
+
+{% block content%}
+
+
+<div id="app">
+    <section class="main-homes">
+    <div
+        class="bgheadproject hidden-xs"
+        style="background: url('static/storage/general/breadcrumb-background.jpg')"
+    >
+        <div class="description">
+            <div class="container-fluid w90">
+                <h2 class="text-center">I am signing up as...</h2>
+                <h6 class="text-center">Click to continue</h6>
+              
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid w90 padtop30 col-lg-10">
+        <div class="rowm10">
+                            <div  class="container-fluid">
+                    <div class="row rowm10 list-agency col-md-12">
+
+                        
+
+       
+                                                    <div class="col-lg-4 ">
+                                <div class="agents-grid">
+
+    <div class="agents-grid-wrap">
+
+        <div class="fr-grid-thumb">
+                            <a  href="{{ url_for('users.register') }}">
+                    <img src="../static/storage/accounts/agent.png"   class="img-fluid mx-auto" alt="Faye Sauer">
+                </a>
+                    </div>
+
+        <div class="fr-grid-detail">
+            <div class="fr-grid-detail-flex">
+                <h5 class="fr-can-name">
+                                            <a href="{{ url_for('users.register') }}">AGENT</a>
+                                    </h5>
+            </div>
+                           
+                    </div>
+
+    </div>
+
+    
+
+    <div class="fr-grid-footer">
+        <div class="fr-grid-footer-flex">
+            <span class="fr-position"><i class="fa fa-user"></i>&nbsp;</span>
+        </div>
+                    <div class="fr-grid-footer-flex-right">
+                <a href="{{ url_for('users.register') }}" class="prt-view" tabindex="0">Get Started</a>
+            </div>
+            </div>
+
+</div>
+
+                            </div>
+
+                            <div class="col-lg-4 ">
+                                <div class="agents-grid">
+
+    <div class="agents-grid-wrap">
+
+        <div class="fr-grid-thumb">
+                            <a  href="{{ url_for('users.register') }}">
+                    <img src="../static/storage/accounts/landlord.png"   class="img-fluid mx-auto" alt="Faye Sauer">
+                </a>
+                    </div>
+
+        <div class="fr-grid-detail">
+            <div class="fr-grid-detail-flex">
+                <h5 class="fr-can-name">
+                                            <a href="{{ url_for('users.register') }}">LANDLORD</a>
+                                    </h5>
+            </div>
+                           
+                    </div>
+
+    </div>
+
+    
+
+    <div class="fr-grid-footer">
+        <div class="fr-grid-footer-flex">
+            <span class="fr-position"><i class="fa fa-user"></i>&nbsp;</span>
+        </div>
+                    <div class="fr-grid-footer-flex-right">
+                <a href="{{ url_for('users.register') }}" class="prt-view" tabindex="0">Get Started</a>
+            </div>
+            </div>
+
+</div>
+
+                            </div>
+                                                    <div class="col-lg-4 ">
+                                <div class="agents-grid">
+
+    <div class="agents-grid-wrap">
+
+        <div class="fr-grid-thumb">
+                            <a href="{{ url_for('users.register_user') }}">
+                    <img src="../static/storage/accounts/user.png" class="img-fluid mx-auto" alt="Ismael Walter">
+                </a>
+                    </div>
+
+        <div class="fr-grid-detail">
+            <div class="fr-grid-detail-flex">
+                <h5 class="fr-can-name">
+                                            <a href="{{ url_for('users.register_user') }}">USER</a>
+                                    </h5>
+            </div>
+                           
+                    </div>
+
+    </div>
+
+   
+
+    <div class="fr-grid-footer">
+        <div class="fr-grid-footer-flex">
+            <span class="fr-position"><i class="fa fa-users"></i>&nbsp;</span>
+        </div>
+                    <div class="fr-grid-footer-flex-right">
+                <a href="{{ url_for('users.register_user') }}" class="prt-view" tabindex="0">Get Started</a>
+            </div>
+            </div>
+
+</div>
+
+                            </div>
+                                                    
+                        
+                                            </div>
+                </div>
+                    </div>
+    </div>
+</section>
+<br>
+<br>
+
+</div>
+
+
+{% endblock content%}

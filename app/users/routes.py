@@ -1,9 +1,9 @@
 from flask import render_template, url_for, flash, redirect, request, abort, Blueprint, session
 from app import db, bcrypt
-from app.models import User
+from app.models import User, Userreg
 from flask_login import login_user, current_user, logout_user, login_required
 from app.users.utils import save_picture, send_password_reset_email
-from app.users.forms import LoginForm, RegistrationForm, UpdateAccountForm, ResetPasswordForm, RequestResetForm
+from app.users.forms import LoginForm, RegistrationForm, UpdateAccountForm, ResetPasswordForm, RequestResetForm, UserForm
 
 users = Blueprint('users', __name__)
 
@@ -23,6 +23,31 @@ def register():
     return render_template("register.html", title='Register', form=form)
 
 
+@users.route('/register_option', methods=['GET', 'POST'])
+def register_option():
+    return render_template("register_option.html")
+
+
+@users.route('/register_user', methods=['GET', 'POST'])
+def register_user():
+  
+    form = UserForm()
+    if form.validate_on_submit():
+        
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+       
+        
+        use = Userreg(email=email, password=password, username=username)
+        db.session.add(use)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('posts.adminproject'))
+    
+    return render_template("register_user.html", form=form)
+
+
 @users.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -33,10 +58,10 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
-            flash('You have logged in successfully.', 'success')
+            flash('Welcome to emax-solution.', 'success')
             return redirect(next_page) if next_page else redirect(url_for('main.index'))
         else:
-            flash('login unsuccessful.please check your Email and password', 'danger')
+            flash('registartion unsuccessful.please check your Email and password', 'danger')
     return render_template('login.html', form=form)
 
 

@@ -66,11 +66,17 @@ def projectpost():
             image = picture_file
         name = form.name.data
         status = form.status.data
+        type = form.type.data
+        
+        blocks = form.blocks.data
+        floors = form.floors.data
+        flats = form.flats.data
+        
         description = form.description.data
         location = form.location.data
         
         author = current_user
-        proj = Project(name=name, status=status, author=author, description=description, location=location, image=image)
+        proj = Project(name=name, status=status, author=author, description=description, location=location, image=image, blocks=blocks, floors=floors, flats=flats, type=type)
         db.session.add(proj)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -90,8 +96,12 @@ def propertiespost():
         if form.image.data:
             picture_file = save_picture(form.image.data)
             image = picture_file
+            
+        if form.pic.data:
+            picture_file = save_picture(form.pic.data)
+            pic = picture_file
         name = form.name.data
-        price = form.price.data
+        
         location = form.location.data
         status = form.status.data
         square = form.square.data
@@ -100,9 +110,14 @@ def propertiespost():
         floors = form.floors.data
         price = form.price.data
         description = form.description.data
+        type = form.type.data
+        
+        fullname = form.fullname.data
+        phone = form.phone.data
+        email = form.email.data
         
         author = current_user
-        prop = Properties(name=name, price=price, author=author, location=location, status=status, square=square, bedroom=bedroom, bathroom=bathroom, floors=floors, description=description, image=image)
+        prop = Properties(name=name, type=type, price=price, author=author, location=location, status=status, square=square, bedroom=bedroom, bathroom=bathroom, floors=floors, description=description, image=image, fullname=fullname, phone=phone, email=email, pic=pic)
         db.session.add(prop)
         db.session.commit()
         flash('Your post has been created!', 'success')

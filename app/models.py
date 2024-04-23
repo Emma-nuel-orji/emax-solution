@@ -53,6 +53,18 @@ class Payment(db.Model):
         return f"Payment('{self.image}')"
 
 
+
+class Userreg(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False, )
+    
+    def __repr__(self):
+        return f"Userreg('{self.username}','{self.email}','{self.password}')"
+
+
+
 class Product(db.Model):
     __searchable__ = ['name', 'desc']
     id = db.Column(db.Integer, primary_key=True)
@@ -92,6 +104,7 @@ class Properties(db.Model):
     price = db.Column(db.String(200), nullable=False)
     location = db.Column(db.String(2000), unique=True, nullable=False)
     status = db.Column(db.String(6000), nullable=False)
+    # type = db.Column(db.String(6000), nullable=False)
     square = db.Column(db.String(2000), nullable=False)
     bedroom = db.Column(db.String(2000), nullable=False)
     bathroom = db.Column(db.String(2000), nullable=False)
@@ -106,9 +119,15 @@ class Properties(db.Model):
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    image = db.Column(db.String(20), nullable=False, default='default.jpg.png')
+    image = db.Column(db.String(200), nullable=False, default='default.jpg.png')
     name = db.Column(db.String(20000), nullable=False)
     status = db.Column(db.String(200), unique=True, nullable=False)
+    
+    # type = db.Column(db.String(200), nullable=False)
+    # blocks = db.Column(db.String(2000), nullable=False)
+    # flats = db.Column(db.String(2000), nullable=False)
+    # floors = db.Column(db.String(2000), nullable=False)
+    
     location = db.Column(db.String(2000), nullable=False)
     description = db.Column(db.Text, nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)

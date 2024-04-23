@@ -23,12 +23,12 @@
     <title>Emax-luxury-Homes</title>
 <meta name="description" content="Find your favorite homes at Flex Home">
 <link rel="canonical" href="{{ url_for('main.index') }}">
-<meta property="og:site_name" content="Worldlup">
-<meta property="og:title" content="Worldlup">
+<meta property="og:site_name" content="Emax-Solution">
+<meta property="og:title" content="Emax-Solution">
 <meta property="og:description" content="Find your favorite homes at Flex Home">
-<meta property="og:url" content="https://worldluxproperties.org">
+
 <meta property="og:type" content="article">
-<meta name="twitter:title" content="Worldlup">
+<meta name="twitter:title" content="Emax-Solution">
 <meta name="twitter:description" content="Find your favorite homes at Flex Home">
 
     <link
@@ -43,8 +43,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Worldlup",
-  "url": "https://worldluxproperties.org"
+  "name": "Emax-solution",
+  "url": "https://emax-solution.com"
 }
 </script>
 
@@ -73,7 +73,7 @@
 <script src="../static/themes/flex-home/libraries/jquery.matchHeight-min.js"></script>
 <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/worldluxproperties.org"},{"@type":"ListItem","position":2,"name":"Home","item":"https:\/\/worldluxproperties.org"}]}</script>
 
-<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","name":"Worldlup","url":"https:\/\/worldluxproperties.org","logo":{"@type":"ImageObject","url":"https:\/\/worldluxproperties.org\/storage\/logo\/world-luxury-2.png"}}</script><link type="application/atom+xml" rel="alternate" title="Properties feed" href="feed/properties">
+
 
 <link type="application/atom+xml" rel="alternate" title="Properties feed" href="static/feed/properties">
 <link
@@ -119,8 +119,10 @@
                                                                                                         <a href="cdn-cgi/l/email-protection.html#f98a98959cb99b968d9b959cd79a9694" dir="ltr"><span class="__cf_email__" >info@emax-solution.com</span></a>
                                             </div>
                     <div class="topbar-right">
-                                                                                    <ul class="topbar-items">
-                                    <li><a href="wishlist.html"><i class="fas fa-heart"></i>&nbsp;Wishlist(<span class="wishlist-count">0</span>)</a></li>
+                                    <ul class="topbar-items">
+                                       {% if current_user.is_authenticated or current_user.email == 'orjiobiajulum@yahoo.com' %}
+                                    <li><a href="{{ url_for('posts.adminagent') }}"><i class="fas fa-users"></i>&nbsp;Agents Profile</a></li>
+                                    {% endif %}
                                 </ul>
                             
                                                                                         <div class="language currency-switcher">
@@ -177,7 +179,7 @@
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                                                     <a class="navbar-brand" href="{{ url_for('main.index') }}">
-                                <img src="../static/storage/logo/2.png"
+                                <img src="../static/storage/logo/emax-main-logo1.jpg"
                                      class="logo" height="65" alt="">
                             </a>
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -228,7 +230,7 @@
            </li>
     </ul>
 
-                                     {% if current_user.email == 'orjiobiajulum@yahoo.com' %}
+                                     {% if current_user.is_authenticated or current_user.email == 'orjiobiajulum@yahoo.com' %}
                                             <a class="btn btn-primary add-property" href="{{url_for('admin.admin1')}}">
                                             <i class="fas fa-plus-circle"></i> Add Property
                                         </a>
@@ -237,9 +239,11 @@
                                     <div class="d-sm-none">
                                         <div>
                                            <ul class="topbar-items d-block">
+                                            {% if current_user.is_authenticated or current_user.email == 'orjiobiajulum@yahoo.com' %}
                                                         <li class="login-item">
-                                                            <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist(<span class="wishlist-count">0</span>)</a>
+                                                            <a href="wishlist.html"><i class="fas fa-heart"></i> Edit Your Profile(<span class="wishlist-count">0</span>)</a>
                                                         </li>
+                                                        {% endif %}
                                                     </ul>
                                                 
                                                        <div class="language">
@@ -322,12 +326,22 @@
             <div class="col-sm-3">
                                     <p>
                         <a href="{{ url_for('main.index') }}">
-                            <img src="static/storage/logo/2.png" style="max-height: 48px" alt="">
+                            <img src="static/storage/logo/emax-main-logo1.jpg" style="max-height: 48px" alt="">
                         </a>
                     </p>
-                                                    <p><i class="fas fa-map-marker-alt"></i> &nbsp;4th Floor, Mukhtar El Yakub Building Zakariyya Maimalari Street, Central Business District Abuja. FCT 900211 Nigeria</p>
-                                                    <p><i class="fas fa-phone-square"></i>&nbsp;<span class="d-inline-block">Hotline: </span>&nbsp;<a href="tel:+234 8118 006 268" dir="ltr">+234 8180 062 968</a></p>
-                                                    <p><i class="fas fa-envelope"></i>&nbsp;<span class="d-inline-block">Email: </span>&nbsp;<a href="" dir="ltr"><span>info@emax-solution.com</span></a></p>
+                                                    
+
+                                                    <p><i class="fas fa-phone-square"></i>&nbsp;<span class="d-inline-block">Hotline: </span>&nbsp;<a href="tel:+234 8118 006 268" dir="ltr">+234 803 727 5412</a></p>
+                                                    <p><i class="fas fa-envelope"></i>&nbsp;
+                                                        <span class="d-inline-block">Email: </span>&nbsp;
+                                                        <a href="mailto:info@emax-solution.com" dir="ltr"><span>info@emax-solution.com</span></a>
+                                                    </p>
+                                                    <p><i class="fas fa-envelope"></i>&nbsp;
+                                                       
+                                                        <a href="mailto:support@emax-solution.com" dir="ltr"><span>support@emax-solution.com</span></a>
+                                                    </p>
+
+                                                    <p><i class="fas fa-map-marker-alt"></i> &nbsp;No. 39 Chime Avenue New Haven, Enugu.</p>
                             </div>
             <div class="col-sm-9 padtop10">
                 <div class="row">
@@ -498,7 +512,7 @@
 
 <div class="action_footer">
     <a href="#" class="cd-top" ><i class="fas fa-arrow-up"></i></a>
-            <a href="tel:18006268" class="text-white" style="font-size: 17px;"><i class="fas fa-phone"></i> <span>  &nbsp;+234 8180 062 168</span></a>
+            <a href="tel:08037275412" class="text-white" style="font-size: 17px;"><i class="fas fa-phone"></i> <span>  &nbsp;+234 8037 275 412</span></a>
     </div>
 
     <script src="../static/themes/flex-home/libraries/jquery.waypoints.min.js"></script>
