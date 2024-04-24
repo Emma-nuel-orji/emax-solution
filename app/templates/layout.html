@@ -11,14 +11,23 @@
 
         <link href="static/fonts.googleapis.com/css27261.css?family=Nunito+Sans:wght@300;600;700;800&amp;display=swap" rel="stylesheet" type="text/css">
 
-    <style>
+        <style>
+			:root {
+				--primary-color: #000000;
+				--primary-color-rgb: rgba(16, 14, 14, 0.8);
+				--primary-color-hover: #063A5D;
+				--primary-font: 'Nunito Sans';
+			}
+		</style>
+
+    <!--<style>
         :root {
             --primary-color: #6F1D22;
             --primary-color-rgb: rgba(111,29,34, 0.8);
             --primary-color-hover: #063A5D;
             --primary-font: 'Nunito Sans';
         }
-    </style>
+    </style>-->
 
     <title>Emax-luxury-Homes</title>
 <meta name="description" content="Find your favorite homes at Flex Home">
@@ -48,6 +57,10 @@
 }
 </script>
 
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
 <script src="https://unpkg.com/htmx.org@1.9.4"></script>
 
@@ -326,12 +339,15 @@
             <div class="col-sm-3">
                                     <p>
                         <a href="{{ url_for('main.index') }}">
-                            <img src="static/storage/logo/emax-main-logo1.jpg" style="max-height: 48px" alt="">
+                            <img src="../static/storage/logo/emax-main-logo1.jpg" style="max-height: 48px" alt="">
                         </a>
                     </p>
                                                     
 
+                                                    <p><span class="d-inline-block"></span> <a style='font-family: "Sofia", sans-serif;' >Empower future and building legacies</a></p>
+
                                                     <p><i class="fas fa-phone-square"></i>&nbsp;<span class="d-inline-block">Hotline: </span>&nbsp;<a href="tel:+234 8118 006 268" dir="ltr">+234 803 727 5412</a></p>
+
                                                     <p><i class="fas fa-envelope"></i>&nbsp;
                                                         <span class="d-inline-block">Email: </span>&nbsp;
                                                         <a href="mailto:info@emax-solution.com" dir="ltr"><span>info@emax-solution.com</span></a>
@@ -465,13 +481,23 @@
                                 <span>Our Properties</span>
             </a>
                     </li>
-            <li
-            >
+            <li>
             <a
                 href="{{ url_for('main.news') }}"
                 title="Building materials"
                             >
                                 <span>Building materials</span>
+            </a>
+                    </li>
+                    <hr>
+                    <hr>
+                    
+                    <li>
+            <a
+                href="#"
+                title="Building materials"
+                            >
+                                <h3 class="font-effect-neon" style='font-family: "Sofia", sans-serif;' >Empower future and building legacies</h3 class="font-effect-neon">
             </a>
                     </li>
     </ul>
