@@ -2,7 +2,7 @@ import secrets
 from app.models import Product, Payment, News, Agent, Project, Properties
 from flask import render_template, url_for, flash, redirect, request, abort, Blueprint, session
 from app import db, mail
-from app.forms import ContactForm, PaymentForm
+from app.forms import ContactForm, PaymentForm, SearchPropForm, SearchAgentForm, SearchProjForm
 from app.models import User
 from flask_login import current_user, login_required
 from flask_mail import Message
@@ -14,7 +14,8 @@ main = Blueprint('main', __name__)
 @main.route('/', methods=['GET', 'POST'])
 def index():
     product = Product.query.all()
-    return render_template("index.html", product=product)
+    form = SearchPropForm()
+    return render_template("index.html", product=product, form=form)
 
 
 @main.route('/about', methods=['GET', 'POST'])
@@ -37,7 +38,9 @@ def properties():
 @main.route('/agents', methods=['GET', 'POST'])
 def agents():
     agent = Agent.query.all()
-    return render_template("agents.html", agent=agent)
+    form = SearchAgentForm()
+    return render_template("agents.html", agent=agent, form=form)
+
 
 
 @main.route('/news', methods=['GET', 'POST'])
@@ -75,7 +78,7 @@ def contact():
     form = ContactForm()
     if form.validate_on_submit():
         msg = Message(f'New Message from {form.name.data}', sender=f'{user.email}',
-                      recipients=['eorji452@gmail.com'])
+                      recipients=['support@emax-solution.com'])
         msg.body = f"""
            Name :  {form.name.data}
 
@@ -201,16 +204,60 @@ def thanks():
 
 
 
-@main.route("/search")
-def search():
-    q = request.args.get("q")
-    print(q)
 
-    if q:
-        results = Product.query.filter(Product.title.icontains(q) | Product.performer.icontains(q)) \
-        .order_by(Product.peak_position.asc()).order_by(Product.chart_debut.desc()).limit(100).all()
-    else:
-        results = []
+# search button goes here
 
-    return render_template("search_results.html", results=results)
+@main.context_processor
+def layout():
+	form = SearchPropForm()
+	return dict(form=form)
 
+ 
+@main.route('/searchprop', methods=["POST"])
+def searchprop():
+	form = SearchPropForm()
+	prop = Properties.query
+
+	if form.validate_on_submit():
+		# Get data from submitted form
+		post.searched = form.searched.data
+		# Query the Database
+		prop = prop.filter(Properties.name.like('%' + post.searched + '%'))
+		prop = prop.order_by(Properties.location).all()
+
+		return render_template("searchprop.html",
+		 form=form,
+		 searched = post.searched,
+		 prop = prop)
+
+
+
+@main.route('/posts/<int:id>')
+def post(id):
+	prop = Properties.query.get_or_404(id)
+	return render_template('users.html', prop=prop)
+
+
+@main.route('/searchproj', methods=["POST"])
+def searchproj():
+	form = SearchProjForm()
+	proj = Project.query
+
+	if form.validate_on_submit():
+		# Get data from submitted form
+		posts.searched = form.searched.data
+		# Query the Database
+		proj = proj.filter(Project.name.like('%' + posts.searched + '%'))
+		proj = proj.order_by(Project.location).all()
+
+		return render_template("searchproj.html",
+		 form=form,
+		 searched = posts.searched,
+		 proj = proj)
+
+
+
+@main.route('/posts/<int:id>')
+def posts(id):
+	proj = Project.query.get_or_404(id)
+	return render_template('users.html', proj=proj)

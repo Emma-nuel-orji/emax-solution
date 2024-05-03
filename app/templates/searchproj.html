@@ -1,0 +1,98 @@
+
+{% extends "layout.html"%}
+
+{% block content%}
+
+
+<div id="app">
+    <div id="ismain-homes">
+        <div class="ck-content"><div><section class="main-homes">
+    <div
+        class="bgheadproject hidden-xs"
+        style="background: url('static/storage/general/breadcrumb-background.jpg')"
+    >
+        <div class="description">
+            <div class="container-fluid w90">
+                <h1 class="text-center">You Searched For: {{ searched }}</h1>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid w90 padtop30">
+        <div class="projecthome">
+        
+          
+            <h5 class="headifhouse">Searched Results</h5>
+
+                <div class="row rowm10">
+                    <div class="col-md-12">
+                  
+                        <div class="data-listing mt-2">
+          
+
+<input type="hidden" name="page" data-value="1">
+    <div class="row">
+
+        <!--here-->
+        {% if proj%}
+    {% for proj in proj %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
+                <div class="item">
+                <div class="blii">
+                    <div class="img"><img class="thumb" data-src="{{url_for('static', filename='img/' + proj.image)}}" src="{{url_for('static', filename='img/' + proj.image)}}" alt="The Avila Apartments">
+                    </div>
+                    <a href="{{ url_for('posts.single_project',proj_id=proj.id) }}" class="linkdetail"></a>
+                    <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>{{ proj.status }}</span></li></ul>
+                </div>
+            
+                <div class="description">
+                    <a href="{{ url_for('posts.single_project',proj_id=proj.id) }}"><h5>{{ proj.name }}</h5>
+                        <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> {{ proj.location }}</p>
+                    </a>
+                </div>
+            </div>
+            </div>
+      {% endfor %}
+   <!--ends here-->
+   {% else %}
+   <h2>Sorry, your search term: <strong> {{ searched }}, </strong> was not found...</h2>
+   {% endif %}
+  
+                   
+            </div>
+
+                        </div>
+                    </div>
+                </div>
+        
+        </div>
+    </div>
+</section>
+<br>
+<div class="col-sm-12">
+    <nav
+        class="d-flex justify-content-center pt-3"
+        aria-label="Page navigation example"
+    >
+        
+    </nav>
+</div>
+<br>
+<br>
+</div></div>
+
+    </div>
+</div>
+
+
+
+{% endblock content%}
+
+
+
+
+
+
+
+
+

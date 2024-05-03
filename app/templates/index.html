@@ -17,40 +17,17 @@
 >
 
     <div class="topsearch">
-                <form
-            id="frmhomesearch"
-             action="#/projects" data-ajax-url="#/projects"             method="GET"
-        >
-            <div
-                class="typesearch"
-                id="hometypesearch"
-            >
-                                    <a
-                        data-url="#/projects"
-                        data-ajax-url="#/projects"
-                        href="javascript:void(0)"
-                         class="active"                         rel="project"
-                    >Projects</a>
-                                <a
-                    data-url="properties.html"
-                    data-ajax-url="properties.html"
-                    href="javascript:void(0)"
-                    rel="sale"
-                                    >Sale</a>
-                <a
-                    data-url="properties.html"
-                    data-ajax-url="properties.html"
-                    href="javascript:void(0)"
-                    rel="rent"
-                                    >Rent</a>
+        
+          
+                <form id="frmhomesearch" action="{{ url_for('main.searchprop')}}" data-ajax-url="{{ url_for('main.searchprop')}}" method="POST">
+                    {{ form.hidden_tag() }}
+            <div class="typesearch" id="hometypesearch">
+            <a class="active" rel="project">Projects</a>
+                <a rel="sale">Sale</a>
+                <a href="javascript:void(0)" rel="rent">Rent</a>
             </div>
-            <div class="input-group input-group-lg">
 
-                <input
-                    id="txttypesearch"
-                    name="type"
-                    type="hidden"
-                     value="project"                 >
+            <div class="input-group input-group-lg">
 
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-search"></i></span>
@@ -58,8 +35,8 @@
                 <div class="keyword-input">
                     <input
                         class="form-control"
-                        id="txtkey"
-                        name="k"
+                      
+                        name="searched"
                         type="text"
                         placeholder="Enter keyword..."
                         autocomplete="off"
@@ -68,22 +45,23 @@
                         <i class="fas fa-spin fa-spinner"></i>
                     </div>
                 </div>
-                <div class="input-group-prepend">
+                <!--<div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-location"></i></span>
-                </div>
+                </div>-->
                 <div
                     class="location-input"
                     data-url="ajax/cities.html"
                 >
                     <input
-                        name="city_id"
+                        name="search"
                         type="hidden"
                     >
                     <input
                         class="select-city-state form-control"
-                        name="location"
+                        name="search"
                         value=""
                         placeholder="City, State"
+                        type="hidden"
                         autocomplete="off"
                     >
                     <div class="spinner-icon">
@@ -94,144 +72,40 @@
                     </div>
                 </div>
                 <div class="input-group-append search-button-wrapper">
-                    <button
-                        class="btn btn-orange"
-                        type="submit"
-                    >Search</button>
+                    <button class="btn btn-orange" type="submit">Search</button>
                 </div>
 
                 <div class="advanced-search">
-    <a href="#" class="advanced-search-toggler">Advanced <i class="fas fa-caret-down"></i></a>
-    <div class="advanced-search-content property-advanced-search">
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-3 px-md-1">
-                    <div class="form-group project-filter-input" style="position: relative;">
-    <input type="hidden" name="project_id">
-    <label for="filter-by-project" class="control-label">Project</label>
-    <div style="position: relative;">
-        <div class="input-has-icon">
-            <input class="form-control" id="filter-by-project"
-                   data-url="https://worldluxproperties.org/ajax/projects-filter" value="" placeholder="Project"
-                   autocomplete="off">
-        </div>
-        <div class="spinner-icon">
-            <i class="fas fa-spin fa-spinner"></i>
-        </div>
-        <div class="suggestion">
-
-        </div>
-    </div>
-</div>
-
-                </div>
-                <div class="col-sm-3 px-md-1">
+                <!--<a href="#" class="advanced-search-toggler">Advanced <i class="fas fa-caret-down"></i></a>-->
+                <div class="advanced-search-content property-advanced-search">
                     <div class="form-group">
-    <label for="select-category" class="control-label">Category</label>
-    <div class="select--arrow">
-        <select name="category_id" id="select-category" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" > Apartment</option>
-                            <option value="2" > Villa</option>
-                            <option value="3" > Condo</option>
-                            <option value="4" > House</option>
-                            <option value="5" > Land</option>
-                            <option value="6" > Commercial property</option>
-                    </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
+                        <div class="row">
+                            <div class="col-sm-3 px-md-1">
+                                <div class="form-group project-filter-input" style="position: relative;">
+                <input type="hidden" name="project_id">
+                <label for="filter-by-project" class="control-label">Project</label>
+                <div style="position: relative;">
+                    <div class="input-has-icon">
+                        <input class="form-control" id="filter-by-project"
+                               data-url="https://worldluxproperties.org/ajax/projects-filter" value="" placeholder="Project"
+                               autocomplete="off" type="hidden">
+                    </div>
+                    <div class="spinner-icon">
+                        <i class="fas fa-spin fa-spinner"></i>
+                    </div>
+                    <div class="suggestion">
+
+                    </div>
+                </div>
 </div>
 
                 </div>
-                <div class="col-sm-3 px-md-1">
-    <label for="min_price" class="control-label">Price from ($)</label>
-    <input type="number" name="min_price" class="form-control min-input" id="min_price"
-           value="" placeholder="From" min="0" step="1">
-</div>
-<div class="col-sm-3 px-md-1">
-    <label for="max_price" class="control-label">Price to ($)</label>
-    <input type="number" name="max_price" class="form-control max-input" id="max_price"
-           value="" placeholder="To" min="0" step="1">
-</div>
+                
+               
 
             </div>
 
-            <div class="row">
-                <div class="col-md-4 col-sm-6 px-md-1">
-                    <div class="form-group">
-    <label for="select-bedroom" class="control-label">Bedrooms</label>
-    <div class="select--arrow">
-        <select name="bedroom" id="select-bedroom" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" >
-                    1 room
-                </option>
-                            <option value="2" >
-                    2 rooms
-                </option>
-                            <option value="3" >
-                    3 rooms
-                </option>
-                            <option value="4" >
-                    4 rooms
-                </option>
-                        <option value="5" >5+ rooms</option>
-        </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
-
-                </div>
-                <div class="col-md-4 col-sm-6 px-md-1">
-                    <div class="form-group">
-    <label for="select-bathroom" class="control-label">Bathrooms</label>
-    <div class="select--arrow">
-        <select name="bathroom" id="select-bathroom" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" >
-                    1 room
-                </option>
-                            <option value="2" >
-                    2 rooms
-                </option>
-                            <option value="3" >
-                    3 rooms
-                </option>
-                            <option value="4" >
-                    4 rooms
-                </option>
-                        <option value="5" >5+ rooms</option>
-        </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
-                </div>
-                <div class="col-md-4 col-sm-6 px-md-1">
-                    <div class="form-group">
-    <label for="select-floor" class="control-label">Floors</label>
-    <div class="select--arrow">
-        <select name="floor" id="select-floor" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" >
-                    1 floor
-                </option>
-                            <option value="2" >
-                    2 floors
-                </option>
-                            <option value="3" >
-                    3 floors
-                </option>
-                            <option value="4" >
-                    4 floors
-                </option>
-                        <option value="5" >5+ floors</option>
-        </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
-
-                </div>
-            </div>
+           
         </div>
     </div>
 
@@ -240,30 +114,19 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-    <label for="select-category" class="control-label">Category</label>
-    <div class="select--arrow">
-        <select name="category_id" id="select-category" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" > Apartment</option>
-                            <option value="2" > Villa</option>
-                            <option value="3" > Condo</option>
-                            <option value="4" > House</option>
-                            <option value="5" > Land</option>
-                            <option value="6" > Commercial property</option>
-                    </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
+    <label for="select-category" class="control-label"> </label>
+
 </div>
 
                     </div>
                     <div class="col-sm-3 px-md-1">
     <label for="min_price" class="control-label">Price from ($)</label>
-    <input type="number" name="min_price" class="form-control min-input" id="min_price"
+    <input type="hidden" name="min_price" class="form-control min-input" id="min_price"
            value="" placeholder="From" min="0" step="1">
 </div>
 <div class="col-sm-3 px-md-1">
     <label for="max_price" class="control-label">Price to ($)</label>
-    <input type="number" name="max_price" class="form-control max-input" id="max_price"
+    <input type="hidden" name="max_price" class="form-control max-input" id="max_price"
            value="" placeholder="To" min="0" step="1">
 </div>
 

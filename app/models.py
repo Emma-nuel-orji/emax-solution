@@ -100,33 +100,51 @@ class Properties(db.Model):
     __searchable__ = ['name', 'description']
     id = db.Column(db.Integer, primary_key=True)
     image = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    
+    image2 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image3 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image4 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image5 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    
     name = db.Column(db.String(20000), nullable=False)
     price = db.Column(db.String(200), nullable=False)
     location = db.Column(db.String(2000), unique=True, nullable=False)
     status = db.Column(db.String(6000), nullable=False)
-    # type = db.Column(db.String(6000), nullable=False)
+    type = db.Column(db.String(6000), nullable=False)
     square = db.Column(db.String(2000), nullable=False)
     bedroom = db.Column(db.String(2000), nullable=False)
     bathroom = db.Column(db.String(2000), nullable=False)
     floors = db.Column(db.String(2000), nullable=False)
     description = db.Column(db.Text, nullable=False)
+    
+    pic = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    fullname = db.Column(db.String(20000), nullable=False)
+    phone = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    
+    
     date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     
     def __repr__(self):
-        return f"Properties('{self.name}','{self.price}','{self.location}','{self.status}','{self.square}','{self.bedroom}','{self.bathroom}','{self.floors}','{self.description}','{self.date_created}','{self.image}')"
+        return f"Properties('{self.name}','{self.price}','{self.pic}','{self.fullname}','{self.phone}','{self.email}','{self.location}','{self.status}','{self.square}','{self.bedroom}','{self.bathroom}','{self.floors}','{self.description}','{self.date_created}','{self.image}')"
 
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image2 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image3 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image4 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    image5 = db.Column(db.String(200), nullable=False, default='default.jpg.png')
+    
     name = db.Column(db.String(20000), nullable=False)
     status = db.Column(db.String(200), unique=True, nullable=False)
     
-    # type = db.Column(db.String(200), nullable=False)
-    # blocks = db.Column(db.String(2000), nullable=False)
-    # flats = db.Column(db.String(2000), nullable=False)
-    # floors = db.Column(db.String(2000), nullable=False)
+    type = db.Column(db.String(200), nullable=False)
+    blocks = db.Column(db.String(2000), nullable=False)
+    flats = db.Column(db.String(2000), nullable=False)
+    floors = db.Column(db.String(2000), nullable=False)
     
     location = db.Column(db.String(2000), nullable=False)
     description = db.Column(db.Text, nullable=False)

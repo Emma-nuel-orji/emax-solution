@@ -9,7 +9,7 @@ from config import mail_username, mail_password
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SECRET_KEY'] = '493d18cba56d77f3b1a10af73e21af17'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Emmanuel.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Emax.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/img'
 app.config['UPLOADED_PHOTO_DEST'] = os.path.join(basedir, 'static/img')

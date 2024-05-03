@@ -21,66 +21,57 @@
         >
         
             <div class="topsearch">
-                        <form
-                    id="frmhomesearch"
-                     action="#/projects" data-ajax-url="#/projects"             method="GET"
-                >
-                    
-                    <div class="input-group input-group-lg">
-        
-                        <input
-                            id="txttypesearch"
-                            name="type"
-                            type="hidden"
-                             value="project"                 >
-        
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="far fa-search"></i></span>
-                        </div>
-                        <div class="keyword-input">
-                            <input
-                                class="form-control"
-                                id="txtkey"
-                                name="k"
-                                type="text"
-                                placeholder="Search by Name..."
-                                autocomplete="off"
-                            >
-                            <div class="spinner-icon">
-                                <i class="fas fa-spin fa-spinner"></i>
-                            </div>
-                        </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="far fa-location"></i></span>
-                        </div>
-                        <div
-                            class="location-input"
-                            data-url="ajax/cities.html"
-                        >
-                            <input
-                                name="city_id"
-                                type="hidden"
-                            >
-                            <input
-                                class="select-city-state form-control"
-                                name="location"
-                                value=""
-                                placeholder="City, State"
-                                autocomplete="off"
-                            >
-                            <div class="spinner-icon">
-                                <i class="fas fa-spin fa-spinner"></i>
-                            </div>
-                            <div class="suggestion">
-        
-                            </div>
-                        </div>
-                        <div class="input-group-append search-button-wrapper">
-                            <button
-                                class="btn btn-orange"
-                                type="submit"
-                            >Search</button>
-                        </div>
+                <form id="frmhomesearch" action="{{ url_for('users.searchagent')}}" data-ajax-url="{{ url_for('users.searchagent')}}" method="POST">
+                    {{ form.hidden_tag() }}
+            <div class="typesearch" id="hometypesearch">
+            <a class="active" rel="project">Projects</a>
+            <a rel="sale">Sale</a>
+            <a rel="rent">Rent</a>
+            </div>
+
+            <div class="input-group input-group-lg">
+
+                
+
+            
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-search"></i></span>
+                </div>
+                <div class="keyword-input">
+                    <input
+                        class="form-control"
+                       
+                        name="searched"
+                        type="text"
+                        placeholder="Enter Agent Name...."
+                        autocomplete="off"
+                    >
+                    <div class="spinner-icon">
+                        <i class="fas fa-spin fa-spinner"></i>
+                    </div>
+                </div>
+                
+                
+                <div class="location-input">
+                    <input
+                        class="select-city-state form-control"
+                        name="searched"
+                        type="hidden"
+                        placeholder="City, State"
+                        autocomplete="off"
+                    >
+                    <div class="spinner-icon">
+                        <i class="fas fa-spin fa-spinner"></i>
+                    </div>
+                    <div class="suggestion">
+
+                    </div>
+                </div>
+
+                <div class="input-group-append search-button-wrapper">
+                    <button class="btn btn-orange" type="submit">Search</button>
+                </div>
         
                         
         
@@ -150,50 +141,10 @@
 {% endfor %}
 <!--here-->
 
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
 
-    <div class="agents-grid-wrap">
 
-        <div class="fr-grid-thumb">
-                            <a href="">
-                    <img src="storage/accounts/3.jpg" class="img-fluid mx-auto" alt="Damon Osinski">
-                </a>
-                    </div>
+                                                   
 
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Damon Osinski</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#86fce5e9f4f1efe8c6f5e5eeebeff2f2a8e5e9eb"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+12705981646</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="fd879e928f8a9493bd8e9e9590948989d39e9290">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;2 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
                                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                 <div class="agents-grid">
 
@@ -238,358 +189,9 @@
 </div>
 
                             </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
 
-    <div class="agents-grid-wrap">
 
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/6.jpg" class="img-fluid mx-auto" alt="Ismael Walter">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Ismael Walter</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#5f323a2d2b363a71373e313b1f37302b323e3633713c3032"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+14638799961</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="432e2631372a266d2b222d27032b2c372e222a2f6d202c2e">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;1 property</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/9.jpg" class="img-fluid mx-auto" alt="Perry Koch">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Perry Koch</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#c9aaa5a0afbda6a7e7aba6aea8a789b0a8a1a6a6e7aaa6a4"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+17019562663</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="d0b3bcb9b6a4bfbefeb2bfb7b1be90a9b1b8bfbffeb3bfbd">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;2 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/8.jpg" class="img-fluid mx-auto" alt="Aubree Bergnaum">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Aubree Bergnaum</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#8ee9e2efeaf7fdb7b9cef7efe6e1e1a0ede1e3"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+16363863220</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="2a4d464b4e5359131d6a534b42454504494547">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;0 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/8.jpg" class="img-fluid mx-auto" alt="Coralie Macejkovic">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Coralie Macejkovic</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#11767063757f74633f627c786579707c51767c70787d3f727e7c"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+12518668208</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="ee898f9c8a808b9cc09d83879a868f83ae89838f8782c08d8183">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;0 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/10.jpg" class="img-fluid mx-auto" alt="Nicolette Bahringer">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Nicolette Bahringer</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#6207050e070b010a0c071022110a030c030a030c4c010d0f"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+17477977258</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="86e3e1eae3efe5eee8e3f4c6f5eee7e8e7eee7e8a8e5e9eb">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;2 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/8.jpg" class="img-fluid mx-auto" alt="Mavis Mueller">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Mavis Mueller</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#e08a8f888e938f8ece8792898686898ea081958592ce838f8d"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+16265867877</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="345e5b5c5a475b5a1a53465d52525d5a74554151461a575b59">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;5 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/7.jpg" class="img-fluid mx-auto" alt="Dell Muller">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Dell Muller</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#88eefae1fcfbebe0a6efe4ede6ece9c8eae7eceda6e1e6eee7"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+19259103363</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="0b6d79627f786863256c676e656f6a4b69646f6e2562656d64">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;1 property</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
-                                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                <div class="agents-grid">
-
-    <div class="agents-grid-wrap">
-
-        <div class="fr-grid-thumb">
-                            <a href="#">
-                    <img src="static/storage/accounts/10.jpg" class="img-fluid mx-auto" alt="Marjorie Mann">
-                </a>
-                    </div>
-
-        <div class="fr-grid-detail">
-            <div class="fr-grid-detail-flex">
-                <h5 class="fr-can-name">
-                                            <a href="#">Marjorie Mann</a>
-                                    </h5>
-            </div>
-                            <div class="fr-grid-detail-flex-right">
-                    <div class="agent-email"><a href="cdn-cgi/l/email-protection.html#b7ddd8dfd999c4dadec3dff7d5d8c3d5dbd299d4d8da"><i class="fa fa-envelope"></i></a></div>
-                </div>
-                    </div>
-
-    </div>
-
-    <div class="fr-grid-info">
-        <ul>
-                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">+19088724843</span></li>
-            
-                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="7913161117570a14100d11391b160d1b151c571a1614">[email&#160;protected]</a></span></li>
-                    </ul>
-    </div>
-
-    <div class="fr-grid-footer">
-        <div class="fr-grid-footer-flex">
-            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;2 properties</span>
-        </div>
-                    <div class="fr-grid-footer-flex-right">
-                <a href="#" class="prt-view" tabindex="0">View</a>
-            </div>
-            </div>
-
-</div>
-
-                            </div>
+                           
                         
                                             </div>
                 </div>

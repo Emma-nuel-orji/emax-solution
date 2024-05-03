@@ -34,12 +34,9 @@
     </div>
     <div class="container-fluid w90 padtop30">
         <div class="projecthome">
-            <form
-                id="ajax-filters-form"
-                data-ajax-url="projects.html"
-                action="https://worldluxproperties.org/projects"
-                method="get"
-            >
+            <form id="frmhomesearch" action="{{ url_for('main.searchproj')}}" data-ajax-url="{{ url_for('main.searchproj')}}" method="POST">
+                {{ form.hidden_tag() }}
+          
                 <div class="search-box">
     <div class="screen-darken"></div>
     <div class="search-box-content">
@@ -55,154 +52,24 @@
                     <div class="form-group">
     <label for="keyword" class="control-label">Keyword</label>
     <div class="input-has-icon">
-        <input type="text" id="keyword" class="form-control" name="k" value=""
+        <input type="text" id="keyword" class="form-control" name="searched" value=""
             placeholder="Enter keyword...">
         <i class="far fa-search"></i>
     </div>
 </div>
                 </div>
+              
                 <div class="col-lg-2 col-md-4 px-1">
-                    <div class="form-group" style="position: relative;">
-    <input type="hidden" name="city_id">
-    <label for="location" class="control-label">Location</label>
-    <div class="location-input" data-url="https://worldluxproperties.org/ajax/cities" style="position: relative;">
-        <div class="input-has-icon">
-            <input class="select-city-state form-control" id="location" name="location"
-                value="" placeholder="City, State"
-                autocomplete="off">
-            <i class="far fa-location"></i>
-        </div>
-        <div class="spinner-icon">
-            <i class="fas fa-spin fa-spinner"></i>
-        </div>
-        <div class="suggestion">
 
-        </div>
-    </div>
-</div>
 
                 </div>
+
                 <div class="col-lg-2 col-md-4 px-1">
-                    <label for="select-type" class="control-label">Choices</label>
-<div class="dropdown mb-2 select-dropdown" data-text-default="Type, category...">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuChoise" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <span>Type, category...</span>
-    </button>
-    <div class="dropdown-menu keep-open" style="min-width: 20em" aria-labelledby="dropdownMenuChoise">
-                    <div class="dropdown-item">
-                <div class="form-group">
-    <label for="select-category" class="control-label">Category</label>
-    <div class="select--arrow">
-        <select name="category_id" id="select-category" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" > Apartment</option>
-                            <option value="2" > Villa</option>
-                            <option value="3" > Condo</option>
-                            <option value="4" > House</option>
-                            <option value="5" > Land</option>
-                            <option value="6" > Commercial property</option>
-                    </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
-
-            </div>
-            <div class="dropdown-item">
-                <div class="form-group">
-    <label for="select-blocks" class="control-label">Number of blocks</label>
-    <div class="select--arrow">
-        <select name="blocks" id="select-blocks" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" >1 block</option>
-                            <option value="2" >2 blocks</option>
-                            <option value="3" >3 blocks</option>
-                            <option value="4" >4 blocks</option>
-                        <option value="5" >5+ blocks</option>
-        </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
-            </div>
-            <div class="dropdown-item">
-                <div class="form-group">
-                    <div class="col-xs-auto">
-                        <button class="btn btn-primary">OK</button>
-                        <button type="button" class="btn btn-primary bg-secondary float-right btn-clear">Clear</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-                </div>
-                                    <div class="col-lg-2 col-md-4 px-1">
-                        <div class="form-group">
-    <label for="select-floor" class="control-label">Floors</label>
-    <div class="select--arrow">
-        <select name="floor" id="select-floor" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" >
-                    1 floor
-                </option>
-                            <option value="2" >
-                    2 floors
-                </option>
-                            <option value="3" >
-                    3 floors
-                </option>
-                            <option value="4" >
-                    4 floors
-                </option>
-                        <option value="5" >5+ floors</option>
-        </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
+                   
 
                     </div>
                     <div class="col-lg-2 col-md-4 px-1">
-                        <label for="select-type" class="control-label">Flat range</label>
-                        <div class="dropdown mb-2">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuFlat" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span>All squares</span>
-                            </button>
-                            <div class="dropdown-menu" style="min-width: 20em;" aria-labelledby="dropdownMenuFlat">
-                                <div class="dropdown-item">
-                                    <div class="form-group min-max-input" data-calc="[{&quot;number&quot;:0,&quot;label&quot;:&quot;__value__ &quot;}]" data-all="All flats">
-    <div class="row">
-        <div class="col-5 pr-1">
-            <label for="min_flat" class="control-label">Flat from</label>
-            <input type="number" name="min_flat" class="form-control min-input" id="min_flat"
-                value="" placeholder="From" min="0" step="1">
-            <span class="position-absolute min-label d-none"></span>
-        </div>
-        <div class="col-5 px-1">
-            <label for="max_flat" class="control-label">Flat to</label>
-            <input type="number" name="max_flat" class="form-control max-input" id="max_flat"
-                value="" placeholder="To" min="0" step="1">
-            <span class="position-absolute max-label d-none"></span>
-        </div>
-        <div class="col-2 px-0" style="align-self: flex-end">
-            <button class="btn btn-primary">OK</button>
-        </div>
-    </div>
-</div>
-<ul class="list-of-suggetions mt-4">
-            <li data-value="0-20">&lt; 30</li>
-            <li data-value="20-50">20 - 50</li>
-            <li data-value="50-100">50 - 100</li>
-            <li data-value="100-150">100 - 150</li>
-            <li data-value="150-200">150 -  200</li>
-            <li data-value="200-300">200 - 300</li>
-            <li data-value="300-0">&gt; 300</li>
-        <li data-value="">All flats</li>
-</ul>
-
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                                 <div class="col-lg-2 col-xl-1 col-md-2 px-1 button-search-wrapper" style="align-self: flex-end;">
                     <div class="btn-group text-center w-100 ">
@@ -232,17 +99,7 @@
         <div class="col-showing col-6 col-sm-5 col-md-6 my-1">
             <div class="form-group--inline">
                 <div class="form-group__content">
-                    <div class="select--arrow">
-                        <select name="per_page" id="per-page" class="form-control">
-                            <option value="">Showing</option>
-                            <option value="" >15</option>
-                            <option value="30" >30</option>
-                            <option value="45" >45</option>
-                            <option value="75" >75</option>
-                            <option value="120" >120</option>
-                        </select>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -250,19 +107,7 @@
             <div class="sort-by-wrap d-flex">
                 <div class="form-group--inline">
                     <div class="form-group__content">
-                        <div class="select--arrow">
-                            <select name="sort_by" id="sort-by" class="form-control">
-                                <option value="">Sort by</option>
-                                <option value="" >Default</option>
-                                <option value="date_asc" >Oldest</option>
-                                <option value="date_desc" >Newest</option>
-                                <option value="price_asc" >Price: low to high</option>
-                                <option value="price_desc" >Price: high to low</option>
-                                <option value="name_asc" >Name: A-Z</option>
-                                <option value="name_desc" >Name: Z-A</option>
-                            </select>
-                            <i class="fas fa-angle-down"></i>
-                        </div>
+                       
                     </div>
                                     </div>
             </div>
@@ -304,7 +149,7 @@
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
     <div class="item">
     <div class="blii">
-        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-34-410x270.jpeg" src="storage/images-34-410x270.jpg" alt="Aydos Forest Apartments">
+        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-34-410x270.jpeg" src="static/storage/images-34-410x270.jpg" alt="Aydos Forest Apartments">
         </div>
         <a href="#" class="linkdetail"></a>
         <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>House</span></li></ul>
@@ -318,74 +163,7 @@
 </div>
 
             </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
-                <div class="item">
-    <div class="blii">
-        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-33-410x270.jpeg" src="storage/images-33-410x270.jpg" alt="Aegean Villas">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>Villa</span></li></ul>
-    </div>
-
-    <div class="description">
-        <a href="#"><h5>Aegean Villas</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-                    </a>
-    </div>
-</div>
-
-            </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
-                <div class="item">
-    <div class="blii">
-        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-32-410x270.jpeg" src="storage/images-32-410x270.jpg" alt="Mimaroba Paradise">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>Apartment</span></li></ul>
-    </div>
-
-    <div class="description">
-        <a href="#"><h5>Mimaroba Paradise</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i>Enugu Nigeria</p>
-                    </a>
-    </div>
-</div>
-
-            </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
-                <div class="item">
-    <div class="blii">
-        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-31-410x270.jpeg" src="storage/images-31-410x270.jpg" alt="Osaka Heights">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>Condo</span></li></ul>
-    </div>
-
-    <div class="description">
-        <a href="#"><h5>Osaka Heights</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-                    </a>
-    </div>
-</div>
-
-            </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 colm10">
-                <div class="item">
-    <div class="blii">
-        <div class="img"><img class="thumb" data-src="https://worldluxproperties.org/storage/images-30-410x270.jpeg" src="storage/images-30-410x270.jpg" alt="Walnut Park Apartments">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <ul class="item-price-wrap hide-on-list"><li class="h-type"><span>House</span></li></ul>
-    </div>
-
-    <div class="description">
-        <a href="#"><h5>Walnut Park Apartments</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i>Enugu Nigeria</p>
-                    </a>
-    </div>
-</div>
-
-            </div>
+                   
             </div>
 
                         </div>

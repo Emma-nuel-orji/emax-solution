@@ -89,3 +89,19 @@ class PaymentForm(FlaskForm):
     image = FileField('Upload Your Payment Proof', validators=[FileAllowed(['jpg', 'png'])])
     description = TextAreaField('description', validators=[DataRequired()])
     submit = SubmitField('Have Make Payment')
+    
+
+# Create A Search Form
+class SearchPropForm(FlaskForm):
+	searched = StringField("Searched", validators=[DataRequired()])
+	submit = SubmitField("Submit")
+
+# Create A Search Form
+class SearchAgentForm(FlaskForm):
+	searched = StringField("Searched", validators=[DataRequired()])
+	submit = SubmitField("Submit")
+ 
+# Create A Search Form
+class SearchProjForm(FlaskForm):
+	searched = StringField("Searched", validators=[DataRequired()])
+	submit = SubmitField("Submit")

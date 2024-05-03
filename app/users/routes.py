@@ -1,9 +1,9 @@
 from flask import render_template, url_for, flash, redirect, request, abort, Blueprint, session
 from app import db, bcrypt
-from app.models import User, Userreg
+from app.models import User, Userreg, Agent
 from flask_login import login_user, current_user, logout_user, login_required
 from app.users.utils import save_picture, send_password_reset_email
-from app.users.forms import LoginForm, RegistrationForm, UpdateAccountForm, ResetPasswordForm, RequestResetForm, UserForm
+from app.users.forms import LoginForm, RegistrationForm, UpdateAccountForm, ResetPasswordForm, RequestResetForm, UserForm, SearchAgentForm
 
 users = Blueprint('users', __name__)
 
@@ -43,9 +43,46 @@ def register_user():
         db.session.add(use)
         db.session.commit()
         flash('Your post has been created!', 'success')
-        return redirect(url_for('posts.adminproject'))
+        return redirect(url_for('main.index'))
     
     return render_template("register_user.html", form=form)
+
+
+
+# search Agents button goes here 
+
+@users.context_processor
+def layout():
+	form = SearchAgentForm()
+	return dict(form=form)
+
+
+ 
+@users.route('/searchagent', methods=["POST"])
+def searchagent():
+	form = SearchAgentForm()
+
+	agent = Agent.query
+
+	if form.validate_on_submit():
+		# Get data from submitted form
+		post.searched = form.searched.data
+		# Query the Database
+		agent = agent.filter(Agent.name.like('%' + post.searched + '%'))
+		agent = agent.order_by(Agent.email).all()
+
+		return render_template("searchagent.html",
+		 form=form,
+		 searched = post.searched,
+		 agent = agent)
+
+
+
+@users.route('/posts/<int:id>')
+def post(id):
+	user = Agent.query.get_or_404(id)
+	return render_template('users.html', user=user)
+
 
 
 @users.route('/login', methods=['GET', 'POST'])

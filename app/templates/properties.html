@@ -32,14 +32,12 @@
             </div>
         </div>
     </div>
+
+
     <div class="container-fluid w90 padtop30">
         <div class="projecthome">
-            <form
-                id="ajax-filters-form"
-                data-ajax-url="properties.html"
-                action="https://emax-solution.com/properties"
-                method="get"
-            >
+            <form id="frmhomesearch" action="{{ url_for('main.searchprop')}}" data-ajax-url="{{ url_for('main.searchprop')}}" method="POST">
+                    {{ form.hidden_tag() }}
                 <div class="search-box">
     <div class="screen-darken"></div>
     <div class="search-box-content">
@@ -55,7 +53,7 @@
                     <div class="form-group">
     <label for="keyword" class="control-label">Keyword</label>
     <div class="input-has-icon">
-        <input type="text" id="keyword" class="form-control" name="k" value=""
+        <input type="text" id="keyword" class="form-control" name="searched" value=""
             placeholder="Enter keyword...">
         <i class="far fa-search"></i>
     </div>
@@ -63,65 +61,22 @@
                 </div>
                 <div class="col-lg-2 col-md-4 px-1">
                     <div class="form-group" style="position: relative;">
-    <input type="hidden" name="city_id">
-    <label for="location" class="control-label">Location</label>
-    <div class="location-input" data-url="https://worldluxproperties.org/ajax/cities" style="position: relative;">
-        <div class="input-has-icon">
-            <input class="select-city-state form-control" id="location" name="location"
-                value="" placeholder="City, State"
-                autocomplete="off">
-            <i class="far fa-location"></i>
-        </div>
-        <div class="spinner-icon">
-            <i class="fas fa-spin fa-spinner"></i>
-        </div>
-        <div class="suggestion">
-
-        </div>
-    </div>
+  
 </div>
 
                 </div>
                 <div class="col-lg-2 col-md-4 px-1">
-                    <label for="select-type" class="control-label">Choices</label>
+                    
 <div class="dropdown mb-2 select-dropdown" data-text-default="Type, category...">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuChoise" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <span>Type, category...</span>
-    </button>
+  
     <div class="dropdown-menu keep-open" style="min-width: 20em" aria-labelledby="dropdownMenuChoise">
                     <div class="dropdown-item">
                 <div class="row">
-                    <div class="col-6 pr-1">
-                        <div class="form-group">
-    <label for="select-type" class="control-label">Type</label>
-    <div class="select--arrow">
-        <select name="type" id="select-type" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="sale" >Sale
-                </option>
-                            <option value="rent" >Rent
-                </option>
-                    </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
-</div>
-                    </div>
+               
                     <div class="col-6 pl-1">
                         <div class="form-group">
     <label for="select-category" class="control-label">Category</label>
-    <div class="select--arrow">
-        <select name="category_id" id="select-category" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" > Apartment</option>
-                            <option value="2" > Villa</option>
-                            <option value="3" > Condo</option>
-                            <option value="4" > House</option>
-                            <option value="5" > Land</option>
-                            <option value="6" > Commercial property</option>
-                    </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
+   
 </div>
 
                     </div>
@@ -135,9 +90,7 @@
     <label for="filter-by-project" class="control-label">Project</label>
     <div style="position: relative;">
         <div class="input-has-icon">
-            <input class="form-control" id="filter-by-project"
-                   data-url="https://worldluxproperties.org/ajax/projects-filter" value="" placeholder="Project"
-                   autocomplete="off">
+         
         </div>
         <div class="spinner-icon">
             <i class="fas fa-spin fa-spinner"></i>
@@ -208,26 +161,7 @@
                 <div class="row">
                     <div class="col-6 pr-1">
                         <div class="form-group">
-    <label for="select-floor" class="control-label">Floors</label>
-    <div class="select--arrow">
-        <select name="floor" id="select-floor" class="form-control">
-            <option value="">-- Select --</option>
-                            <option value="1" >
-                    1 floor
-                </option>
-                            <option value="2" >
-                    2 floors
-                </option>
-                            <option value="3" >
-                    3 floors
-                </option>
-                            <option value="4" >
-                    4 floors
-                </option>
-                        <option value="5" >5+ floors</option>
-        </select>
-        <i class="fas fa-angle-down"></i>
-    </div>
+  
 </div>
 
                     </div>
@@ -246,76 +180,23 @@
 </div>
 
                 </div>
-                                    <div class="col-lg-2 col-md-4 px-1 mb-2">
-                        <label for="select-type" class="control-label">Price range</label>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuPrice" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span>All prices</span>
-                            </button>
-                            <div class="dropdown-menu" style="min-width: 20em;" aria-labelledby="dropdownMenuPrice">
-                                <div class="dropdown-item">
-                                                                        <div class="form-group min-max-input" data-calc="[{&quot;number&quot;:1000000000,&quot;label&quot;:&quot;__value__ billion&quot;},{&quot;number&quot;:1000000,&quot;label&quot;:&quot;__value__ million&quot;},{&quot;number&quot;:1000,&quot;label&quot;:&quot;__value__ thousand&quot;},{&quot;number&quot;:0,&quot;label&quot;:&quot;__value__&quot;}]" data-all="All prices">
-                                        <div class="row">
-                                            <div class="col-5 pr-1">
-                                                <label for="min_price" class="control-label">Price from (₫)</label>
-                                                <input type="number" name="min_price" class="form-control min-input" id="min_price"
-                                                       value="" placeholder="From" min="0" step="1">
-                                                <span class="position-absolute min-label d-none"></span>
-                                            </div>
-                                            <div class="col-5 px-1">
-                                                <label for="max_price" class="control-label">Price to (₫)</label>
-                                                <input type="number" name="max_price" class="form-control max-input" id="max_price"
-                                                       value="" placeholder="To" min="0" step="1">
-                                                <span class="position-absolute max-label d-none"></span>
-                                            </div>
-                                            <div class="col-2 px-0 btn-min-max" style="align-self: flex-end">
-                                                <button class="btn btn-primary">OK</button>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
+
+
+
+
+
+                                    <div class="col-lg-2 col-md-4 px-1 mb-2">
+                       
                     </div>
                     <div class="col-lg-2 col-md-4 px-1 mb-2">
-                        <label for="select-type" class="control-label">Square range</label>
+                       
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSquare" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span>All squares</span>
-                            </button>
+                           
                             <div class="dropdown-menu" style="min-width: 20em;" aria-labelledby="dropdownMenuSquare">
                                 <div class="dropdown-item">
-                                    <div class="form-group min-max-input" data-calc="[{&quot;number&quot;:0,&quot;label&quot;:&quot;__value__ m\u00b2&quot;}]" data-all="All squares">
-    <div class="row">
-        <div class="col-5 pr-1">
-            <label for="min_square" class="control-label">Square from</label>
-            <input type="number" name="min_square" class="form-control min-input" id="min_square"
-                value="" placeholder="From" step="10" min="0">
-            <span class="position-absolute min-label d-none"></span>
-        </div>
-        <div class="col-5 px-1">
-            <label for="max_square" class="control-label">Square to</label>
-            <input type="number" name="max_square" class="form-control max-input" id="max_square"
-                value="" placeholder="To" step="10" min="0">
-                <span class="position-absolute max-label d-none"></span>
-        </div>
-        <div class="col-2 px-0" style="align-self: flex-end">
-            <span class="btn btn-primary">OK</span>
-        </div>
-    </div>
-</div>
-<ul class="list-of-suggetions mt-4">
-            <li data-value="0-100">&lt; 100 m²</li>
-            <li data-value="100-200">100 m² - 200 m²</li>
-            <li data-value="200-300">200 m² - 300 m²</li>
-            <li data-value="300-400">300 m² - 400 m²</li>
-            <li data-value="400-500">400 m² - 500 m²</li>
-            <li data-value="500-0">&gt; 500 m²</li>
-        <li data-value="">All squares</li>
-</ul>
+
+
 
                                 </div>
                             </div>
@@ -353,17 +234,7 @@
         <div class="col-showing col-6 col-sm-5 col-md-6 my-1">
             <div class="form-group--inline">
                 <div class="form-group__content">
-                    <div class="select--arrow">
-                        <select name="per_page" id="per-page" class="form-control">
-                            <option value="">Showing</option>
-                            <option value="" >15</option>
-                            <option value="30" >30</option>
-                            <option value="45" >45</option>
-                            <option value="75" >75</option>
-                            <option value="120" >120</option>
-                        </select>
-                        <i class="fas fa-angle-down"></i>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -371,19 +242,7 @@
             <div class="sort-by-wrap d-flex">
                 <div class="form-group--inline">
                     <div class="form-group__content">
-                        <div class="select--arrow">
-                            <select name="sort_by" id="sort-by" class="form-control">
-                                <option value="">Sort by</option>
-                                <option value="" >Default</option>
-                                <option value="date_asc" >Oldest</option>
-                                <option value="date_desc" >Newest</option>
-                                <option value="price_asc" >Price: low to high</option>
-                                <option value="price_desc" >Price: high to low</option>
-                                <option value="name_asc" >Name: A-Z</option>
-                                <option value="name_desc" >Name: Z-A</option>
-                            </select>
-                            <i class="fas fa-angle-down"></i>
-                        </div>
+                        
                     </div>
                                             <div class="change-view ml-2">
                             <i class="fas fa-map-marker-alt view-type-map  active "></i>
@@ -456,50 +315,7 @@
 
 
 
-                    <div class="colm10 property-item" data-lat="" data-long="">
-                <div class="item" data-lat="" data-long="">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/760xxsxm-410x270.webp"
-                src="static/storage/760xxsxm-410x270.webp"
-                alt="Family House Near Horský Park, Ba I – Old Town, Id: 0213">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>8</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="House">House</span></li>
-            <li class="item-price"><span title="41,510,439,653₫">₦ 41,510,439,653₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="36"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Family House Near Horský Park, Ba I – Old Town, Id: 0213</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> </p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">4</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">3</i></span>
-                                    
-        </p>
-    </div>
-</div>
-
-            </div>
+           
                     <div class="colm10 property-item" data-lat="" data-long="">
                 <div class="item" data-lat="" data-long="">
     <div class="blii">
@@ -544,335 +360,15 @@
 </div>
 
             </div>
-                    <div class="colm10 property-item" data-lat="43.222732" data-long="-76.105523">
-                <div class="item" data-lat="43.222732" data-long="-76.105523">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
-                src="static/storage/logo/3199ad0747c48a74132193e34a9c7ed4-cc-ft-384-410x270.webp"
-                alt="Nice Apartment for rent in Berlin">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>1</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Renting</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Villa">Villa</span></li>
-            <li class="item-price"><span title="28,864,198₫">28,864,198₫</span></li>
-        </ul>
-    </div>
 
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="17"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Nice Apartment for rent in Berlin</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">1</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">1</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">33 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
 
-            </div>
-                    <div class="colm10 property-item" data-lat="43.52876" data-long="-76.65882">
-                <div class="item" data-lat="43.52876" data-long="-76.65882">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/logo/741fcac9549437e9bb640884ece45885-uncropped-scaled-within-1536-1152-410x270.webp"
-                src="storage/logo/741fcac9549437e9bb640884ece45885-uncropped-scaled-within-1536-1152-410x270.webp"
-                alt="Apartment Muiderstraatweg in Diemen">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>4</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Renting</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Villa">Villa</span></li>
-            <li class="item-price"><span title="50,352,253₫">50,352,253₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="16"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Apartment Muiderstraatweg in Diemen</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">3</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">1</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">90 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-            </div>
-                    <div class="colm10 property-item" data-lat="43.636294" data-long="-76.116519">
-                <div class="item" data-lat="43.636294" data-long="-76.116519">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
-                src="static/storage/logo/38c41895c1507829753ee4ccfca4ebc1-cc-ft-384-410x270.webp"
-                alt="2 Floor house in Compound Pejaten Barat Kemang">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>5</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Renting</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Commercial property">Commercial property</span></li>
-            <li class="item-price"><span title="33,204,500₫">33,204,500₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="15"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>2 Floor house in Compound Pejaten Barat Kemang</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">3</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">2</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">200 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-            </div>
-                    <div class="colm10 property-item" data-lat="42.504328" data-long="-76.341293">
-                <div class="item" data-lat="42.504328" data-long="-76.341293">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                src="static/storage/f4c52f798c35a86df5223113878b5c41-410x270.jpg"
-                alt="5 room luxury penthouse for sale in Kuala Lumpur">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>7</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Villa">Villa</span></li>
-            <li class="item-price"><span title="37,710,825,000₫">37,710,825,000₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="14"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>5 room luxury penthouse for sale in Kuala Lumpur</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i>Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">5</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">7</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">377 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-            </div>
-                    <div class="colm10 property-item" data-lat="42.813772" data-long="-76.615855">
-                <div class="item" data-lat="42.813772" data-long="-76.615855">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
-                src="static/storage/34f98a7b698ed4a37a6b389551be87f5-410x270.jpg"
-                alt="Luxury Apartments in Singapore for Sale">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>5</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Condo">Condo</span></li>
-            <li class="item-price"><span title="21,772,665,000₫">21,772,665,000₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="13"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Luxury Apartments in Singapore for Sale</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">2</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">2</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">78 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-            </div>
-                    <div class="colm10 property-item" data-lat="43.137361" data-long="-76.539998">
-                <div class="item" data-lat="43.137361" data-long="-76.539998">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
-                src="static/storage/1a36ff0db28344402104a8b559e534c8-410x270.jpg"
-                alt="Elegant family home presents premium modern living">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>6</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Renting</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Condo">Condo</span></li>
-            <li class="item-price"><span title="37,331,345₫">37,331,345₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="12"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Elegant family home presents premium modern living</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">3</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">3</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">658 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-            </div>
-                    <div class="colm10 property-item" data-lat="42.659611" data-long="-76.197177">
-                <div class="item" data-lat="42.659611" data-long="-76.197177">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
-                src="static/storage/907595e5123c4d34cb8f2e39cd822ca8-410x270.jpg"
-                alt="Brand New 1 Bedroom Apartment In First Class Location">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>5</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Renting</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Villa">Villa</span></li>
-            <li class="item-price"><span title="39,845,400₫">39,845,400₫</span></li>
-        </ul>
-    </div>
-
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="11"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Brand New 1 Bedroom Apartment In First Class Location</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">1</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">1</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">80 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
-
-            </div>
+                     
+                    
+                 
+                   
+                   
+                 
+                   
                     <div class="colm10 property-item" data-lat="42.601639" data-long="-76.36969">
                 <div class="item" data-lat="42.601639" data-long="-76.36969">
     <div class="blii">
@@ -920,53 +416,10 @@
 </div>
 
             </div>
-                    <div class="colm10 property-item" data-lat="42.812299" data-long="-76.137607">
-                <div class="item" data-lat="42.812299" data-long="-76.137607">
-    <div class="blii">
-        <div class="img">
-            <img class="thumb"
-                data-src="static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
-                src="static/storage/b8a2e17d35d5d6c4aafe8420aacbed3a-1-410x270.jpg"
-                alt="Private Estate Magnificent Views">
-        </div>
-        <a href="#" class="linkdetail"></a>
-        <div class="media-count-wrapper">
-            <div class="media-count">
-                <img src="static/themes/flex-home/images/media-count.svg" alt="media">
-                <span>2</span>
-            </div>
-        </div>
-        <div class="status"><span class="label-success status-label">Selling</span></div>
-        <ul class="item-price-wrap hide-on-list">
-            <li class="h-type"><span title="Land">Land</span></li>
-            <li class="item-price"><span title="16,459,945,000₫">16,459,945,000₫</span></li>
-        </ul>
-    </div>
 
-    <div class="description">
-        <a href="#" class="text-orange heart add-to-wishlist" data-id="9"
-            title="I care about this property!!!"><i class="far fa-heart"></i></a>
-        <a href="#">
-            <h5>Private Estate Magnificent Views</h5>
-            <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> Enugu Nigeria</p>
-        </a>
-        <p class="threemt bold500">
-                            <span original-title="Number of rooms">
-                    <i><img src="static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
-                        class="vti">3</i>
-                </span>
-                                        <span title="Number of rest rooms"> <i><img
-                            src="static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
-                        class="vti">1</i></span>
-                                        <span title="Square"> <i><img
-                            src="static/themes/flex-home/images/area.svg" alt="icon"></i> <i
-                        class="vti">2,000 m²</i> </span>
-                        
-        </p>
-    </div>
-</div>
 
-            </div>
+                   
+            
             </div>
     <br>
 

@@ -20,6 +20,11 @@ class AgentForm(FlaskForm):
     
 class ProjectForm(FlaskForm):
     image = FileField('Upload Image', validators=[FileAllowed(['jpg', 'png'])])
+    image2 = FileField('Upload back of Your Property', validators=[FileAllowed(['jpg', 'png'])])
+    image3 = FileField('Upload Property Interior Image', validators=[FileAllowed(['jpg', 'png'])])
+    image4 = FileField('Upload Property Interior Image', validators=[FileAllowed(['jpg', 'png'])])
+    image5 = FileField('Upload Property Interior Image', validators=[FileAllowed(['jpg', 'png'])])
+    
     name = StringField('Project Name', validators=[DataRequired()])
     
     status = SelectField('Property Status', validators=[DataRequired()], choices=[("--Select One--"), ("Selling"),("Renting")])
@@ -35,7 +40,11 @@ class ProjectForm(FlaskForm):
 
     
 class PropertiesForm(FlaskForm):
-    image = FileField('Upload Image', validators=[FileAllowed(['jpg', 'png'])])
+    image = FileField('Upload Property Front Image', validators=[FileAllowed(['jpg', 'png'])])
+    image2 = FileField('Upload back of Your Property', validators=[FileAllowed(['jpg', 'png'])])
+    image3 = FileField('Upload Property Interior Image', validators=[FileAllowed(['jpg', 'png'])])
+    image4 = FileField('Upload Property Interior Image', validators=[FileAllowed(['jpg', 'png'])])
+    image5 = FileField('Upload Property Interior Image', validators=[FileAllowed(['jpg', 'png'])])
     
     name = StringField('Property Name', validators=[DataRequired()])
     location = StringField('Location', validators=[DataRequired()])
@@ -50,7 +59,7 @@ class PropertiesForm(FlaskForm):
     description = StringField('Description', validators=[DataRequired()])
     
     pic = FileField('Upload Your Profile', validators=[FileAllowed(['jpg', 'png'])])
-    fullname = StringField('Fullname', validators=[DataRequired()])
+    fullname = StringField('Agent Fullname', validators=[DataRequired()])
     phone = StringField('Phone Number', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
     

@@ -1,0 +1,110 @@
+{% extends "layout.html"%}
+
+{% block content%}
+
+
+
+<div id="app">
+    <section class="main-homes">
+    <div
+        class="bgheadproject hidden-xs"
+        style="background: url('static/storage/general/breadcrumb-background.jpg')"
+    >
+        <div class="description">
+            <div class="container-fluid w90">
+                <h1 class="text-center">You Searched For: {{ searched }}</h1>
+                <p class="text-center d-none d-sm-inline-block"></p>
+            
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid w90 padtop30">
+        <div class="projecthome">
+                            <h5 class="headifhouse">Searched Results</h5>
+                <div class="row rowm10">
+
+                    <!--starts here-->
+
+                    {% if prop %}
+                      
+                        {% for prop in prop %}
+                    <div class="col-sm-6 col-lg-4 col-xl-3 colm10" style="margin-bottom: 20px;">
+                        <div class="item" data-lat="43.222732" data-long="-76.105523">
+                            <div class="blii">
+                                <div class="img">
+                                    <img class="thumb"
+                                        data-src="{{url_for('static', filename='img/' + prop.image)}}"
+                                        src="{{url_for('static', filename='img/' + prop.image)}}"
+                                        alt="Nice Apartment for rent in Berlin">
+                                </div>
+                                <a href="{{ url_for('posts.single_properties',prop_id=prop.id) }}" class="linkdetail"></a>
+                                <div class="media-count-wrapper">
+                                    <div class="media-count">
+                                        <img src="../static/themes/flex-home/images/media-count.svg" alt="media">
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="status"><span class="label-success status-label">{{ prop.status }}</span></div>
+                                <ul class="item-price-wrap hide-on-list">
+                                    <li class="h-type"><span title="Villa">{{ prop.type }}</span></li>
+                                    <li class="item-price"><span title="28,864,198₫">{{ prop.price }}</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="description">
+                                <a href="#" class="text-orange heart add-to-wishlist" data-id="17"
+                                    title="I care about this property!!!"><i class="far fa-heart"></i></a>
+                                <a href="{{ url_for('posts.single_properties',prop_id=prop.id) }}">
+                                    <h5>{{ prop.name }}</h5>
+                                    <p class="dia_chi"><i class="fas fa-map-marker-alt"></i> {{ prop.location }}</p>
+                                </a>
+                                <p class="threemt bold500">
+                                                    <span original-title="Number of rooms">
+                                            <i><img src="../static/themes/flex-home/images/bed.svg" alt="icon"></i> <i
+                                                class="vti">{{ prop.bedroom }}</i>
+                                        </span>
+                                                                <span title="Number of rest rooms"> <i><img
+                                                    src="../static/themes/flex-home/images/bath.svg" alt="icon"></i> <i
+                                                class="vti">{{ prop.bathroom }}</i></span>
+                                                                <span title="Square"> <i><img
+                                                    src="../static/themes/flex-home/images/area.svg" alt="icon"></i> <i
+                                                class="vti">{{ prop.square }} m²</i> </span>
+                                                
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                                    
+                        {% endfor %}
+                         <!--ends here-->
+                        {% else %}
+	                    <h2>Sorry, your search term: <strong> {{ searched }}, </strong> was not found...</h2>
+	                    {% endif %}
+              
+                     
+
+
+
+                                           
+
+                     
+                                    </div>
+                    </div>
+    </div>
+</section>
+<br>
+<div class="col-sm-12">
+    <nav
+        class="d-flex justify-content-center pt-3"
+        aria-label="Page navigation example"
+    >
+        
+    </nav>
+</div>
+<br>
+<br>
+
+</div>
+
+
+{% endblock content%}

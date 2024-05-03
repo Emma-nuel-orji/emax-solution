@@ -65,6 +65,24 @@ def projectpost():
             picture_file = save_picture(form.image.data)
             image = picture_file
         name = form.name.data
+        
+        if form.image2.data:
+            picture_file = save_picture(form.image2.data)
+            image2 = picture_file
+            
+        if form.image3.data:
+            picture_file = save_picture(form.image3.data)
+            image3 = picture_file
+            
+        if form.image4.data:
+            picture_file = save_picture(form.image4.data)
+            image4 = picture_file
+            
+        if form.image5.data:
+            picture_file = save_picture(form.image5.data)
+            image5 = picture_file 
+            
+            
         status = form.status.data
         type = form.type.data
         
@@ -76,7 +94,7 @@ def projectpost():
         location = form.location.data
         
         author = current_user
-        proj = Project(name=name, status=status, author=author, description=description, location=location, image=image, blocks=blocks, floors=floors, flats=flats, type=type)
+        proj = Project(name=name, status=status, author=author, description=description, location=location, image=image, image2=image2, image3=image3, image4=image4, image5=image5, blocks=blocks, floors=floors, flats=flats, type=type)
         db.session.add(proj)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -96,12 +114,28 @@ def propertiespost():
         if form.image.data:
             picture_file = save_picture(form.image.data)
             image = picture_file
+        
+        if form.image2.data:
+            picture_file = save_picture(form.image2.data)
+            image2 = picture_file
+            
+        if form.image3.data:
+            picture_file = save_picture(form.image3.data)
+            image3 = picture_file
+            
+        if form.image4.data:
+            picture_file = save_picture(form.image4.data)
+            image4 = picture_file
+            
+        if form.image5.data:
+            picture_file = save_picture(form.image5.data)
+            image5 = picture_file   
             
         if form.pic.data:
             picture_file = save_picture(form.pic.data)
             pic = picture_file
-        name = form.name.data
         
+        name = form.name.data
         location = form.location.data
         status = form.status.data
         square = form.square.data
@@ -117,7 +151,7 @@ def propertiespost():
         email = form.email.data
         
         author = current_user
-        prop = Properties(name=name, type=type, price=price, author=author, location=location, status=status, square=square, bedroom=bedroom, bathroom=bathroom, floors=floors, description=description, image=image, fullname=fullname, phone=phone, email=email, pic=pic)
+        prop = Properties(name=name, type=type, price=price, author=author, location=location, status=status, square=square, bedroom=bedroom, bathroom=bathroom, floors=floors, description=description, image=image, image2=image2, image3=image3, image4=image4, image5=image5, fullname=fullname, phone=phone, pic=pic, email=email )
         db.session.add(prop)
         db.session.commit()
         flash('Your post has been created!', 'success')

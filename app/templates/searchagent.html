@@ -1,0 +1,121 @@
+{% extends "layout.html"%}
+
+{% block content%}
+
+
+<div id="app">
+    <section class="main-homes">
+    
+        
+
+
+        <div id="app">
+            <div id="ismain-homes">
+            <div class="ck-content">
+                <div>
+                    <div
+            class="home_banner"
+            id="bannerSlider"
+            data-images="[]"
+            data-seconds="5"
+            data-slide="no"
+            style="background-image: url(static/storage/general/sky.jpg); transition: background 3s"
+        >
+        
+            <div class="topsearch">
+                <h2 style='color: white;'>You Searched For: <em>{{ searched }}</em></h2>
+            </div>
+        </div>
+        </div>
+
+
+
+<br>
+<br>
+
+</div>
+
+
+<!--starts here -->
+
+
+<!--Endsher-->
+
+<div id="app">
+    <section class="main-homes">
+  
+  <div id="app">
+         
+    <div class="container-fluid w90 padtop30">
+        <h5 class="headifhouse">Searched Results</h5>
+        <div class="rowm10">
+            
+                            <div class="container-fluid">
+                    <div class="row rowm10 list-agency">
+
+                        <!--here-->
+                        {% if agent %}
+                        {% for post in agent %}
+                                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="agents-grid">
+
+    <div class="agents-grid-wrap">
+
+        <div class="fr-grid-thumb">
+                            <a href="{{ url_for('posts.single_agent',post_id=post.id) }}">
+                    <img src="{{url_for('static', filename='img/' + post.image)}}" class="img-fluid mx-auto" alt="Meta Krajcik">
+                </a>
+                    </div>
+
+        <div class="fr-grid-detail">
+            <div class="fr-grid-detail-flex">
+                <h5 class="fr-can-name">
+                                            <a href="{{ url_for('posts.single_agent',post_id=post.id) }}"> {{ post.name }}</a>
+                                    </h5>
+            </div>
+                            <div class="fr-grid-detail-flex-right">
+                    <div class="agent-email"><a href="mailto:{{ post.email }}"><i class="fa fa-envelope"></i></a></div>
+                </div>
+                    </div>
+
+    </div>
+
+    <div class="fr-grid-info">
+        <ul>
+                            <li><strong class="d-inline-block me-1">Phone:</strong>&nbsp;<span dir="ltr">{{ post.phone }} </span></li>
+            
+                            <li><strong class="d-inline-block me-1">Email:</strong>&nbsp;<span dir="ltr"><a href="mailto:{{ post.email }}" class="" data-cfemail="026f63617b2c646770707b42606376782c616d6f">{{ post.email }}</a></span></li>
+                    </ul>
+    </div>
+
+    <div class="fr-grid-footer">
+        <div class="fr-grid-footer-flex">
+            <span class="fr-position"><i class="fa fa-home"></i>&nbsp;1 property</span>
+        </div>
+                    <div class="fr-grid-footer-flex-right">
+                <a href="{{ url_for('posts.single_agent',post_id=post.id) }}" class="prt-view" tabindex="0">View</a>
+            </div>
+            </div>
+
+</div>
+</div>
+
+{% endfor %}
+<!--here-->
+
+{% else %}
+	<h2>Sorry, your search term: <strong> {{ searched }}, </strong> was not found...</h2>
+	{% endif %}
+                         
+</div>
+</div>
+</div>
+    </div>
+</section>
+<br>
+<br>
+
+</div>
+
+
+{% endblock content%}
